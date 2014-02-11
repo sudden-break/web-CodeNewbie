@@ -1,0 +1,12 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore .DS_Store
+.DS_STORE
+*ds_store
+
+# Ignore local databases.
+/db/*.sqlite3
+
+# Ignore configuration file
+/config/authentication.rb
