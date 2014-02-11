@@ -1,0 +1,153 @@
+h1 {
+}
+
+body{
+  background: #f7f1e2;
+  background: #f0f0ec;
+  margin: 80px 150px 150px 150px;
+}
+
+h3 {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  color: #404040;
+}
+
+p, h1, h2, li, h4 {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  color: #404040;
+  font-size: 1.5em;
+}
+
+h1 {
+  color: #11bd2d;
+  font-weight: 800;
+  font-size: 6em; 
+  margin-bottom: -20px;
+}
+
+h2 {
+  display: inline;
+/*  font-size: 2em;*/
+  font-weight: 700;
+  color: ;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.7em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.title:after {
+  margin-right: 10px;
+}
+
+.deck {
+  width: 100%;
+  display: block;
+  position: relative;
+  height: 50px;
+}
+
+.deck h2 {
+  position: absolute;
+  top: 10;
+}
+
+section {
+  width: 90%;
+  border-bottom: solid 1px #ccc;
+  padding: 30px;
+}
+
+section.faq h3.title {
+  text-decoration: none;
+}
+
+section.faq h3 {
+  text-decoration: underline;
+}
+
+h3, li {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 1.7em;
+  font-weight: 400;
+}
+
+.rules li, .rules {
+  display: inline;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+.rules {
+  padding: 40px 0px;
+  text-align: center;
+  vertical-align: middle
+}
+
+.rules li:before {
+  content: counter(my-awesome-counter);
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 25px 0 40px;
+  width: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 1in;
+  border: 1.5px solid #11bd2d;
+  font-weight: 900;
+}
+
+ul {
+  list-style: none;
+  padding: 0 0 0 120px;
+  counter-reset: my-awesome-counter;
+}
+
+li {
+  margin: .5em;
+  padding: 0;
+  counter-increment: my-awesome-counter;
+}
+
+li:before {
+  content: counter(my-awesome-counter);
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 25px 0 -80px;
+  width: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 1in;
+  border: 1.5px solid #11bd2d;
+  font-weight: 900;
+}
+
+.signature {
+  margin-top: 50px;
+}
+
+a {
+  color: #11bd2d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.keyword {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #036b72;
+  font-weight: 700;
+}
+
+.signature {
+  font-weight: 900;
+  font-size: 1.5em;  
+  text-align: center;
+}
