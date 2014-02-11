@@ -8,7 +8,7 @@ require_relative 'environment'
 
 # Rename 'AppName' to name of choice.
 # => Update 'AppName' : config.ru // spec_helper.rb
-module AppName
+module CodeNewbie
   class App < Sinatra::Application
     register Sinatra::ActiveRecordExtension
 

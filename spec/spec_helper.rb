@@ -10,7 +10,7 @@ set :raise_errors, true
 set :logging, false
 
 def app
-  AppName::App 
+  CodeNewbie::App 
 end
 
 RSpec.configure do |config|
