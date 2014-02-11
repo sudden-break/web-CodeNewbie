@@ -1,6 +1,7 @@
 require 'sinatra/activerecord/rake'
-require 'rspec/core/rake_task'
 require './app'
+
+require 'rspec/core/rake_task'
 
 # Include all rake tasks located in lib/tasks folder.
 Dir.glob('lib/tasks/*.rake').each { |r| load r }
