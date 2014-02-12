@@ -1,6 +1,3 @@
-h1 {
-}
-
 body{
   background: #f7f1e2;
   background: #f0f0ec;
@@ -31,8 +28,13 @@ h2 {
   color: ;
 }
 
+
 h2.subtitle {
   font-weight: 400;
+}
+
+.center {
+  text-align: center;
 }
 
 .title {
@@ -112,6 +114,7 @@ h3, li {
   border-radius: 1in;
   border: 1.5px solid #11bd2d;
   font-weight: 900;
+  background: white;
 }
 
 section .tweet {
@@ -166,6 +169,6 @@ a:hover {
 
 .signature {
   font-weight: 900;
-  font-size: 1.5em;  
+  font-size: 2.0em;  
   text-align: center;
 }
