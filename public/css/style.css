@@ -123,6 +123,7 @@ h3, li {
   border-radius: 1in;
   font-weight: 900;
   background: white;
+  position: inherit;
 }
 
 section .tweet {
@@ -140,14 +141,13 @@ li {
   margin: 1em .5em;
   padding: 0;
   counter-increment: my-awesome-counter;
-  line-height: 0;
+  line-height: 1.5em;
 }
 
 li:before {
   content: counter(my-awesome-counter);
   font-size: 1.5em;
   display: inline-block;
-  vertical-align: middle;
   margin: 20px 25px 0 -90px;
   width: 1.5em;
   line-height: 1.5em;
@@ -156,6 +156,8 @@ li:before {
   border: 1.5px solid #11bd2d;
   font-weight: 900;
   background: white;
+  position: relative;
+  top: 30px;
 }
 
 .signature {
