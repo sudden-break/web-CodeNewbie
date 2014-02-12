@@ -25,12 +25,12 @@ h1 {
 h2 {
   display: inline;
   font-weight: 700;
-  color: ;
 }
 
 
 h2.subtitle {
-  font-weight: 400;
+  font-weight: 200;
+  padding-left: 30px;
 }
 
 .center {
@@ -47,11 +47,6 @@ a.join {
   padding: 5px 15px; 
   margin: 20px;
   background: white;
-}
-
-a.join:hover {
-  color: #11bd2d;
-  border: 3px solid #11bd2d;
 }
 
 .title:after {
@@ -78,10 +73,24 @@ section {
 
 section.faq h3.title {
   text-decoration: none;
+    font-weight: 900;
 }
 
 section.faq h3 {
-  text-decoration: underline;
+  font-weight: 600;
+  padding-top: 30px;
+}
+
+section.faq h3:nth-child(2), section.faq h3:first-child {
+  padding-top: 0px;
+}
+
+section.faq ul {
+  margin-bottom: 50px;
+}
+
+section p,  {
+  margin-left: 5%;
 }
 
 h3, li {
@@ -112,7 +121,6 @@ h3, li {
   line-height: 1.5em;
   text-align: center;
   border-radius: 1in;
-  border: 1.5px solid #11bd2d;
   font-weight: 900;
   background: white;
 }
@@ -129,9 +137,10 @@ ul {
 }
 
 li {
-  margin: .5em;
+  margin: 1em .5em;
   padding: 0;
   counter-increment: my-awesome-counter;
+  line-height: 0;
 }
 
 li:before {
@@ -139,13 +148,14 @@ li:before {
   font-size: 1.5em;
   display: inline-block;
   vertical-align: middle;
-  margin: 0 25px 0 -80px;
+  margin: 20px 25px 0 -90px;
   width: 1.5em;
   line-height: 1.5em;
   text-align: center;
   border-radius: 1in;
   border: 1.5px solid #11bd2d;
   font-weight: 900;
+  background: white;
 }
 
 .signature {
