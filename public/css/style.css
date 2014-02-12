@@ -128,7 +128,17 @@ h3, li {
 
 section .tweet {
   border: 10px solid white;
-  padding: 5%;
+  padding: 1% 4% 3%;
+  margin-top: 20px;
+  position: relative;
+}
+
+img {
+  width: 60px;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+
 }
 
 ul {
