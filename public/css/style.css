@@ -1,6 +1,3 @@
-h1 {
-}
-
 body{
   background: #f7f1e2;
   background: #f0f0ec;
@@ -30,6 +27,10 @@ h2 {
 /*  font-size: 2em;*/
   font-weight: 700;
   color: ;
+}
+
+.center {
+  text-align: center;
 }
 
 .title {
@@ -153,6 +154,6 @@ a:hover {
 
 .signature {
   font-weight: 900;
-  font-size: 1.5em;  
+  font-size: 2.0em;  
   text-align: center;
 }
