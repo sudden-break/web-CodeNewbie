@@ -92,13 +92,18 @@ h3, li {
   font-size: 1.5em;
   display: inline-block;
   vertical-align: middle;
-  margin: 0 25px 0 40px;
+  margin: 0 25px 0 5%;
   width: 1.5em;
   line-height: 1.5em;
   text-align: center;
   border-radius: 1in;
   border: 1.5px solid #11bd2d;
   font-weight: 900;
+}
+
+section .tweet {
+  border: 10px solid white;
+  padding: 5%;
 }
 
 ul {
