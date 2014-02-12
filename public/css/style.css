@@ -27,16 +27,29 @@ h1 {
 
 h2 {
   display: inline;
-/*  font-size: 2em;*/
   font-weight: 700;
   color: ;
 }
 
+h2.subtitle {
+  font-weight: 400;
+}
+
 .title {
   font-weight: 800;
-  font-size: 1.7em;
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+a.join {
+  padding: 5px 15px; 
+  margin: 20px;
+  background: white;
+}
+
+a.join:hover {
+  color: #11bd2d;
+  border: 3px solid #11bd2d;
 }
 
 .title:after {
