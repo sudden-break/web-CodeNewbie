@@ -35,6 +35,14 @@ module CodeNewbie
       erb :index
     end
 
+    get '/chats' do
+      erb :chats
+    end
+
+    get '/chats/2' do
+      erb :chat_two
+    end
+
     # Helpers
     # => define helper methods.
 
