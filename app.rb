@@ -1,52 +1,33 @@
-# Include:
-# => Authentication File
-# => Concerns | Helpers | Models
-# => Database Configuration
-# => Debug Tools
-# => Sinatra Libraries
+require 'sinatra'
+require 'sinatra/activerecord'
+
 require_relative 'environment'
 
-# Rename 'AppName' to name of choice.
-# => Update 'AppName' : config.ru // spec_helper.rb
+require 'sinatra/flash'
+require 'sinatra/redirect_with_flash'
+
 module CodeNewbie
   class App < Sinatra::Application
     register Sinatra::ActiveRecordExtension
 
-    # Configure Options
-    # => set configuration options.
-
-    # ==> Set default paths for static content.
     configure do
       set :root, File.dirname(__FILE__)
       set :public_folder, 'public'
     end
 
-    # ==> Set global JavaScript files for project.
     set :javascripts, [:jquery]
 
-    # Filters
-    # => add route filters.
-
-    # Routes
-    # => define controller actions.
-
-    # ==> Render index page.
     get '/' do
       erb :index
     end
 
-    # Helpers
-    # => define helper methods.
-
     helpers do
-      # ==> Enable partials in all templates.
+      include Rack::Utils
+      
+      alias_method :h, :escape_html
+      
       def partial(file_name)
         erb file_name, :layout => false
-      end
-
-      def h(text)
-        # ==> Capability to escape HTML.
-        Rack::Utils.escape_html(text)
       end
     end
   end
