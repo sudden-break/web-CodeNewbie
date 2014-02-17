@@ -1,6 +1,11 @@
 body{
   background: #f7f1e2;
   background: #f0f0ec;
+  margin: 0 auto;
+/*  margin: 80px 150px 150px 150px;
+*/}
+
+.container {
   margin: 80px 150px 150px 150px;
 }
 
@@ -20,6 +25,7 @@ h1 {
   font-weight: 800;
   font-size: 6em; 
   margin-bottom: -20px;
+  font-family: "Averia Sans Libre";
 }
 
 h2 {
@@ -31,6 +37,8 @@ h2 {
 h2.subtitle {
   font-weight: 200;
   padding-left: 30px;
+  width: 100%;
+  background-color: white;
 }
 
 .center {
@@ -64,7 +72,6 @@ nav h1 {
 
 nav h3 {
   width: 40%;
-  height: 100%;
   float: right;
   position: relative;
   top: 25px;
