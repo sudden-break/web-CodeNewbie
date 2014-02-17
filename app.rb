@@ -32,7 +32,6 @@ module CodeNewbie
     # Helpers
     # => define helper methods.
 
-030e369c5662e7d22f30c7f99b188be02fd36155
     helpers do
       include Rack::Utils
       

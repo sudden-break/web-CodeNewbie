@@ -90,6 +90,23 @@ nav h3 {
   background: white;
 }
 
+a li:hover {
+  color: #11bd2d;
+}
+
+a li:before {
+  content: counter(my-awesome-counter);
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 1in;
+  font-weight: 900;
+  background: white;
+  position: inherit;
+}
+
 
 .title:after {
   margin-right: 10px;
