@@ -17,21 +17,32 @@ module CodeNewbie
 
     set :javascripts, [:jquery]
 
+    # Route Definitions
     get '/' do
       erb :index
     end
 
     get '/chats' do
-      erb :chats
+      erb 'chats/index'.to_sym
     end
 
-    get '/chats/2' do
-      erb :chat_two
+    get '/chats/:id' do
+      begin
+        erb "chats/chat_#{params[:id]}".to_sym
+      rescue Errno::ENOENT
+        redirect '/'
+      end
     end
 
-    # Helpers
-    # => define helper methods.
+    error do
+      redirect '/'
+    end
 
+    not_found do
+      redirect '/'
+    end
+
+    # Helper Methods
     helpers do
       include Rack::Utils
       
