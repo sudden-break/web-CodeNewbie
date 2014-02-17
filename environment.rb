@@ -1,14 +1,8 @@
-# Require Authentication / Configuration File
 require './config/authentication' if File.exists?('./config/authentication.rb')
 
-# Include Sinatra Libraries
-require 'sinatra'
-require 'sinatra/reloader'
-require 'active_record'
-require 'sinatra/activerecord'
+configure :development, :test do
+  require 'sinatra/reloader'
 
-# Include Debug Capabilities in Development
-configure :development do
   require 'better_errors'
   require 'binding_of_caller'
   require 'pry-debugger'
@@ -20,7 +14,6 @@ configure :development do
   also_reload 'lib/*/*.rb'
 end
 
-# Database Configuration and Setup
 configure :development do
  set :database, 'sqlite:///db/development.sqlite3'
  set :show_exceptions, true
@@ -44,7 +37,6 @@ configure :production do
  )
 end
 
-# Include all models, concerns, and helpers in /lib/*/*.rb
 Dir.glob('./lib/*').each do |folder|
   Dir.glob(folder +'/*.rb').each do |file|
     require file
