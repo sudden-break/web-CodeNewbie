@@ -1,4 +1,4 @@
-Testapp4
+CodeNewbie
 ========
 
 Getting Started

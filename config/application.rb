@@ -11,7 +11,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module Testapp4
+module CodeNewbie
   class Application < Rails::Application
     config.i18n.enforce_available_locales = true
 

@@ -3,7 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Testapp4::Application.load_tasks
+CodeNewbie::Application.load_tasks
 if defined?(RSpec)
   task(:spec).clear
 
