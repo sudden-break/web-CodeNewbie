@@ -19,3 +19,6 @@
 
 .DS_STORE
 *ds_store
+
+# Ignore application configuration
+/config/application.yml

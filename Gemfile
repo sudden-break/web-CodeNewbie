@@ -31,6 +31,10 @@ gem 'unicorn'
 
 gem 'figaro'
 
+##############
+# Group Gems #
+##############
+
 group :development do
   gem 'foreman'
 end
