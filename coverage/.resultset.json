@@ -1,0 +1,26 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/syitbarek/Development/code/CodeNewbie/web-CodeNewbie/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/syitbarek/Development/code/CodeNewbie/web-CodeNewbie/app/controllers/pages_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/syitbarek/Development/code/CodeNewbie/web-CodeNewbie/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1396113258
+  }
+}
