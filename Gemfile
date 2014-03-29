@@ -30,6 +30,7 @@ gem 'unicorn'
 ###############
 
 gem 'figaro'
+gem 'sprockets', '<= 2.11.0'
 
 ##############
 # Group Gems #
@@ -41,6 +42,8 @@ end
 
 group :development, :test do
   gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'jazz_hands'
