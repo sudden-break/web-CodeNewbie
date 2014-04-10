@@ -15,10 +15,13 @@
 /log/*.log
 /tmp
 
-# Ignore .DS_Store Information
+# Ignore .DS_Store Information.
 
 .DS_STORE
 *ds_store
 
-# Ignore application configuration
+# Ignore application configuration.
 /config/application.yml
+
+# Ignore simplecov test files.
+/coverage
