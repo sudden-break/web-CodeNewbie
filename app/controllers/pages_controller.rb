@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @test = "This High Voltage hack works!"
+    @next_wednesday = Chronic.parse("next Wednesday").strftime("%B %d")
   end
+  
 end

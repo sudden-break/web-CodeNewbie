@@ -8,7 +8,7 @@ ruby '2.1.1'
 
 gem 'airbrake'
 gem 'bourbon'
-gem 'coffee-rails'
+gem 'coffee-rails'  
 gem 'delayed_job_active_record', '>= 4.0.0'
 gem 'email_validator'
 gem 'flutie'
@@ -29,6 +29,7 @@ gem 'unicorn'
 # Custom Gems #
 ###############
 
+gem 'chronic'
 gem 'figaro'
 gem 'sprockets', '<= 2.11.0'
 

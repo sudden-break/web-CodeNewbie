@@ -6,9 +6,13 @@
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, :media => 'all' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Averia+Sans+Libre' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
 </head>
 <body class="<%= body_class %>">
   <%= render 'layouts/nav' %>
+  <%= render 'layouts/main_header' %>
   <%= render 'flashes' -%>
   <%= yield %>
   <%= render 'javascript' %>

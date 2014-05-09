@@ -1,0 +1,53 @@
+h1, h2, h3, h4, p, li, a {
+  font-family: "Roboto", "Helvetica", "san-serif";
+  color: $dark-gray;
+}
+
+li, a, p {
+  font-weight: 300;
+}
+
+h1, h2 {
+  padding: 0;
+  margin:0;
+}
+
+a {
+  text-decoration: none;
+  color: $bright-green;
+}
+
+a:hover {
+  color: $dark-aqua;
+}
+
+ul {
+  list-style: none;
+  padding: 0 0 0 50px;
+  counter-reset: my-awesome-counter;
+}
+
+li {
+  margin-left: 10px;
+  padding: 0 0 25px 0;
+  counter-increment: my-awesome-counter;
+  margin-bottom: 25px;
+  border-bottom: 1px solid white;
+  line-height: 35px;
+}
+
+li:before {
+  content: counter(my-awesome-counter);
+  font-size: 30px;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 -50px;
+  width: 40px;
+  text-align: center;
+  border-radius: 1in;
+  border: 1.5px solid #11bd2d;
+  font-weight: 900;
+  background: white;
+
+}
