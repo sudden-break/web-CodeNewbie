@@ -32,7 +32,6 @@ CodeNewbie::Application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
-  config.assets.precompile += %w( vendor/modernizr.js )
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -85,6 +84,7 @@ CodeNewbie::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.log_level = ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].to_sym : ('info').to_sym
 
   config.action_mailer.default_url_options = { host: 'codenewbie.com' }
 end
