@@ -15,6 +15,22 @@ h3 {
   font-weight: 500;
 }
 
+.highlight {
+  background: white;
+}
+
+.faqs {
+  h4 {
+    font-size: 25px;
+    padding: 10px;
+    line-height: 35px;;
+    margin-left: -50px;
+    color: $bright-green;
+    background: white;
+    text-align: center
+  }
+}
+
 section {
   @include outer-container;
   margin-bottom: 15px;
@@ -31,36 +47,39 @@ section {
     // border-right: 5px dotted white;
     @include span-columns(12);
     padding: 10px 10px 0px 10px;
-    text-align: center;
+    text-align: left;
 
     h1 {
-      font-size: 55px;
-      color: $bright-green;
+      font-size: 100px;
       font-family: "Love Ya Like A Sister";
       font-weight: 500;
+      line-height: 75px;
     }
     p {
-      background: white;
-      padding: 5px;
+      padding: 15px;
       margin: 0;
-      font-size: 15px;
+      font-size: 25px;
+      line-height: 40px;
     }
+   
   }
 }  
 
 .next-chat {
   .next-chat-info {
 
-    padding-top: 0;
+    padding-top: 80px;
     padding-bottom: 50px;
+    background: white;
     // border-left: 5px dotted white;
     // border-right: 5px dotted white;
     text-align: center;
     p {
-      font-size: 18px;
+      font-size: 25px;
+      text-align: left;
     }
     h2:first-child {
-      color: white;
+      line-height: 15px;
       padding: 0;
       margin: 0;  
 
@@ -80,8 +99,9 @@ section {
   .tweet {
     border: 10px solid white;
     a {
-      font-size: 22px;
+      font-size: 25px;
       line-height: 20px;
+      font-weight: 400;
     }
     text-align: left-justified;
 
