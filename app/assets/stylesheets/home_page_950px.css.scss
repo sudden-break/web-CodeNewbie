@@ -1,0 +1,63 @@
+.next-chat {
+  margin-top: 50px;
+  .next-chat-info {
+    @include span-columns(6);
+    margin: 0;  
+    vertical-align: middle;
+    height: 100%;
+    h1 {
+      
+    }
+  }
+
+  .tweet {
+    @include span-columns(6);
+  }
+}
+
+header {
+  position: relative;
+  margin-top: 40px;
+  .details {
+    display: inline-block;
+    text-align: right;
+    color: blue;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    width: 70%;
+    p {
+      font-size: 22px;
+      line-height: 25px;
+      padding: 5px;
+    }
+  }
+}
+
+aside.rules {
+  text-align: center;
+
+  h2 {
+    display: inline;
+    text-align: center;
+    vertical-align: middle;
+    padding-right: 50px;
+  }
+
+  ul {
+    display: inline;
+  }
+
+  li {
+    display: inline;      
+    padding-right: 80px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+
+
+
+
+
