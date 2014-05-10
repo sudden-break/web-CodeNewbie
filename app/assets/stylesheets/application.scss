@@ -1,15 +1,15 @@
-@charset 'utf-8';
+@charset "utf-8";
 
 ///////////////////////////////////////////////////////////////////////////////
 
-@import 'foundation_and_overrides';
+@import "foundation_and_overrides";
 
 
 ///////////////////////////////////////////////////////////////////////////////
 
 // Custom Styling for CodeNewbie
-@import 'variables';
-@import 'media_queries';
+@import "variables";
+@import "media_queries";
 
 /*
  *= require_self
@@ -17,4 +17,4 @@
 
  *= require foundation
  *= require_tree .
- */
+*/
