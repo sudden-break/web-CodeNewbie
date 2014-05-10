@@ -9,3 +9,8 @@ development: &default
 test:
   <<: *default
   database: codenewbie_test
+
+production:
+  <<: *default
+  database: codenewbie_production
+
