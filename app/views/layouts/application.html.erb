@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title %></title>
   <%= stylesheet_link_tag :application %>
@@ -17,6 +16,6 @@
   <%= render 'layouts/main_header' %>
   <%= render 'flashes' -%>
   <%= yield %>
-  <%= render 'javascript' %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
