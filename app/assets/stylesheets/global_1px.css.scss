@@ -23,7 +23,7 @@ a:hover {
 
 ul {
   list-style: none;
-  padding: 0 0 0 50px;
+  padding: 0 0 0 17px;
   counter-reset: my-awesome-counter;
 }
 
@@ -38,12 +38,12 @@ li {
 
 li:before {
   content: counter(my-awesome-counter);
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 20px;
+  line-height: 30px;
   display: inline-block;
   vertical-align: middle;
-  margin: 0 10px 0 -50px;
-  width: 40px;
+  margin: 0 10px 0 -40px;
+  width: 30px;
   text-align: center;
   border-radius: 1in;
   border: 1.5px solid #11bd2d;

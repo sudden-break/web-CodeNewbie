@@ -4,9 +4,11 @@
 
 @import 'bourbon';
 @import 'neat';
+@import 'foundation_and_overrides';
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
 // Custom Styling for CodeNewbie
 @import 'variables';
-@import 'media_queries'
+@import 'media_queries';

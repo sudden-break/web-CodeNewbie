@@ -32,6 +32,7 @@ gem 'unicorn'
 gem 'chronic'
 gem 'figaro'
 gem 'sprockets', '<= 2.11.0'
+gem 'foundation-rails'
 
 ##############
 # Group Gems #

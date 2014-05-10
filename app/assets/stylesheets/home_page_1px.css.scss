@@ -8,7 +8,7 @@ h2 {
 }
 
 li, h3, p {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 h3 {
@@ -20,23 +20,24 @@ h3 {
 }
 
 .faqs {
+
   h4 {
     font-size: 25px;
     padding: 10px;
     line-height: 35px;;
-    margin-left: -50px;
+    margin-left: -35px;
     color: $bright-green;
     background: white;
-    text-align: center
+    text-align: center;
   }
 }
 
 section {
-  @include outer-container;
+  @include grid-row;
   margin-bottom: 15px;
 
   article, aside {
-    @include span-columns(12);
+    @include grid-column(12);
     padding: 30px;
     border-bottom: solid 2px white;
   }
@@ -45,29 +46,30 @@ section {
     // border-left: 5px dotted white;
     // border-top: 5px dotted white;
     // border-right: 5px dotted white;
-    @include span-columns(12);
-    padding: 10px 10px 0px 10px;
+    @include grid-column(12);
+    padding: 40px 10px 0px 10px;
+    margin-bottom: 0;
     text-align: left;
 
     h1 {
-      font-size: 100px;
+      font-size: 85px;
       font-family: "Love Ya Like A Sister";
       font-weight: 500;
       line-height: 75px;
+      color: $bright-green;
     }
     p {
-      padding: 15px;
+      padding: 10px;
       margin: 0;
-      font-size: 25px;
-      line-height: 40px;
+      font-size: 22px;
+      line-height: 35px;
+      color: black;
     }
-   
   }
 }  
 
 .next-chat {
   .next-chat-info {
-
     padding-top: 80px;
     padding-bottom: 50px;
     background: white;
@@ -87,7 +89,7 @@ section {
     h1 {
       margin-top: 0;
       padding-top: 0;
-      font-size: 90px;
+      font-size: 80px;
       font-weight: 500;
       font-family: "Love Ya Like A Sister"; 
     }
@@ -113,6 +115,7 @@ section {
 
 .rules {
   ul {
+    margin-top: 20px;
     margin-bottom: 0;
     padding-bottom: 0;
   }
@@ -122,7 +125,7 @@ section {
   }
 
   li:last-child {
-        margin-bottom: 0;
+    margin-bottom: 0;
     padding-bottom: 0;
   }
 

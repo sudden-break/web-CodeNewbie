@@ -1,37 +1,44 @@
 .next-chat {
+  background: white;
   margin-top: 50px;
   .next-chat-info {
-    @include span-columns(6);
+    @include grid-column(6);
     margin: 0;  
+    padding-top: 51px;
     vertical-align: middle;
-    height: 100%;
-    h1 {
-      
-    }
   }
 
   .tweet {
-    @include span-columns(6);
+    @include grid-column(6);
+    background: $tan;
+    padding-left: 30px;
   }
 }
 
-header {
+section {
+  header {
   position: relative;
   margin-top: 40px;
+  h1 {
+    font-size: 100px;
+    @include grid-column(3);
+  }
   .details {
+    @include grid-column(9);
     display: inline-block;
     text-align: right;
     color: blue;
     position: absolute;
-    top: 25px;
     right: 10px;
     width: 70%;
     p {
-      font-size: 22px;
+      font-size: 20px;
       line-height: 25px;
       padding: 5px;
     }
   }
+}
+
 }
 
 aside.rules {
@@ -41,7 +48,8 @@ aside.rules {
     display: inline;
     text-align: center;
     vertical-align: middle;
-    padding-right: 50px;
+    padding-right: 40px;
+    font-size: 25px;
   }
 
   ul {
@@ -50,13 +58,43 @@ aside.rules {
 
   li {
     display: inline;      
-    padding-right: 80px;
+    padding-right: 60px;
     text-align: center;
     vertical-align: middle;
+    font-size: 25px;
   }
 }
 
+.faqs {
 
+  h3 {
+    padding-bottom: 10px;
+  }
+
+  h3, li, p {
+    font-size: 25px;
+  }
+
+  .first-question {
+    border-bottom: 1px solid white;
+  }
+
+  li:before {
+    content: counter(my-awesome-counter);
+    font-size: 30px;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 0 -50px;
+    width: 40px;
+    text-align: center;
+    border-radius: 1in;
+    border: 1.5px solid #11bd2d;
+    font-weight: 900;
+    background: white;
+  }
+
+}
 
 
 
