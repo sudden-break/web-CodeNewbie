@@ -1,4 +1,4 @@
-@charset "utf-8";
+// @charset "utf-8";
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -10,11 +10,3 @@
 // Custom Styling for CodeNewbie
 @import "variables";
 @import "media_queries";
-
-/*
- *= require_self
- //= require foundation_and_overrides
-
- *= require foundation
- *= require_tree .
-*/
