@@ -1,4 +1,9 @@
-<%= form_tag sessions_path do %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-<% end %>
+<section>
+  <article>
+    <%= form_tag sessions_path do %>
+      <%= label_tag "Password" %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "Submit" %>
+  <% end %>
+  </article>
+</section>

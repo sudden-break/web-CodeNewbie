@@ -50,3 +50,25 @@ li:before {
   font-weight: 900;
   background: white;
 }
+
+input {
+  font-size: 16px;
+  padding: 10px 15px;  
+  box-shadow: none;
+}
+
+input[type="submit"] {
+  background: $bright-green;
+  color: white;
+  box-shadow: none;
+  font-family: "Roboto";
+  border: none;
+}
+
+input[type="submit"]:hover {
+   background: white;
+   color: $bright-green;
+   padding: 9px 15px; 
+   border: 1px solid $bright-green;
+
+}
