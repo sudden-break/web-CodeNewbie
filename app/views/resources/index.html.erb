@@ -1,0 +1,13 @@
+<section>
+  <article>
+    <h1>Resources</h1>
+    <p>Here are some of our favorite programming resources. Got one you want added to the list? Tweet us at <a href="https://twitter.com/codenewbies">@CodeNewbies</a></p>
+    <% @resources.each do |resource| %>
+    <article>
+      <h2><%=link_to resource.name, resource.link %></h2>
+      <p><%= resource.description %></p>
+    </article>
+    <% end %>
+  </article>
+</section>
+
