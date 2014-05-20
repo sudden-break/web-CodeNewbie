@@ -33,6 +33,7 @@ gem 'chronic'
 gem 'figaro'
 gem 'sprockets', '<= 2.11.0'
 gem 'foundation-rails'
+gem 'acts-as-taggable-on', '~> 3.1'
 
 ##############
 # Group Gems #
