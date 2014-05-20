@@ -2,23 +2,31 @@ class ResourcesController < ApplicationController
    skip_before_action :authorize, only: [:index, :show]
 
   def index
-    @resources = Resources.all
+    if params[:tag]
+      @resources = Resources.tagged_with(params[:tag]).order("name")
+    else
+      @resources = Resources.all.order("name")
+    end
   end
 
   def edit
-    @resources = Resources.all
+    @resources = Resources.all.order("name")
+  end
+
+  def show
+    @resource = Resources.find(params[:id])
   end
 
   def update
+    @resource = Resources.find(params[:id])
     @resource.update(resource_params)
-    @resource.
-    redirect_to edit_path
+    redirect_to edit_resources_path
   end
 
   private
 
   def resource_params
-    params.require(resource).permit(:name, :link)
+    params.require(:resources).permit(:name, :link, :tag_list)
   end
 
 end

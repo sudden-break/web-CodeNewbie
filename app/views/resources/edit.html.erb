@@ -1,0 +1,15 @@
+<section id="edit-resources">
+  <% @resources.each do |resource| %>
+    <article>
+      <%= form_for(resource) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+        <%= f.label :tag_list, "Tags (seperated by commas)" %>
+        <%= f.text_field :tag_list %>
+        <%= f.submit%>
+      <% end %>
+    </article>
+  <% end %>
+</section>
