@@ -2,6 +2,7 @@
   <article>
     <h1><%= link_to "Resources", resources_path %></h1>
   </article>
+
   <% @resources.each do |resource| %>
     <article>
       <%= form_for(resource) do |f| %>
@@ -9,7 +10,7 @@
         <%= f.text_field :name %>
         <%= f.label :link %>
         <%= f.text_field :link %>
-        <%= f.label :tag_list, "Tags (seperated by commas)" %>
+        <%= f.label :tag_list, "Tags (separated by commas)" %>
         <%= f.text_field :tag_list %>
         <%= f.submit "Update" %>
       <% end %>
