@@ -89,10 +89,6 @@ resources = Resources.create([
     link: "https://www.hackerschool.com/"
   },
   {
-    name: "Hungry Academy",
-    link: "http://hungryacademy.com/"
-  },
-  {
     name: "Maker Square",
     link: "http://www.makersquare.com/"
   }

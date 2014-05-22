@@ -8,10 +8,16 @@
       <%= form_for(resource) do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
+
         <%= f.label :link %>
         <%= f.text_field :link %>
-        <%= f.label :tag_list, "Tags (separated by commas)" %>
-        <%= f.text_field :tag_list %>
+
+        <%= f.label :format_list, "Format (separated by commas)" %>
+        <%= f.text_field :format_list %>
+
+        <%= f.label :tag_list, "Languages (separated by commas)" %>
+        <%= f.text_field :proglang_list %>
+
         <%= f.submit "Update" %>
       <% end %>
     </article>

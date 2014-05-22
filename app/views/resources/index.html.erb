@@ -1,21 +1,59 @@
 <section id="resources">
   <article>
-    <h1><%= link_to "Resources", resources_path %></h1>
-    <p>Here are some of our favorite programming resources. Got one you want added to the list? Tweet us at <a href="https://twitter.com/codenewbies">@CodeNewbies</a></p>
+    <h1>
+      <%= link_to "Resources", resources_path %>
+    </h1>
+
     <p>
-      <% Resources.all_tags.each do |tag| %>
-      <a href="<%= tag_path(tag.name) %>"><span class="tag"><%= tag.name %></span></a>
+      Here are some of our favorite programming resources. Got one you want added to the list? Tweet us at 
+      <a href="https://twitter.com/codenewbies">
+        @CodeNewbies
+      </a>
+    </p>
+
+    <p>
+      <h3>Format</h3>
+      <% Resources.format_counts.each do |tag| %>
+        <a href="<%= tag_path(tag.name) %>">
+          <span class="tag">
+            <%= tag.name %>
+          </span>
+        </a>
       <% end %>
     </p>
-    <% @resources.each do |resource| %>
-    <article>
-      <h2><%= link_to resource.name, resource.link %></h2>
-      <p><%= resource.description %></p>
-      <% resource.tag_list.sort.each do |tag| %>
-      <span class="tag"><%= link_to tag, tag_path(tag) %></span>
+
+    <p>
+      <h3>Languages</h3>
+      <% Resources.proglang_counts.each do |tag| %>
+        <a href="<%= tag_path(tag.name) %>">
+          <span class="tag">
+            <%= tag.name %>
+          </span>
+        </a>
       <% end %>
-    </article>
+    </p>
+
+    <% @resources.each do |resource| %>
+      <article>
+        <h2><%= link_to resource.name, resource.link %></h2>
+        <p><%= resource.description %></p>
+
+        <span>Format:</span>
+        <% resource.format_list.sort.each do |tag| %>
+          <span class="tag">
+            <%= link_to tag, tag_path(tag) %>
+          </span>
+        <% end %>
+
+        <br><br>
+
+        <span>Languages</span>
+        <% resource.proglang_list.sort.each do |tag| %>
+          <span class="tag">
+            <%= link_to tag, tag_path(tag) %>
+          </span>
+        <% end %>
+      </article>
     <% end %>
   </article>
 </section>
-

@@ -26,7 +26,8 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resources).permit(:name, :link, :tag_list)
+    params.require(:resources)
+          .permit(:name, :link, :format_list, :proglang_list)
   end
 
 end
