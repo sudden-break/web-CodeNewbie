@@ -1,103 +1,130 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
+# Create Initial Seed Data for Resources
 
 resources = Resources.create([
   {
-    name: "Codecademy",
-    link: "http://www.codecademy.com/"
+    name:          'App Academy',
+    link:          'http://www.appacademy.io/',
+    format_list:   'bootcamp,in-person',
+    proglang_list: 'html,css,javascript,ruby,rails'
   },
   {
-    name: "Code School",
-    link: "https://www.codeschool.com/"
+    name:          'Codecademy',
+    link:          'http://www.codecademy.com/',
+    format_list:   'online,self-directed',
+    proglang_list: 'php,python,ruby' 
   },
   {
-    name: "Treehouse",
-    link: "http://teamtreehouse.com/"
+    name:          'Code School',
+    link:          'http://www.codeschool.com/',
+    format_list:   'online,self-directed',
+    proglang_list: 'html,css,javascript,ruby,ios' 
   },
   {
-    name: "Ruby on Rails Tutorial",
-    link: "http://www.railstutorial.org/book"
+    name:          'Dev Bootcamp',
+    link:          'http://devbootcamp.com/',
+    format_list:   'bootcamp,in-person',
+    proglang_list: 'html,css,javascript,ruby,rails'
   },
   {
-    name: "Try Git",
-    link: "https://try.github.io/levels/1/challenges/1"
+    name:          'Flatiron School',
+    link:          'http://www.flatironschool.com/',
+    format_list:   'bootcamp,in-person',
+    proglang_list: 'html,css,javascript,ruby,rails,ios'
   },
   {
-    name: "Learn to Program",
-    link: "https://pine.fm/LearnToProgram/"
+    name:          'Fullstack Academy',
+    link:          'http://www.fullstackacademy.com/',
+    format_list:   'bootcamp,in-person',
+    proglang_list: 'html,css,javascript,ruby,rails'
   },
   {
-    name: "How To Learn Javascript Properly",
-    link: "http://javascriptissexy.com/how-to-learn-javascript-properly/"
+    name:          'gSchool',
+    link:          'http://www.galvanize.it/school#our-school',
+    format_list:   'bootcamp,in-person',
+    proglang_list: 'html,css,javascript,ruby,rails'
   },
   {
-    name: "Try JQuery",
-    link: "https://www.codeschool.com/courses/try-jquery"
+    name:          'Hackbright Academy',
+    link:          'http://hackbrightacademy.com/',
+    format_list:   'bootcamp,in-person',
+    proglang_list: 'html,css,javascript,python'
   },
   {
-    name: "Skillshare",
-    link: "http://www.skillshare.com/classes/technology?levels=2"
+    name:          'Hacker School',
+    link:          'https://www.hackerschool.com/',
+    format_list:   'in-person,self-directed',
+    proglang_list: 'c++,java,ruby,python'
   },
   {
-    name: "Skillcrush",
-    link: "http://skillcrush.com/"
+    name:          'How To Learn Javascript Properly',
+    link:          'http://javascriptissexy.com/how-to-learn-javascript-properly/',
+    format_list:   'online,self-directed',
+    proglang_list: 'javascript'
   },
   {
-    name: "Thinkful",
-    link: "https://www.thinkful.com/"
+    name:          'Learn to Program',
+    link:          'https://pine.fm/LearnToProgram/',
+    format_list:   'book,ebook,self-directed',
+    proglang_list: 'ruby,rails'
   },
   {
-    name: "Rails Girls",
-    link: "http://railsgirls.com/"
-  }, 
-  {
-    name: "RailsBridge",
-    link: "http://railsbridge.org/"
+    name:          'Maker Square',
+    link:          'http://www.makersquare.com/',
+    format_list:   'bootcamp,in-person',
+    proglang_list: 'html,css,javascript,ruby,rails'
   },
   {
-    name: "Flatiron School",
-    link: "http://flatironschool.com/"
+    name:          'RailsBridge',
+    link:          'http://railsbridge.org/',
+    format_list:   'workshop,in-person',
+    proglang_list: 'ruby,rails'
   },
   {
-    name: "Dev Bootcamp",
-    link: "http://devbootcamp.com/"
-  }, 
-  {
-    name: "App Academy",
-    link: "http://devbootcamp.com/"
+    name:          'Rails Girls',
+    link:          'http://railsgirls.com/',
+    format_list:   'workshop,in-person',
+    proglang_list: 'ruby,rails'
   },
   {
-    name: "Fullstack Academy",
-    link: "http://www.fullstackacademy.com/"
+    name:          'Ruby on Rails Tutorial',
+    link:          'http://www.railstutorial.org/book',
+    format_list:   'online,self-directed',
+    proglang_list: 'javascript'
   },
   {
-    name: "gSchool",
-    link: "http://www.galvanize.it/school#our-school"
+    name:          'Skillcrush',
+    link:          'http://skillcrush.com/',
+    format_list:   'online,self-directed',
+    proglang_list: 'html,css,javascript,ruby,rails'
   },
   {
-    name: "Hackbright Academy",
-    link: "http://hackbrightacademy.com/"
+    name:          'Skillshare',
+    link:          'http://www.skillshare.com/classes/technology?levels=2',
+    format_list:   'online,self-directed',
+    proglang_list: 'html,css,javascript,ios'
   },
   {
-    name: "Hacker School",
-    link: "https://www.hackerschool.com/"
+    name:          'Thinkful',
+    link:          'https://www.thinkful.com/',
+    format_list:   'online,self-directed',
+    proglang_list: 'html,css,javascript,python,ruby,rails'
   },
   {
-    name: "Maker Square",
-    link: "http://www.makersquare.com/"
+    name:          'Treehouse',
+    link:          'http://teamtreehouse.com/',
+    format_list:   'online,self-directed',
+    proglang_list: 'html,css,javascript,ruby,rails,php,python'
+  },
+  {
+    name:          'Try Git',
+    link:          'https://try.github.io/levels/1/challenges/1',
+    format_list:   'online,self-directed',
+    proglang_list: 'git'
+  },
+  {
+    name:          'Try JQuery',
+    link:          'https://www.codeschool.com/courses/try-jquery',
+    format_list:   'online,self-directed',
+    proglang_list: 'javascript,jquery'
   }
 ])
-
-
-
-
-
-
-
-
