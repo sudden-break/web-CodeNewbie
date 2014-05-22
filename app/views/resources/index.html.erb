@@ -13,7 +13,7 @@
 
     <p>
       <h3>Format</h3>
-      <% Resources.format_counts.each do |tag| %>
+      <% Resources.format_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
         <a href="<%= tag_path(tag.name) %>">
           <span class="tag">
             <%= tag.name %>
@@ -24,7 +24,7 @@
 
     <p>
       <h3>Languages</h3>
-      <% Resources.proglang_counts.each do |tag| %>
+      <% Resources.proglang_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
         <a href="<%= tag_path(tag.name) %>">
           <span class="tag">
             <%= tag.name %>
