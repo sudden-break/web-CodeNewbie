@@ -76,13 +76,13 @@ resources = Resources.create([
   {
     name:          'RailsBridge',
     link:          'http://railsbridge.org/',
-    format_list:   'workshop,in-person',
+    format_list:   'workshop,in-person,community',
     proglang_list: 'ruby,rails'
   },
   {
     name:          'Rails Girls',
     link:          'http://railsgirls.com/',
-    format_list:   'workshop,in-person',
+    format_list:   'workshop,in-person,community',
     proglang_list: 'ruby,rails'
   },
   {
