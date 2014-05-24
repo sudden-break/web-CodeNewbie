@@ -1,4 +1,4 @@
-<section id="careers">
+<section id="resources">
   <article>
     <h1>
       <%= link_to "Careers", jobs_path %>
@@ -44,7 +44,7 @@
     <hr>
 
     <% @jobs.each do |job| %>
-      <article class="career">
+      <article class="resource">
         <h2><%= link_to job.name, job.link %></h2>
         <p>at <%= job.company %></p>
         <p><%= job.description %></p>

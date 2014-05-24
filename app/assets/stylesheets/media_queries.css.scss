@@ -2,12 +2,11 @@
   @import "home_page_1px";
   @import "global_1px";
   @import "resources_1px";
-  @import "career_1px";
 }
 
 @media only screen and (min-width: 789px) {
-  @import "home_page_950px";
+  @import "home_page_desktop";
   @import "global_1px";
-  @import "resources_950px";
-  @import "career_950px";
+  @import "resources_desktop";
+  @import "career_desktop";
 }
