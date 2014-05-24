@@ -43,8 +43,8 @@
 nav.top-bar {
   background: $mint-green;
 
-  .name {
-    
+  .title-area li:not(.has-form) a:not(.button):hover {
+    background: white;
   }
 
   .title-area {
@@ -98,7 +98,7 @@ nav {
       background: $mint-green;
     }
 
-    li:not(.has-form) a:not(.button):hover, .name a:hover {
+    li:not(.has-form) a:not(.button):hover  {
       background: $dark-aqua;
       color: $mint-green;
     }
