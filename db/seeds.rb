@@ -6,22 +6,21 @@ resources = Resources.create([
     link:          'http://www.appacademy.io/',
     description:   'An immersive web development and job placement program in San Francisco and New York City.',
     format_list:   'bootcamp,in-person',
-    proglang_list: 'html,css,javascript,ruby,rails',
-    description:   'Become a software developer.'
+    proglang_list: 'html,css,javascript,ruby,rails'
   },
   {
     name:          'Codecademy',
     link:          'http://www.codecademy.com/',
     description:   'Teaching the world how to code by building interactive websites, fun games, and apps.',
     format_list:   'online,self-directed',
-    proglang_list: 'php,python,ruby' 
+    proglang_list: 'php,python,ruby'
   },
   {
     name:          'Code School',
     link:          'http://www.codeschool.com/',
     description:   'Code School teaches web technologies in the comfort of your browser with video lessons, coding challenges, and screencasts.',
     format_list:   'online,self-directed',
-    proglang_list: 'html,css,javascript,ruby,ios' 
+    proglang_list: 'html,css,javascript,ruby,ios'
   },
   {
     name:          'Dev Bootcamp',
@@ -42,28 +41,28 @@ resources = Resources.create([
     link:          'http://www.fullstackacademy.com/',
     description:   'Passionate Teachers + Cutting-edge Curriculum. This is Fullstack.',
     format_list:   'bootcamp,in-person',
-    proglang_list: 'html,css,javascript,ruby,rails'
+    proglang_list: 'html,css,javascript,ruby,rails' 
   },
   {
     name:          'G School',
     link:          'http://www.galvanize.it/school#our-school',
     description:   'Learn from the best and launch a new path through our rigorous developer training programs.',
     format_list:   'bootcamp,in-person',
-    proglang_list: 'html,css,javascript,ruby,rails'
+    proglang_list: 'html,css,javascript,ruby,rails' 
   },
   {
     name:          'Hackbright Academy',
     link:          'http://hackbrightacademy.com/',
     description:   'The Engineering Fellowship for Women.',
     format_list:   'bootcamp,in-person',
-    proglang_list: 'html,css,javascript,python'
+    proglang_list: 'html,css,javascript,python' 
   },
   {
     name:          'Hacker School',
     link:          'http://www.hackerschool.com/',
     description:   'Hacker School is a retreat for programmers.',
     format_list:   'in-person,self-directed',
-    proglang_list: 'c++,java,ruby,python'
+    proglang_list: 'c++,java,ruby,python' 
   },
   {
     name:          'How To Learn Javascript Properly',
@@ -161,11 +160,38 @@ jobs = Job.create([
     position_list:  "apprentice"
   },
   {
-    name: "Apprentice.io",
-    company: "ThoughtBot",
-    link: "http://apprentice.io",
+    name:           "Apprentice.io",
+    company:        "ThoughtBot",
+    link:           "http://apprentice.io",
     proglang_list:  "ruby, rails",
     location_list:  "Chicago, NYC",
     position_list:  "apprentice"
+  },
+  {
+    name:           "Hungry Academy",
+    company:        "Living Social and JumpstartLab",
+    link:           "http://hungryacademy.com/",
+    proglang_list:  "ruby, rails",
+    location_list:  "DC",
+    position_list:  "apprentice",
+    description:    "A unique and game changing five-month learning experience."
+  },
+  {
+    name:           "Craftsmanship Academy",
+    company:        "RoleModel Software",
+    link:           "http://craftsmanshipacademy.com/",
+    proglang_list:  "ruby, rails, html, css, javascript, sql, objective-c, android",
+    location_list:  "NC",
+    position_list:  "apprentice",
+    description:    "Training the next generation of top software developers."
+  },
+  {
+    name:           "Apprenticeship",
+    company:        "8thlight",
+    link:           "http://www.8thlight.com/apprenticeship",
+    proglang_list:  "ruby, rails",
+    location_list:  "Chicago, IL, London",
+    position_list:  "apprentice",
+    description:    "8th Light offers a step on the pathway to mastery through apprenticeship."
   }
 ])
