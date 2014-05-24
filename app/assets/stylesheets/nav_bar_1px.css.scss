@@ -1,0 +1,107 @@
+#nav {
+  .slogan {
+    font-size: 12px;
+    padding-left: 10px;
+    text-transform: none;
+  }
+}
+
+#nav {
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-left: 0px;
+    padding: 0px;
+    counter-increment: my-awesome-counter;
+    margin-bottom: 0px;
+    border-bottom: none;
+    line-height: 35px;
+  }
+
+  li:before {
+    content: none;
+    font-size: 20px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    text-align: center;
+    border-radius: 1in;
+    border: none;
+    background: inherit;
+  }
+}
+  
+#nav {
+  .sticky {
+    background: $mint-green;
+  }
+}
+
+nav.top-bar {
+  background: $mint-green;
+
+  .name {
+    
+  }
+
+  .title-area {
+    margin: -2px;
+  }
+
+  ul, li, a, h1, .name h1 a {
+    color: $dark-aqua;
+  }
+
+  .name h1 a {
+    font-family: "Architects Daughter";
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .toggle-topbar.menu-icon a::after {
+    box-shadow: 0 10px 0 1px #ddd, 0 16px 0 1px #ddd, 0 22px 0 1px #ddd;
+  }
+}
+
+.top-bar.expanded {
+  .title-area {
+    background: $mint-green;
+  }
+}
+  
+nav {
+
+  padding-bottom: 20px;
+  .right li > a {
+    border-left: 3px solid white;
+    padding: 0 30px;
+  }
+
+  .top-bar-section {
+    background: $mint-green;
+    ul {
+       background: $mint-green;
+    }
+
+    ul li > a , li:not(.has-form) a:not(.button){
+      background: $mint-green;
+      color: $dark-aqua;
+      font-family: "Roboto", "Helvetica", sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+
+    li:not(.has-form) a:not(.button) {
+      background: $mint-green;
+    }
+
+    li:not(.has-form) a:not(.button):hover, .name a:hover {
+      background: $dark-aqua;
+      color: $mint-green;
+    }
+
+  }
+}
