@@ -1,0 +1,9 @@
+.resource {
+  height: 250px;
+  @include grid-column(6);
+  padding-left: 50px;
+}
+
+.resource:nth-child(even), .career:nth-child(odd) {
+  border-right: 1px solid $mint-green;
+}

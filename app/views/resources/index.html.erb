@@ -12,29 +12,27 @@
     </p>
 
     <p>
-      <h3>Format</h3>
-      <% Resources.format_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
-        <a href="<%= tag_path(tag.name) %>">
-          <span class="tag">
-            <%= tag.name %>
-          </span>
-        </a>
-      <% end %>
+      <h3>Format
+        <% Resources.format_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
+            <span class="tag">
+              <%= link_to tag.name, tag_path(tag.name) %>
+            </span>
+        <% end %>
+      </h3>
     </p>
-
     <p>
-      <h3>Languages</h3>
-      <% Resources.proglang_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
-        <a href="<%= tag_path(tag.name) %>">
-          <span class="tag">
-            <%= tag.name %>
-          </span>
-        </a>
-      <% end %>
+      <h3>Languages
+        <% Resources.proglang_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
+            <span class="tag">
+              <%=link_to tag.name, tag_path(tag.name) %>
+            </span>
+        <% end %>
+      </h3>
     </p>
 
+<hr>
     <% @resources.each do |resource| %>
-      <article>
+      <article class="resource">
         <h2><%= link_to resource.name, resource.link %></h2>
         <p><%= resource.description %></p>
 

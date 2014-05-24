@@ -1,0 +1,82 @@
+<section id="careers">
+  <article>
+    <h1>
+      <%= link_to "Careers", jobs_path %>
+    </h1>
+
+    <p>
+      Here are some career opportunities targeting new/entry-level programmers. Got one to add to the list? Tweet us at 
+      <a href="https://twitter.com/codenewbies">
+        @CodeNewbies
+      </a>
+    </p>
+
+    <p>
+      <h3>Location
+        <% Job.location_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
+            <span class="tag">
+              <%= link_to tag, job_tag_path(tag.name) %>
+            </span>
+        <% end %>
+      </h3>
+    </p>
+
+    <p>
+      <h3>Languages
+        <% Job.proglang_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
+            <span class="tag">
+              <%= link_to tag, job_tag_path(tag.name) %>
+            </span>
+        <% end %>
+      </h3>
+    </p>
+
+    <p>
+      <h3>Position
+        <% Job.position_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
+            <span class="tag">
+              <%= link_to tag, job_tag_path(tag.name) %>
+            </span>
+        <% end %>
+      </h3>
+    </p>
+
+    <hr>
+
+    <% @jobs.each do |job| %>
+      <article class="career">
+        <h2><%= link_to job.name, job.link %></h2>
+        <p>at <%= job.company %></p>
+        <p><%= job.description %></p>
+
+        <span>Location:</span>
+        <% job.location_list.sort.each do |tag| %>
+          <span class="tag">
+            <%= link_to tag, job_tag_path(tag) %>
+          </span>
+        <% end %>
+
+        <br><br>
+
+        <span>Languages:</span>
+        <% job.proglang_list.sort.each do |tag| %>
+          <span class="tag">
+            <%= link_to tag, job_tag_path(tag) %>
+          </span>
+        <% end %>
+       
+       <br><br>
+
+        <span>Position:</span>
+        <% job.position_list.sort.each do |tag| %>
+          <span class="tag">
+            <%= link_to tag, job_tag_path(tag) %>
+          </span>
+        <% end %>
+
+
+
+      </article>
+    <% end %>
+  </article>
+</section>
