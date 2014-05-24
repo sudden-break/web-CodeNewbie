@@ -1,24 +1,25 @@
 <section id="edit-resources">
   <article>
-    <h1><%= link_to "Resources", resources_path %></h1>
+    <h1><%= link_to 'Resources', resources_path %></h1>
   </article>
 
   <% @resources.each do |resource| %>
-    <article>
-      <%= form_for(resource) do |f| %>
+    <article id="resource_<%= resource.id %>">
+      <%= form_for(resource, remote: true) do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
 
         <%= f.label :link %>
         <%= f.text_field :link %>
 
-        <%= f.label :format_list, "Format (separated by commas)" %>
+        <%= f.label :format_list, 'Format (separated by commas)' %>
         <%= f.text_field :format_list %>
 
-        <%= f.label :tag_list, "Languages (separated by commas)" %>
+        <%= f.label :tag_list, 'Languages (separated by commas)' %>
         <%= f.text_field :proglang_list %>
 
-        <%= f.submit "Update" %>
+        <%= f.submit 'Update', name: 'update_button', id: 'update_button' %>
+        <%= f.submit 'Delete', name: 'delete_button' %>
       <% end %>
     </article>
   <% end %>

@@ -1,0 +1,4 @@
+if (<%= @delete %> == true) {
+  alert("Delete Successful!");
+  $("#resource_<%= @resource.id %>").remove();
+}
