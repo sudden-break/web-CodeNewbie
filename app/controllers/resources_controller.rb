@@ -19,8 +19,16 @@ class ResourcesController < ApplicationController
 
   def update
     @resource = Resources.find(params[:id])
-    @resource.update(resource_params)
-    redirect_to edit_resources_path
+
+    if params[:update_button]
+      @resource.update(resource_params)
+      @update = true
+    else
+      @resource.destroy
+      @delete = true
+    end
+
+    respond_to { |format| format.js }
   end
 
   private
