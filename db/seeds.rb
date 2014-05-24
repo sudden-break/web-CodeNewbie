@@ -5,7 +5,8 @@ resources = Resources.create([
     name:          'App Academy',
     link:          'http://www.appacademy.io/',
     format_list:   'bootcamp,in-person',
-    proglang_list: 'html,css,javascript,ruby,rails'
+    proglang_list: 'html,css,javascript,ruby,rails',
+    description:   'Become a software developer.'
   },
   {
     name:          'Codecademy',
@@ -126,5 +127,24 @@ resources = Resources.create([
     link:          'https://www.codeschool.com/courses/try-jquery',
     format_list:   'online,self-directed',
     proglang_list: 'javascript,jquery'
+  }
+])
+
+jobs = Job.create([
+  {
+    name:           "Constant Contact Apprenticeship",
+    company:        "Constant Contact",
+    link:           "http://constantcontact.com",
+    location_list:  "NYC",
+    proglang_list:  "rails, ruby, javascript",
+    position_list:  "apprentice"
+  },
+  {
+    name: "Apprentice.io",
+    company: "ThoughtBot",
+    link: "http://apprentice.io",
+    proglang_list:  "ruby, rails",
+    location_list:  "Chicago, NYC",
+    position_list:  "apprentice"
   }
 ])
