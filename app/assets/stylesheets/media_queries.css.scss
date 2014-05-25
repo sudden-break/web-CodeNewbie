@@ -3,6 +3,7 @@
   @import "global_1px";
   @import "resources_1px";
   @import "nav_bar_1px";
+
 }
 
 @media only screen and (min-width: 789px) {
@@ -10,4 +11,5 @@
   @import "global_1px";
   @import "resources_desktop";
   @import "career_desktop";
+  @import "nav_bar_desktop";
 }
