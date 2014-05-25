@@ -28,4 +28,11 @@
   <%= yield %>
   <%= javascript_include_tag "application" %>
 </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $(document).foundation();
+
+    $('.menu-icon').click(function(){ false });
+    });
+  </script>
 </html>

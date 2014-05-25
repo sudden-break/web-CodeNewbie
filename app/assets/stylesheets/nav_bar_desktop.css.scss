@@ -1,4 +1,10 @@
 #nav {
+  padding-top: 0px;
+
+  img {
+    width: 40%;
+  }
+
   .slogan {
     font-size: 12px;
     padding-left: 10px;
@@ -9,5 +15,14 @@
 
   .right li > a {
     border-left: 3px solid white;
+    border-top: none; 
+  }
+
+  .top-bar .toggle-topbar.menu-icon::after {
+    display: none;
+  }
+
+  .sticky {
+    padding-top: 0;
   }
 }
