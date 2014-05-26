@@ -1,11 +1,11 @@
-<section id="edit-resources">
+<section id="edit-jobs">
   <article>
     <h1><%= link_to "Careers", jobs_path %></h1>
   </article>
 
-  <% @jobs.each do |career| %>
-    <article>
-      <%= form_for(career) do |f| %>
+  <% @jobs.each do |job| %>
+    <article id="job_<%= job.id %>">
+      <%= form_for(job, remote: true) do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
 
@@ -24,7 +24,8 @@
         <%= f.label :position_list, "Position (separated by commas)" %>
         <%= f.text_field :position_list %>
 
-        <%= f.submit "Update" %>
+        <%= f.submit 'Update', name: 'update_button', id: 'update_button' %>
+        <%= f.submit 'Delete', name: 'delete_button', id: 'delete_button' %>
       <% end %>
     </article>
   <% end %>
