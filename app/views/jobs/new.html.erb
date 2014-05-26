@@ -1,0 +1,17 @@
+<section id="new-job">
+
+  <h1>Create a New Job</h1>
+
+  <article>
+    <%= form_for @job do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+
+      <%= f.submit 'Create', name: 'create_button', id: 'create_button' %>
+    <% end %>
+  </article>
+
+  <h3>
+    <%= link_to 'Back to Edit Jobs', edit_jobs_path %>
+  </h3>
+
+</section>

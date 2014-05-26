@@ -1,28 +1,18 @@
 <section id="edit-jobs">
   <article>
-    <h1><%= link_to "Careers", jobs_path %></h1>
+    <h1>
+      <%= link_to 'Careers', jobs_path %>
+    </h1>
+
+    <br>
+
+     <%= button_to 'Add New Career', new_job_path, :method => :get %>
   </article>
 
   <% @jobs.each do |job| %>
     <article id="job_<%= job.id %>">
       <%= form_for(job, remote: true) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-
-        <%= f.label :link %>
-        <%= f.text_field :link %>
-
-        <%= f.label :company %>
-        <%= f.text_field :company %>
-
-        <%= f.label :location_list, "Location (separated by commas)" %>
-        <%= f.text_field :location_list %>
-
-        <%= f.label :tag_list, "Languages (separated by commas)" %>
-        <%= f.text_field :proglang_list %>        
-
-        <%= f.label :position_list, "Position (separated by commas)" %>
-        <%= f.text_field :position_list %>
+        <%= render :partial => 'form', :locals => { :f => f } %>
 
         <%= f.submit 'Update', name: 'update_button', id: 'update_button' %>
         <%= f.submit 'Delete', name: 'delete_button', id: 'delete_button' %>

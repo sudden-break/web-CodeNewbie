@@ -9,6 +9,14 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def new
+    @resource = Resource.new
+    respond_to { |format| format.html }
+  end
+
+  def create
+  end
+
   def edit
     @resources = Resource.all.order("name")
   end
