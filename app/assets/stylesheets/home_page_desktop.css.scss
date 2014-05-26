@@ -1,17 +1,44 @@
 .next-chat {
-  background: white;
-  margin-top: 50px;
-  .next-chat-info {
+  max-width: none;
+  background: $bright-green;
+  height: 500px;
+  background-image: url("code-monster.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  article.next-chat-info {
+    padding-left: 0px;
+    padding-right: 90px;
+    padding-top: 120px;
     @include grid-column(6);
     margin: 0;  
-    padding-top: 51px;
     vertical-align: middle;
+    background: none;
+    border: none;
+    h1, a {
+      color: white;
+      line-height: 100px;
+    }
+    h2:last-child {
+      line-height: 15px;
+    }
+    h2:first-child {
+      line-height: 0px;
+    }
   }
 
   .tweet {
     @include grid-column(6);
-    background: white;
-    padding-left: 30px;
+    background: none;
+    padding-left: 100px;
+    padding-right: 220px;
+    border: none;
+    padding-top: 120px;
+    a {
+      color: white;
+      line-height: 25px;
+      font-family: "Love Ya Like A Sister", "Roboto", "Helvetica";
+    }
   }
 }
 
