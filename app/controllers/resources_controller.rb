@@ -15,6 +15,15 @@ class ResourcesController < ApplicationController
   end
 
   def create
+    @resource = Resource.new(resource_params)
+
+    respond_to do |format|
+      if @resource.save
+        format.html { redirect_to resources_path, notice: 'Resource was successfully created.' }
+      else
+        format.html { render action: 'new', notice: 'Error creating Resource!' }
+      end
+    end
   end
 
   def edit
@@ -42,8 +51,8 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resources)
-          .permit(:name, :link, :format_list, :proglang_list)
+    params.require(:resource)
+          .permit(:name, :link, :description, :format_list, :proglang_list)
   end
 
 end
