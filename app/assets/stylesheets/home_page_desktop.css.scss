@@ -31,13 +31,14 @@
     @include grid-column(6);
     background: none;
     padding-left: 100px;
-    padding-right: 220px;
+    padding-right: 180px;
     border: none;
     padding-top: 120px;
     a {
       color: white;
-      line-height: 25px;
+      line-height: 0px;
       font-family: "Love Ya Like A Sister", "Roboto", "Helvetica";
+      font-size: 23px;
     }
   }
 }
