@@ -3,22 +3,22 @@ class ResourcesController < ApplicationController
 
   def index
     if params[:tag]
-      @resources = Resources.tagged_with(params[:tag]).order("name")
+      @resources = Resource.tagged_with(params[:tag]).order("name")
     else
-      @resources = Resources.all.order("name")
+      @resources = Resource.all.order("name")
     end
   end
 
   def edit
-    @resources = Resources.all.order("name")
+    @resources = Resource.all.order("name")
   end
 
   def show
-    @resource = Resources.find(params[:id])
+    @resource = Resource.find(params[:id])
   end
 
   def update
-    @resource = Resources.find(params[:id])
+    @resource = Resource.find(params[:id])
 
     if params[:update_button]
       @resource.update(resource_params)

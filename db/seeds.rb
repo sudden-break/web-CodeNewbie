@@ -1,6 +1,6 @@
 # Create Initial Seed Data for Resources
 
-resources = Resources.create([
+resources = Resource.create([
   {
     name:          'App Academy',    
     link:          'http://www.appacademy.io/',
