@@ -1,4 +1,4 @@
-class CareersController < ApplicationController
+class JobsController < ApplicationController
   skip_before_action :authorize, only: [:index, :show]
 
   def index
@@ -19,13 +19,13 @@ class CareersController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-    @job.update(resource_params)
+    @job.update(job_params)
     redirect_to edit_jobs_path
   end
 
   private
 
-  def resource_params
+  def job_params
     params.require(:job)
           .permit(:name, :link, :company, :description, :location_list, :position_list, :proglang_list)
   end
