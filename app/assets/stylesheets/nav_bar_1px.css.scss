@@ -1,0 +1,136 @@
+#nav {
+  .slogan {
+    display: none;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
+  .top-bar .toggle-topbar.menu-icon {
+    background: none;
+    display: block;
+    height: 200px;
+    right: 10px;
+    position: absolute;
+    top: 25px;
+    width: 180px;
+    z-index: 99999;
+  }
+
+  .top-bar .toggle-topbar.menu-icon::after {
+    content:"";
+    box-shadow: 0 6px 0 1px white, 0 14px 0 1px white, 0 22px 0 1px white;
+    -webkit-box-shadow: 0 6px 0 1px white, 0 14px 0 1px white, 0 22px 0 1px white;
+    display: block;
+    height: 2px;
+    right: 1px;
+    position: absolute;
+    top: -5px;
+    width: 25px;
+  }
+
+#nav {
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-left: 0px;
+    padding: 0px;
+    counter-increment: my-awesome-counter;
+    margin-bottom: 0px;
+    border-bottom: none;
+    line-height: 35px;
+  }
+
+  li:before {
+    content: none;
+    font-size: 20px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    text-align: center;
+    border-radius: 1in;
+    border: none;
+    background: inherit;
+  }
+}
+  
+#nav {
+  .sticky {
+    background: $mint-green;
+    padding-top: 10px;
+  }
+}
+
+nav.top-bar {
+  background: $mint-green;
+
+  .title-area li:not(.has-form) a:not(.button):hover {
+    background: white;
+  }
+
+  .title-area {
+    margin: -2px;
+  }
+
+  ul, li, a, h1, .name h1 a {
+    color: $dark-aqua;
+  }
+
+  .name h1 a {
+    font-family: "Architects Daughter";
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .toggle-topbar.menu-icon a::after {
+    box-shadow: 0 10px 0 1px #ddd, 0 16px 0 1px #ddd, 0 22px 0 1px #ddd;
+  }
+}
+
+.top-bar.expanded {
+  .title-area {
+    background: $mint-green;
+  }
+}
+  
+nav {
+
+  ul.right {
+    padding: 0px;
+  }
+
+  .right li > a {
+    border-top: 3px solid white;
+  }
+
+  .top-bar-section {
+    background: $mint-green;
+    margin-bottom: 0px;
+    ul {
+       background: $mint-green;
+    }
+
+    ul li > a , li:not(.has-form) a:not(.button){
+      background: $mint-green;
+      color: $dark-aqua;
+      font-family: "Roboto", "Helvetica", sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+
+    li:not(.has-form) a:not(.button) {
+      background: $mint-green;
+    }
+
+    li:not(.has-form) a:not(.button):hover  {
+      background: $dark-aqua;
+      color: $mint-green;
+    }
+
+  }
+}

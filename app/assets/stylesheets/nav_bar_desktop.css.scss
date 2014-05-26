@@ -1,0 +1,26 @@
+#nav {
+  padding-top: 0px;
+
+  img {
+    width: 25%;
+  }
+
+  .slogan {
+    font-size: 12px;
+    text-transform: none;
+    display: inline;
+  }
+
+  .right li > a {
+    border-left: 3px solid white;
+    border-top: none; 
+  }
+
+  .top-bar .toggle-topbar.menu-icon::after {
+    display: none;
+  }
+
+  .sticky {
+    padding-top: 0;
+  }
+}
