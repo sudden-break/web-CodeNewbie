@@ -152,14 +152,6 @@ resources = Resource.create([
 
 jobs = Job.create([
   {
-    name:           "Constant Contact Apprenticeship",
-    company:        "Constant Contact",
-    link:           "http://constantcontact.com",
-    location_list:  "NYC",
-    proglang_list:  "rails, ruby, javascript",
-    position_list:  "apprentice"
-  },
-  {
     name:           "Apprentice.io",
     company:        "ThoughtBot",
     link:           "http://apprentice.io",
