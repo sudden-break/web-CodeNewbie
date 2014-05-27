@@ -1,0 +1,4 @@
+if (<%= @delete %> == true) {
+  alert("Delete Successful!");
+  $("#job_<%= @job.id %>").remove();
+}

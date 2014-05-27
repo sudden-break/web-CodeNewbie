@@ -3,22 +3,39 @@ class ResourcesController < ApplicationController
 
   def index
     if params[:tag]
-      @resources = Resources.tagged_with(params[:tag]).order("name")
+      @resources = Resource.tagged_with(params[:tag]).order("name")
     else
-      @resources = Resources.all.order("name")
+      @resources = Resource.all.order("name")
+    end
+  end
+
+  def new
+    @resource = Resource.new
+    respond_to { |format| format.html }
+  end
+
+  def create
+    @resource = Resource.new(resource_params)
+
+    respond_to do |format|
+      if @resource.save
+        format.html { redirect_to resources_path, notice: 'Resource was successfully created.' }
+      else
+        format.html { render action: 'new', notice: 'Error creating Resource!' }
+      end
     end
   end
 
   def edit
-    @resources = Resources.all.order("name")
+    @resources = Resource.all.order("name")
   end
 
   def show
-    @resource = Resources.find(params[:id])
+    @resource = Resource.find(params[:id])
   end
 
   def update
-    @resource = Resources.find(params[:id])
+    @resource = Resource.find(params[:id])
 
     if params[:update_button]
       @resource.update(resource_params)
@@ -34,8 +51,8 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resources)
-          .permit(:name, :link, :format_list, :proglang_list)
+    params.require(:resource)
+          .permit(:name, :link, :description, :format_list, :proglang_list)
   end
 
 end

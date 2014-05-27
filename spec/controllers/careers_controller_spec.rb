@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe CareersController do
+describe JobsController do
 
 end

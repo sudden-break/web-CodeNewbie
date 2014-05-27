@@ -1,19 +1,19 @@
-<section id="edit-resources">
+<section id="edit-jobs">
   <article>
     <h1>
-      <%= link_to 'Resources', resources_path %>
+      <%= link_to 'Careers', jobs_path %>
     </h1>
 
     <br>
 
-     <%= button_to 'Add New Resource', new_resource_path, :method => :get %>
+     <%= button_to 'Add New Career', new_job_path, :method => :get %>
   </article>
 
-  <% @resources.each do |resource| %>
-    <article id="resource_<%= resource.id %>">
-      <%= form_for(resource, remote: true) do |f| %>
+  <% @jobs.each do |job| %>
+    <article id="job_<%= job.id %>">
+      <%= form_for(job, remote: true) do |f| %>
         <%= render :partial => 'form', :locals => { :f => f } %>
-        
+
         <%= f.submit 'Update', name: 'update_button', id: 'update_button' %>
         <%= f.submit 'Delete', name: 'delete_button', id: 'delete_button' %>
       <% end %>
