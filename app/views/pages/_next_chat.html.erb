@@ -7,5 +7,7 @@
   <article class="tweet">
     <h2><a href="https://twitter.com/CodeNewbies/status/465182577520017408" target="_blank">The most supportive community of programmers and people learning to code.</a></h2>
     <a href="https://twitter.com/CodeNewbies/status/465182577520017408" target="_blank"><img src="/assets/twitter.png"></a>
+    <h2>this month's challenge: <%= @challenge.name %></h2>
+    <%= link_to "Learn More", challenges_path("the-commit") %>
   </article>
 </section>
