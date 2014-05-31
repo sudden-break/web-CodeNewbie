@@ -87,7 +87,7 @@ section {
 .next-chat {
 
   .next-chat-info {
-    height: 308px;
+    height: 400px;
     padding-top: 80px;
     padding-bottom: 50px;
     background: white;
@@ -118,6 +118,7 @@ section {
 
   .tweet {
     border: 10px solid $mint-green;
+    background: $mint-green;
     padding: 50px;
     h2 {
       line-height: 30px;
