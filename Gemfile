@@ -34,7 +34,7 @@ gem 'chronic'
 gem 'figaro'
 gem 'foundation-rails'
 gem 'sprockets', '<= 2.11.0'
-gem 'friendly_id'
+gem 'friendly_id', '~> 5.0.0'
 
 ##############
 # Group Gems #

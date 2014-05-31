@@ -268,7 +268,7 @@ DEPENDENCIES
   flutie
   foreman
   foundation-rails
-  friendly_id
+  friendly_id (~> 5.0.0)
   high_voltage
   jazz_hands
   jquery-rails

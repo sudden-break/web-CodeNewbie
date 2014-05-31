@@ -26,6 +26,6 @@ CodeNewbie::Application.routes.draw do
 
   # code
 
-  get   '/challenges/:id'        => 'challenges#show', as: 'challenge'
+  get   '/challenges/:slug'    => 'challenges#show', as: 'challenge'
 
 end
