@@ -1,0 +1,17 @@
+<div id="challenge">
+  <section id="resources">
+    <article>
+      <h1>
+        <%= "##{@challenge.name.gsub(' ','')}"%>
+      </h1>
+
+      <p>
+        <%= @challenge.description.html_safe %> Tweet us at 
+        <a href="https://twitter.com/codenewbies">
+          @CodeNewbies
+        </a>
+      </p>
+      <p><%= @challenge.source.html_safe %></p>
+    </article>
+  </section>
+</div>
