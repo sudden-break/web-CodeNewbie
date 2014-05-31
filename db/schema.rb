@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531140423) do
+ActiveRecord::Schema.define(version: 20140531143646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140531140423) do
     t.string   "slug"
     t.boolean  "current"
     t.text     "source"
+    t.string   "hashtag"
   end
 
   add_index "challenges", ["slug"], name: "index_challenges_on_slug", unique: true, using: :btree

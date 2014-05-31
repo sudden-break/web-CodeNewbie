@@ -1,0 +1,14 @@
+<section class="challenge">
+  <article class="next-chat-info">
+    <h2>CodeNewbie Challenge: <%= link_to @challenge.hashtag, challenge_path("the-commit") %></h2>
+          <p>
+        <%= @challenge.description.html_safe %> Tweet us at 
+        <a href="https://twitter.com/codenewbies">
+          @CodeNewbies
+        </a>
+      </p>
+      <p><%= @challenge.source.html_safe %></p>
+  </article>  
+</section>
+
+ 
