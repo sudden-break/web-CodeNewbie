@@ -34,6 +34,7 @@ gem 'chronic'
 gem 'figaro'
 gem 'foundation-rails'
 gem 'sprockets', '<= 2.11.0'
+gem 'twitter'
 
 ##############
 # Group Gems #
