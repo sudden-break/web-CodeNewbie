@@ -10,8 +10,8 @@ module TwitterUtils
 
   MAX_ATTEMPTS = 3
 
-  # Friend   => account that authenticated user is following.
-  # Follower => account that is following authenticated user.
+  # Follower   => account that we are following and who is following us.
+  # Friend     => account that is following us who we are not following.
   def follow_all_friends
     handle_rate_limiting { find_and_follow_friends }
   end
@@ -38,7 +38,7 @@ module TwitterUtils
     rescue Twitter::Error::TooManyRequests => error
       puts "Rate Limiting Reached, trying again in #{error.rate_limit.reset_in} seconds."
       if num_attempts <= MAX_ATTEMPTS
-        sleep error.rate_limit.reset_in
+        sleep (error.rate_limit.reset_in + 10)
         retry
       else
         raise 'Exiting process, rate limit is unrecoverable.'
