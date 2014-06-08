@@ -187,3 +187,14 @@ jobs = Job.create([
     description:    "8th Light offers a step on the pathway to mastery through apprenticeship."
   }
 ])
+
+challenges = Challenge.create([
+  {
+    name: "The Commit",
+    source: "We got this idea from John Resig's awesome blog post 'Write Code Every Day'. Read it <a href='http://ejohn.org/blog/write-code-every-day/'>here</a>",
+    description: "Make one commit every day. It can be small, big, and in any language you want. And when you do, tell us about it. Tweet us at <a href='https://twitter.com/codenewbies'>@CodeNewbies</a> with the hashtag <a href='http://https://twitter.com/search?f=realtime&q=%23thecommit&src=typd'>#theCommit</a>. Happy coding!",
+    slug: "the-commit",
+    current: true,
+    hashtag: "#theCommit"
+  }
+])

@@ -1,0 +1,41 @@
+section.challenge {
+  padding-top: 50px;
+  max-width: none;
+
+}
+
+article.next-chat-info {
+  @include grid-column(8);
+  border-bottom: none;
+    padding-right: 50px;
+}
+
+article.sign-up {
+  @include grid-column(4);
+  border-bottom: none;
+  background: $mint-green;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  
+
+  #mc_embed_signup {
+    margin-right: 10px;
+    background: none;
+    input.button {
+      background: $bright-green;
+      text-transform: uppercase;
+      font-family: "Roboto";
+      border-radius: 0;
+    }
+    label {
+      font-family: "Roboto";
+      text-align: center;
+      font-weight: normal;
+    }
+    input {
+      border: 1px solid #eee;
+      width: 100%;
+    }
+  }
+
+}
