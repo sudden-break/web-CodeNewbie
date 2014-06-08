@@ -61,13 +61,13 @@
   
 #nav {
   .sticky {
-    background: $mint-green;
+    background: $bright-green;
     padding-top: 10px;
   }
 }
 
 nav.top-bar {
-  background: $mint-green;
+  background: $bright-green;
 
   .title-area li:not(.has-form) a:not(.button):hover {
     background: white;
@@ -78,7 +78,7 @@ nav.top-bar {
   }
 
   ul, li, a, h1, .name h1 a {
-    color: $dark-aqua;
+    color: white;
   }
 
   .name h1 a {
@@ -94,7 +94,7 @@ nav.top-bar {
 
 .top-bar.expanded {
   .title-area {
-    background: $mint-green;
+    background: $bright-green;
   }
 }
   
@@ -109,27 +109,27 @@ nav {
   }
 
   .top-bar-section {
-    background: $mint-green;
+    background: $bright-green;
     margin-bottom: 0px;
     ul {
-       background: $mint-green;
+       background: $bright-green;
     }
 
     ul li > a , li:not(.has-form) a:not(.button){
-      background: $mint-green;
-      color: $dark-aqua;
+      background: $bright-green;
+      color: white;
       font-family: "Roboto", "Helvetica", sans-serif;
       text-transform: uppercase;
       font-size: 18px;
     }
 
     li:not(.has-form) a:not(.button) {
-      background: $mint-green;
+      background: $bright-green;
     }
 
     li:not(.has-form) a:not(.button):hover  {
-      background: $dark-aqua;
-      color: $mint-green;
+      background: white;
+      color: $bright-green;
     }
 
   }
