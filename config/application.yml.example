@@ -1,3 +1,7 @@
+# Set Local Time Zone of Rails App
+# For US Time Zones: ActiveSupport::TimeZone.us_zones.map(&:name) 
+LOCAL_TIME_ZONE: XXX
+
 # Required for Administrative Privileges 
 PW: XXX
 
