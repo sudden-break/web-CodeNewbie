@@ -2,15 +2,16 @@
   max-width: none;
   background: $bright-green;
   height: 500px;
-  background-image: url("code-monster2.png");
+  background-image: url("code-newbie-baby2.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right 300px top 30px;
+  background-size: 700px;
+  padding-top: 50px;
 
   article.next-chat-info {
-    padding-left: 0px;
-    padding-right: 90px;
-    padding-top: 120px;
-    @include grid-column(6);
+    padding-left: 100px;
+    padding-right: 230px;
+    @include grid-column(8);
     margin: 0;  
     vertical-align: middle;
     background: none;
@@ -19,26 +20,22 @@
       color: white;
       line-height: 100px;
     }
-    h2:last-child {
-      line-height: 15px;
-    }
     h2:first-child {
-      line-height: 0px;
+      line-height: 32px;
     }
   }
 
   .tweet {
-    @include grid-column(6);
     background: none;
-    padding-left: 100px;
-    padding-right: 180px;
+    padding-left: 330px;
+    padding-right: 150px;
     border: none;
-    padding-top: 120px;
-    a {
+    h2 {
       color: white;
-      line-height: 0px;
+      line-height: 30px;
       font-family: "Love Ya Like A Sister", "Roboto", "Helvetica";
       font-size: 23px;
+      text-align: right;
     }
   }
 }
