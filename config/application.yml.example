@@ -1,1 +1,11 @@
-SECRET_KEY_BASE: "YOUR SECRET KEY HERE"
+# Required for Administrative Privileges 
+PW: XXX
+
+# Secret Key to Encrypt Sessions
+SECRET_KEY_BASE: XXX
+
+# Twitter Client Configuration Information
+TWITTER_CONSUMER_KEY: XXX
+TWITTER_CONSUMER_SECRET: XXX
+TWITTER_ACCESS_TOKEN: XXX
+TWITTER_TOKEN_SECRET: XXX

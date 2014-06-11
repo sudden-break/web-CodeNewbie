@@ -32,9 +32,10 @@ gem 'unicorn'
 gem 'acts-as-taggable-on', '~> 3.1'
 gem 'chronic'
 gem 'figaro'
+gem 'friendly_id', '~> 5.0.0'
 gem 'foundation-rails'
 gem 'sprockets', '<= 2.11.0'
-gem 'friendly_id', '~> 5.0.0'
+gem 'twitter'
 
 ##############
 # Group Gems #
