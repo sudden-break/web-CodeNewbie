@@ -6,6 +6,10 @@
   img {
     width: 50%;
   }
+
+  img:hover {
+    background: $bright-green;
+  }
 }
 
   .top-bar .toggle-topbar.menu-icon {

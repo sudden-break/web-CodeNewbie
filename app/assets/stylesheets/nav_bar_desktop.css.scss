@@ -5,10 +5,19 @@
     width: 25%;
   }
 
-  .slogan {
+  .slogan, .slogan a {
     font-size: 12px;
     text-transform: none;
     display: inline;
+    padding: 0;
+  }
+
+  .slogan a {
+    color: $mint-green;
+  }
+
+  .slogan a:hover {
+    color: $bright-green;
   }
 
   .right li > a {
