@@ -1,41 +1,62 @@
-section.challenge {
-  padding-top: 50px;
-  max-width: none;
-  border-bottom: 1px solid #eee;
-}
-
 article.next-chat-info {
-  @include grid-column(8);
+  @include grid-column(12);
   border-bottom: none;
-  padding-right: 50px;
 }
 
-article.sign-up {
-  @include grid-column(4);
-  border-bottom: none;
-  background: $mint-green;
-  margin-top: 50px;
-  padding-bottom: 30px;
-  
+.next-chat {
+  background-image: url("code-newbie-baby2.png");
+  background-repeat: no-repeat;
+  background-position: right -60px top 100px;
+  background-color: $bright-green;
+  background-size: 600px;
+  height: 700px;
 
-  #mc_embed_signup {
-    margin-right: 10px;
-    background: none;
-    input.button {
-      background: $bright-green;
-      text-transform: uppercase;
-      font-family: "Roboto";
-      border-radius: 0;
+  .next-twitter-chat {
+    text-align: center;
+  }
+
+  .next-chat-info {
+    height: 400px;
+    padding-bottom: 50px;
+    text-align: left;
+
+    .next-twitter-chat {
+      padding-top: 375px;
+      color: white;
     }
-    label {
-      font-family: "Roboto";
-      text-align: center;
-      font-weight: normal;
+    p {
+      font-size: 25px;
+      text-align: left;
     }
-    input {
-      border: 1px solid #eee;
-      width: 100%;
+
+    h1 {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 80px;
+      font-weight: 500;
+      font-family: "Love Ya Like A Sister"; 
+      color: white;
+      line-height: 80px;
+    }
+    h2:last-child {
+      font-size: 22px;
     }
   }
 
+  .tweet {
+    h2 {
+      line-height: 30px;
+      font-family: "Love Ya Like A Sister"; 
+      color: white;
+    }
+    a {
+      font-size: 25px;
+      font-weight: 400;
+    }
+    text-align: left-justified;
+
+    img {
+      float: right;
+    }
+  }
 }

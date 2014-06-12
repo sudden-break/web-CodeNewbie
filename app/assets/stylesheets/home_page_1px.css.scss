@@ -84,59 +84,6 @@ section {
   }
 }  
 
-.next-chat {
-
-  .next-chat-info {
-    height: 400px;
-    padding-bottom: 50px;
-    background: white;
-    // border-left: 5px dotted white;
-    // border-right: 5px dotted white;
-    text-align: right;
-    .next-twitter-chat {
-      padding-right: 150px;
-      padding-top: 40px;
-    }
-    p {
-      font-size: 25px;
-      text-align: left;
-    }
-    h2:first-child {
-      line-height: 15px;
-      padding: 0;
-      margin: 0;  
-
-    }
-    h1 {
-      margin-top: 0;
-      padding-top: 0;
-      font-size: 80px;
-      font-weight: 500;
-      font-family: "Love Ya Like A Sister"; 
-    }
-    h2:last-child {
-      font-size: 22px;
-    }
-  }
-
-  .tweet {
-    border: 10px solid $mint-green;
-    background: $mint-green;
-    h2 {
-      line-height: 30px;
-    }
-    a {
-      font-size: 25px;
-      font-weight: 400;
-    }
-    text-align: left-justified;
-
-    img {
-      float: right;
-    }
-  }
-}
-
 .rules {
   ul {
     margin-top: 20px;

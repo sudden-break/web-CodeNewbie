@@ -1,0 +1,19 @@
+.next-chat {
+  article.next-chat-info {
+    @include grid-column(8);
+    border-bottom: none;
+    padding-right: 40px;
+
+    .next-twitter-chat {
+      padding-right: 150px;
+      padding-top: 50px;
+      text-align: right;
+      h2:first-child {
+        line-height: 15px;
+        padding: 0;
+        margin: 0;  
+      }
+    }
+  }
+}
+  
