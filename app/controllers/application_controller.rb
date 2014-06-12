@@ -18,5 +18,5 @@ class ApplicationController < ActionController::Base
     session[:password] == ENV["PW"]
   end
   helper_method :admin?
-  
+
 end

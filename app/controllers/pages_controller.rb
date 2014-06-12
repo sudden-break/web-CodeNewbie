@@ -5,5 +5,5 @@ class PagesController < ApplicationController
     @next_wednesday = Chronic.parse("next Wednesday").strftime("%B %d")
     @challenge = Challenge.find_by(:current => true)
   end
-  
+
 end

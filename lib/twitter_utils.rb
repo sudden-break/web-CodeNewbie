@@ -7,13 +7,22 @@ module TwitterUtils
              config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
              config.access_token_secret = ENV['TWITTER_TOKEN_SECRET']
            end
-
   MAX_ATTEMPTS = 3
+  TIME_DIFF    = 1.hour
+  TIME_ZONE    = ActiveSupport::TimeZone.new(ENV['LOCAL_TIME_ZONE'])
 
-  # Friend   => account that authenticated user is following.
-  # Follower => account that is following authenticated user.
+  # Follower   => account that we are following and who is following us.
+  # Friend     => account that is following us who we are not following.
   def follow_all_friends
     handle_rate_limiting { find_and_follow_friends }
+  end
+
+  # send_message_on_hashtag('OR', '#CodeNewbie', '#TheCommit')
+  def send_message_on_hashtag(operator='OR', *hashtags)
+    now    = Time.now
+
+    search = CLIENT.search(hashtags.join(" #{operator} "))
+    tweets = search.select { |t| in_time_diff?(now,t.attrs[:created_at]) }
   end
 
   private
@@ -28,6 +37,10 @@ module TwitterUtils
     puts "Congratulations, you have followed or requested to follow all your friends!"
   end
 
+  def in_time_diff?(*times)
+    times.collect { |t| t.in_time_zone(TIME_ZONE) }.inject(:-) < TIME_DIFF
+  end
+
   # Error Handling Logic for Rate Limiting
   def handle_rate_limiting
     num_attempts = 0
@@ -38,7 +51,7 @@ module TwitterUtils
     rescue Twitter::Error::TooManyRequests => error
       puts "Rate Limiting Reached, trying again in #{error.rate_limit.reset_in} seconds."
       if num_attempts <= MAX_ATTEMPTS
-        sleep error.rate_limit.reset_in
+        sleep (error.rate_limit.reset_in + 10)
         retry
       else
         raise 'Exiting process, rate limit is unrecoverable.'
