@@ -2,6 +2,6 @@ section.challenge {
   max-width: none;
 
   .next-chat-info {
-    @include grid-column(8);
+    @include grid-column(12);
   }
 }

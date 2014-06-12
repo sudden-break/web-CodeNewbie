@@ -1,4 +1,7 @@
 section.challenge {
   padding-top: 50px;
   border-bottom: 1px solid #eee;
+  .next-chat-info {
+    @include grid-column(8);
+  }
 }
