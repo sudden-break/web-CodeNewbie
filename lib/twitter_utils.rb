@@ -7,9 +7,11 @@ module TwitterUtils
              config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
              config.access_token_secret = ENV['TWITTER_TOKEN_SECRET']
            end
-  MAX_ATTEMPTS = 3
-  TIME_DIFF    = 1.hour
-  TIME_ZONE    = ActiveSupport::TimeZone.new(ENV['LOCAL_TIME_ZONE'])
+  MAX_ATTEMPTS  = 3
+  DM_RECIPIENTS = ENV['DM_RECIPIENTS']
+  HASHTAGS      = ENV['HASHTAGS']
+  TIME_DIFF     = 1.hour
+  TIME_ZONE     = ActiveSupport::TimeZone.new(ENV['LOCAL_TIME_ZONE'])
 
   # Follower   => account that we are following and who is following us.
   # Friend     => account that is following us who we are not following.
@@ -17,12 +19,19 @@ module TwitterUtils
     handle_rate_limiting { find_and_follow_friends }
   end
 
-  # send_message_on_hashtag('OR', '#CodeNewbie', '#TheCommit')
-  def send_message_on_hashtag(operator='OR', *hashtags)
-    now    = Time.now
+  # TODO: Need to split hashtags in rake task.
 
-    search = CLIENT.search(hashtags.join(" #{operator} "))
+  # Used with Whenever Gem to auto-send DMs when hashtag used.
+  #
+  # Example use as a standalone function:
+  # send_message_on_hashtag(operator='OR', '#CodeNewbie', '#TheCommit')
+  def send_message_on_hashtag(operator='OR', *hashtags)
+    now    = Time.now;
+    date   = now.strftime("%Y-%m-%d")
+
+    search = CLIENT.search(hashtags.join(" #{operator} ") + " since:#{date}")
     tweets = search.select { |t| in_time_diff?(now,t.attrs[:created_at]) }
+    send_direct_messages(tweets) unless tweets.empty?
   end
 
   private
@@ -40,6 +49,21 @@ module TwitterUtils
   def in_time_diff?(*times)
     times.collect { |t| t.in_time_zone(TIME_ZONE) }.inject(:-) < TIME_DIFF
   end
+
+  def send_direct_messages(tweets)
+    tweets.each do |t|
+      tweet_url = "https://twitter.com/#{t.attrs[:user][:screen_name]}/status/#{t.attrs[:id]}"
+      dm_text   = "Tracked Hashtag Used! Tweet URL = #{tweet_url}"
+      
+      DM_RECIPIENTS.split(',').each do |recipient|
+        handle_rate_limiting { CLIENT.create_direct_message(recipient,dm_text) }
+      end
+    end
+  end
+
+  ##################
+  # ERROR HANDLING #
+  ##################
 
   # Error Handling Logic for Rate Limiting
   def handle_rate_limiting
