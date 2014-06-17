@@ -1,29 +1,30 @@
-set :output, {
-  :error    => 'cron_error.log',
-  :standard => 'cron_output.log'
-}
+# Load Environment Settings.
+require 'active_support'
+require 'yaml'
 
-every 30.seconds do
-  puts "Cron Task Running! It's #{Time.now}"
+settings = YAML::load_file(
+  File.join(File.dirname(File.expand_path(__FILE__)), '/application.yml')
+)
+
+# Allows for Server Time to map to Local Time.
+Time.zone = settings['LOCAL_TIME_ZONE']
+
+# Custom Variables to determine Frequency
+follow_all_friends_times = 
+  ['12:15am','6:15am','12:15pm','6:15pm'].collect do |time|
+    Time.zone.parse(time).localtime
+  end
+time_diff = eval(settings['TIME_DIFF']) rescue 1.hour
+
+# Information on Whenever Gem:
+# ==> http://github.com/javan/whenever
+
+set :output, 'logs/cron.log'
+
+every time_diff do
+  rake 'cron:send_message_on_hashtag'
 end
 
-# Use this file to easily define all of your cron jobs.
-#
-# It's helpful, but not entirely necessary to understand cron before proceeding.
-# http://en.wikipedia.org/wiki/Cron
-
-# Example:
-#
-# set :output, "/path/to/my/cron_log.log"
-#
-# every 2.hours do
-#   command "/usr/bin/some_great_command"
-#   runner "MyModel.some_method"
-#   rake "some:great:rake:task"
-# end
-#
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
-
-# Learn more: http://github.com/javan/whenever
+every :day, :at => follow_all_friends_times do
+  rake 'cron:follow_all_friends'
+end

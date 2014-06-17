@@ -25,7 +25,7 @@ gem 'simple_form'
 gem 'title'
 gem 'uglifier'
 gem 'unicorn'
-gem 'whenever'
+gem 'whenever', require: false
 
 ###############
 # Custom Gems #

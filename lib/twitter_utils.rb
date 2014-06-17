@@ -21,15 +21,14 @@ module TwitterUtils
     handle_rate_limiting { find_and_follow_friends }
   end
 
-  # TODO: Need to split hashtags in rake task.
-
-  # Used with Whenever Gem to auto-send DMs when hashtag used.
+  # Used with Whenever Gem to auto-send DMs when hashtags are used.
   #
   # Example use as a standalone function:
-  # send_message_on_hashtag(operator='OR', '#CodeNewbie', '#TheCommit')
-  def send_message_on_hashtag(operator='OR', *hashtags)
+  # send_message_on_hashtag(operator='OR',['#CodeNewbie','#TheCommit'])
+  def send_message_on_hashtag(operator='OR',hashtags)
     now    = Time.now;
     date   = now.strftime("%Y-%m-%d")
+    tags   = hashtags.join(" #{operator} ")
 
     search = CLIENT.search(hashtags.join(" #{operator} ") + " since:#{date}")
     tweets = search.select { |t| in_time_diff?(now,t.attrs[:created_at]) }
@@ -45,7 +44,7 @@ module TwitterUtils
       CLIENT.follow(user_id) rescue 'Request already out to user. Moving on!'; next
     end
 
-    puts "Congratulations, you have followed or requested to follow all your friends!"
+    puts "#{Time.now.strftime('%m/%d/%Y at %I:%M%p - attempted to follow all friends!')}"
   end
 
   def in_time_diff?(*times)
@@ -63,6 +62,8 @@ module TwitterUtils
       DM_RECIPIENTS.split(',').each do |recipient|
         handle_rate_limiting { CLIENT.create_direct_message(recipient,dm_text) }
       end
+
+      puts "#{Time.now.strftime('%m/%d/%Y at %I:%M%p - done sending hashtag DMs!')}"
     end
   end
 
