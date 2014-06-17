@@ -21,7 +21,7 @@ module TwitterUtils
     handle_rate_limiting { find_and_follow_friends }
   end
 
-  # Used with Whenever Gem to auto-send DMs when hashtags are used.
+  # Used with Whenever Gem to auto-send DMs when hashtags are used (no RTs).
   #
   # Example use as a standalone function:
   # send_message_on_hashtag(operator='OR',['#CodeNewbie','#TheCommit'])
@@ -30,7 +30,7 @@ module TwitterUtils
     date   = now.strftime("%Y-%m-%d")
     tags   = hashtags.join(" #{operator} ")
 
-    search = CLIENT.search(hashtags.join(" #{operator} ") + " since:#{date}")
+    search = CLIENT.search(hashtags.join(" #{operator} ") + " since:#{date} -rt")
     tweets = search.select { |t| in_time_diff?(now,t.attrs[:created_at]) }
     send_direct_messages(tweets) unless tweets.empty?
   end
