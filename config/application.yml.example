@@ -10,11 +10,18 @@ HASHTAGS: XXX
 # For US Time Zones: ActiveSupport::TimeZone.us_zones.map(&:name) 
 LOCAL_TIME_ZONE: XXX
 
+# Max attempts to overcome API throttling before quitting.
+MAX_ATTEMPS: X
+
 # Required for Administrative Privileges 
 PW: XXX
 
 # Secret Key to Encrypt Sessions
 SECRET_KEY_BASE: XXX
+
+# Time Difference to Check Tweets
+# For example => 30.minutes, 1.hour
+TIME_DIFF: XXX
 
 # Twitter Client Configuration Information
 TWITTER_CONSUMER_KEY: XXX

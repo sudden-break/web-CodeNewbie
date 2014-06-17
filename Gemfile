@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 ruby '2.1.1'
 
 ###################
@@ -24,6 +25,7 @@ gem 'simple_form'
 gem 'title'
 gem 'uglifier'
 gem 'unicorn'
+gem 'whenever'
 
 ###############
 # Custom Gems #

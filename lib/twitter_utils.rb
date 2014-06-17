@@ -1,3 +1,5 @@
+# Constants within file set in application.yml file!
+
 module TwitterUtils
   extend self
 
@@ -7,10 +9,10 @@ module TwitterUtils
              config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
              config.access_token_secret = ENV['TWITTER_TOKEN_SECRET']
            end
-  MAX_ATTEMPTS  = 3
   DM_RECIPIENTS = ENV['DM_RECIPIENTS']
   HASHTAGS      = ENV['HASHTAGS']
-  TIME_DIFF     = 1.hour
+  MAX_ATTEMPTS  = ENV['MAX_ATTEMPTS']
+  TIME_DIFF     = eval(ENV['TIME_DIFF']) rescue 1.hour
   TIME_ZONE     = ActiveSupport::TimeZone.new(ENV['LOCAL_TIME_ZONE'])
 
   # Follower   => account that we are following and who is following us.
@@ -53,7 +55,7 @@ module TwitterUtils
   def send_direct_messages(tweets)
     tweets.each do |t|
       tweet_url = "https://twitter.com/#{t.attrs[:user][:screen_name]}/status/#{t.attrs[:id]}"
-      
+
       dm_text   = "--- A tracked HashTag was used!\n"
       dm_text  += "#{t.created_at.strftime('Created on %m/%d/%Y at %I:%M%p.')}\n"
       dm_text  += "Tweet URL => #{tweet_url}"
@@ -78,7 +80,7 @@ module TwitterUtils
     rescue Twitter::Error::TooManyRequests => error
       puts "Rate Limiting Reached, trying again in #{error.rate_limit.reset_in} seconds."
       if num_attempts <= MAX_ATTEMPTS
-        sleep (error.rate_limit.reset_in + 10)
+        sleep (error.rate_limit.reset_in + 15)
         retry
       else
         raise 'Exiting process, rate limit is unrecoverable.'
