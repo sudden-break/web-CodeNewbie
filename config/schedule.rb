@@ -1,18 +1,12 @@
 # Allows for Server Time to map to Local Time.
 Time.zone = 'Eastern Time (US & Canada)'
 
-# Custom Variables to determine task frequency.
-follow_all_friends_times = 
-  ['12:15am','6:15am','12:15pm','6:15pm'].collect do |time|
-    Time.zone.parse(time).localtime
-  end
-
 # Information on Whenever Gem:
 # ==> http://github.com/javan/whenever
 
 set :output, 'log/cron.log'
 
-every 30.minutes do
+every 1.hour do
   rake 'cron:send_message_on_hashtag'
 end
 
@@ -33,5 +27,11 @@ settings = YAML::load_file(
 
 Time.zone = settings['LOCAL_TIME_ZONE']
 time_diff = eval(settings['TIME_DIFF']) rescue 1.hour
+
+# Custom Variables to determine task frequency.
+follow_all_friends_times = 
+  ['12:15am','6:15am','12:15pm','6:15pm'].collect do |time|
+    Time.zone.parse(time).localtime
+  end
 
 WHENEVERTODO
