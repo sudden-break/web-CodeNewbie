@@ -26,7 +26,7 @@ module TwitterUtils
   # Example use as a standalone function:
   # send_message_on_hashtag(operator='OR',['#CodeNewbie','#TheCommit'])
   def send_message_on_hashtag(operator='OR',hashtags)
-    now    = Time.now;
+    now    = current_time
     date   = now.strftime("%Y-%m-%d")
     tags   = hashtags.join(" #{operator} ")
 
@@ -44,7 +44,11 @@ module TwitterUtils
       CLIENT.follow(user_id) rescue 'Request already out to user. Moving on!'; next
     end
 
-    puts "#{Time.now.strftime('%m/%d/%Y at %I:%M%p - attempted to follow all friends!')}"
+    puts "#{current_time.strftime('%m/%d/%Y at %I:%M%p - attempted to follow all friends!')}"
+  end
+
+  def current_time
+    Time.now.in_time_zone(TIME_ZONE)
   end
 
   def in_time_diff?(*times)
@@ -63,7 +67,7 @@ module TwitterUtils
         handle_rate_limiting { CLIENT.create_direct_message(recipient,dm_text) }
       end
 
-      puts "#{Time.now.strftime('%m/%d/%Y at %I:%M%p - done sending hashtag DMs!')}"
+      puts "#{current_time.strftime('%m/%d/%Y at %I:%M%p - done sending hashtag DMs!')}"
     end
   end
 
