@@ -10,7 +10,7 @@ follow_all_friends_times =
 # Information on Whenever Gem:
 # ==> http://github.com/javan/whenever
 
-set :output, 'logs/cron.log'
+set :output, 'log/cron.log'
 
 every 30.minutes do
   rake 'cron:send_message_on_hashtag'
