@@ -59,9 +59,9 @@ module TwitterUtils
     tweets.each do |t|
       tweet_url = "https://twitter.com/#{t.attrs[:user][:screen_name]}/status/#{t.attrs[:id]}"
 
-      dm_text   = "--- A tracked HashTag was used!\n"
-      dm_text  += "#{t.created_at.in_time_zone(TIME_ZONE).strftime('Created on %m/%d/%Y at %I:%M%p.')}\n"
-      dm_text  += "Tweet URL => #{tweet_url}"
+      dm_text   = "Tracked HashTag was used!\n"
+      dm_text  += "#{t.created_at.in_time_zone(TIME_ZONE).strftime('%m/%d/%Y at %I:%M%p.')}\n"
+      dm_text  += "#{tweet_url}"
       
       DM_RECIPIENTS.split(',').each do |recipient|
         handle_rate_limiting { CLIENT.create_direct_message(recipient,dm_text) }
