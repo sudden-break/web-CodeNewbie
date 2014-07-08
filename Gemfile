@@ -38,6 +38,9 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'foundation-rails'
 gem 'sprockets', '<= 2.11.0'
 gem 'twitter'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 ##############
 # Group Gems #
