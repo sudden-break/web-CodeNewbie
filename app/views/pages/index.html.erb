@@ -1,4 +1,6 @@
 <%= render 'pages/next_chat' %>
-<%= render 'pages/challenge' %>
+<% if @challenge %>
+  <%= render 'pages/challenge' %>
+<% end %>
 <%= render 'pages/faqs' %>
 <%= render 'pages/about' %>

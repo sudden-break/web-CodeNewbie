@@ -11,13 +11,13 @@ CodeNewbie::Application.routes.draw do
   get '/logout' => 'sessions#destroy'
   
   # resources
-  get   '/resources'           => 'resources#index', as: 'resources'
-  get   '/resources/new'       => 'resources#new',   as: 'new_resource'
-  post  '/resources'           => 'resources#create'
-  get   '/resources/edit'      => 'resources#edit',  as: 'edit_resources'
-  get   '/resources/:id'       => 'resources#show',  as: 'resource'
-  patch '/resources/:id'       => 'resources#update'
-  get   '/resources/tags/:tag' => 'resources#index', as: 'tag'
+  get   '/learn'           => 'resources#index', as: 'resources'
+  get   '/learn/new'       => 'resources#new',   as: 'new_resource'
+  post  '/learn'           => 'resources#create'
+  get   '/learn/edit'      => 'resources#edit',  as: 'edit_resources'
+  get   '/learn/:id'       => 'resources#show',  as: 'resource'
+  patch '/learn/:id'       => 'resources#update'
+  get   '/learn/tags/:tag' => 'resources#index', as: 'tag'
 
   # careers
   get   '/careers'             => 'jobs#index', as: 'jobs'
