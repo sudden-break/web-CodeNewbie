@@ -19,6 +19,14 @@ feature "Admin creates a new resource" do
   end
 
   scenario "with the wrong password" do 
+    visit admin_path
+    fill_in("password", with: "wrong")
+    click_button("Submit")
+    expect(page).not_to have_content("Yea gurl!")
+
+    visit new_resource_path
+    expect(page).to have_content("Unauthorized")
+    expect(current_path).to eq(root_path) 
   end
 
 end
