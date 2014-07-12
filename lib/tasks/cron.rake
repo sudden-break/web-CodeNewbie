@@ -20,7 +20,7 @@ namespace :cron do
   task :send_message_on_hashtag => :environment do
     unless within_chat_window?
       challenge_hashtag = Challenge.where(current: true).first.hashtag
-      hashtags          = "#CodeNewbie,#{challenge_hashtag}".split(',')
+      hashtags          = "#CodeNewbie,#CodeNewbies,#{challenge_hashtag}".split(',')
       
       TwitterUtils::Messaging.send_message_on_hashtag('OR',hashtags)
     end
