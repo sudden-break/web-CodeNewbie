@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  skip_before_action :authorize, only: [:index, :show]
+  before_action :authorize, except: [:index, :show]
 
   def index
     if params[:tag]

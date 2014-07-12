@@ -1,9 +1,6 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
-  require 'uuidtools'
-
   def twitter
-    binding.pry
     auth = env["omniauth.auth"]
 
     @user = User.find_for_twitter_oauth(request.env["omniauth.auth"],current_user)
