@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     if user
-      user.update(photo: auth.extra.raw_info.profile_image_url.gsub("_normal", ""))
+      user.update(avatar: auth.extra.raw_info.profile_image_url.gsub("_normal", ""))
       user.twitter_account.update(followers_count: auth.extra.raw_info.followers_count)
       return user
     else
@@ -21,8 +21,12 @@ class User < ActiveRecord::Base
                             uid: auth.uid,
                             email: auth.uid+"@twitter.com",
                             password: Devise.friendly_token[0,20],
-                            photo: auth.extra.raw_info.profile_image_url.gsub("_normal", ""),
-                            twitter_account: TwitterAccount.create(followers_count: auth.extra.raw_info.followers_count, handle: auth.extra.raw_info.screen_name )
+                            avatar: auth.extra.raw_info.profile_image_url.gsub("_normal", ""),
+                            name: auth.extra.raw_info.name,
+                            twitter_account: TwitterAccount.create(
+                              followers_count: auth.extra.raw_info.followers_count, 
+                              handle: auth.extra.raw_info.screen_name 
+                              )
                           )
       end
 
