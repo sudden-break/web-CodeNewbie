@@ -7,8 +7,8 @@ CodeNewbie::Application.routes.draw do
   end
 
   # login
-  get '/login'  => 'sessions#new'
-  get '/logout' => 'sessions#destroy'
+  get   '/login'  => 'sessions#new'
+  get   '/logout' => 'sessions#destroy'
   
   # resources
   get   '/learn'           => 'resources#index', as: 'resources'
@@ -32,10 +32,10 @@ CodeNewbie::Application.routes.draw do
   get   '/challenges/:slug'    => 'challenges#show', as: 'challenge'
 
   # signing in stuff
-  get '/beta'  => 'pages#beta', as: 'beta'
+  get   '/beta'  => 'pages#beta', as: 'beta'
 
   # admin panel
-  get '/admin' => 'sessions#admin_new'
-  post '/admin' => 'sessions#create_admin'
+  get   '/admin' => 'sessions#admin_new'
+  post  '/admin' => 'sessions#create_admin'
 
 end
