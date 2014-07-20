@@ -1,6 +1,13 @@
 <section id="new-resource">
 
   <h1>#CodeNewbie Stories</h1>
+  <p class="tag-cloud">
+    <% Blog.tag_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>
+        <span class="tag">
+          <%= link_to tag.name, blog_tag_path(tag.name) %>
+        </span>
+    <% end %>
+  </p>
 
   <article>
     <% @blogs.each do |post| %>
