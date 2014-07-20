@@ -21,6 +21,7 @@ RSpec.configure do |config|
   end
 
   config.include Features, type: :feature
+  config.include Features::SessionHelpers, type: :feature
   config.infer_base_class_for_anonymous_controllers = false
   config.order = 'random'
   config.use_transactional_fixtures = false
