@@ -9,6 +9,7 @@ CodeNewbie::Application.routes.draw do
   # blog
   get  '/blog' => 'blog#index', as: 'blogs'
   get  '/blog/new' => 'blog#new', as: 'new_blog'
+  get  '/blog/tags/:tag' => 'blog#index', as: 'blog_tag'
   get  '/blog/:slug' => 'blog#show', as: 'blog'
   post  '/blog' => 'blog#create'
 

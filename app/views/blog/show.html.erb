@@ -4,6 +4,11 @@
       <h1>
         <%= @blog.title%>
       </h1>
+      <% @blog.tag_list.sort.each do |tag| %>
+        <span class="tag">
+          <%= link_to tag, blog_tag_path(tag) %>
+        </span>
+      <% end %>
       <p>
         <%= simple_format(@blog.body) %>
       </p>

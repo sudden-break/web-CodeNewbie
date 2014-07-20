@@ -2,7 +2,12 @@ class BlogController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-    @blogs = Blog.all
+    if params[:tag]
+      @blogs = Blog.tagged_with(params[:tag]).order("created_at")
+    else
+      @blogs = Blog.all.order("created_at")
+    end
+    
   end
 
   def new
