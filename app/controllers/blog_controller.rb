@@ -3,21 +3,20 @@ class BlogController < ApplicationController
 
   def index
     if params[:tag]
-      @blogs = Blog.tagged_with(params[:tag]).order("created_at")
+      @blog_posts = Blog.tagged_with(params[:tag]).order("created_at")
     else
-      @blogs = Blog.all.order("created_at")
+      @blog_posts = Blog.all.order("created_at")
     end
-    
   end
 
   def new
-    @blog = Blog.new
+    @blog_post = Blog.new
   end
 
   def create
-    @blog = Blog.new(blog_params)
-    if @blog.save
-      redirect_to blog_path(@blog.slug)
+    @blog_post = Blog.new(blog_params)
+    if @blog_post.save
+      redirect_to blog_path(@blog_post.slug)
     else
       flash[:notice] = "Couldn't save. Try again?"
       redirect_to new_blog_path
@@ -25,7 +24,22 @@ class BlogController < ApplicationController
   end
 
   def show
-    @blog = Blog.friendly.find(params[:slug])
+    @blog_post = Blog.friendly.find(params[:slug])
+  end
+
+  def edit
+    @blog_post = Blog.friendly.find(params[:slug])
+  end
+
+  def update
+    @blog_post = Blog.friendly.find(params[:slug])
+    @blog_post.update(blog_params)
+    if @blog_post.save
+      redirect_to blog_path(@blog_post.slug)
+    else
+      flash[:notice] = "Couldn't save. Try again?"
+      redirect_to edit_blog_path(@blog)
+    end
   end
 
   private

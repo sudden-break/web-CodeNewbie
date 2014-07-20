@@ -2,19 +2,20 @@
   <section id="resources">
     <article>
       <h1>
-        <%= @blog.title%>
+        <%= @blog_post.title%>
       </h1>
-      <% @blog.tag_list.sort.each do |tag| %>
+      <% @blog_post.tag_list.sort.each do |tag| %>
         <span class="tag">
           <%= link_to tag, blog_tag_path(tag) %>
         </span>
       <% end %>
       <p>
-        <%= simple_format(@blog.body) %>
+        <%= simple_format(@blog_post.body) %>
       </p>
     </article>
     <h3 class="page-nav-buttons">
       <%= link_to 'Back to Stories', blogs_path %>
+      <%= link_to 'Edit', edit_blog_path(@blog_post) if admin? %>
     </h3>
   </section>
 </div>

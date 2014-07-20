@@ -9,10 +9,10 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # def new
-  #   @resource = Resource.new
-  #   respond_to { |format| format.html }
-  # end
+  def new
+    @resource = Resource.new
+    respond_to { |format| format.html }
+  end
 
   def create
     @resource = Resource.new(resource_params)

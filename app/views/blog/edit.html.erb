@@ -1,0 +1,23 @@
+<section id="edit-blog-post">
+  <article>
+    <h1>
+      <%= link_to '#CodeNewbie Stories', blogs_path %>
+    </h1>
+
+    <br>
+
+    
+  </article>
+
+  <article id="blog_post_<%= @blog_post.slug %>">
+    <%= form_for(@blog_post) do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+      
+      <%= f.submit 'Update', name: 'update_button', id: 'update_button' %>
+      <%= f.submit 'Delete', name: 'delete_button', id: 'delete_button' %>
+
+    <% end %>
+  </article>
+  <%= button_to 'Add New Story', new_blog_path, :method => :get %>
+  <%= button_to 'Back to Stories', blogs_path, :method => :get %>
+</section>

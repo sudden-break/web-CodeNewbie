@@ -3,7 +3,7 @@
   <h1>Create a New Blog Post</h1>
 
   <article>
-    <%= form_for @blog do |f| %>
+    <%= form_for @blog_post do |f| %>
       <%= render :partial => 'form', :locals => { :f => f } %>
 
       <%= f.submit 'Create', name: 'create_button', id: 'create_button' %>
