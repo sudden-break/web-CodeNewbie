@@ -7,13 +7,13 @@ CodeNewbie::Application.routes.draw do
   end
 
   # blog
-  get    '/blog' => 'blog#index', as: 'blogs'
-  get    '/blog/new' => 'blog#new', as: 'new_blog'
-  get    '/blog/tags/:tag' => 'blog#index', as: 'blog_tag'
-  get    '/blog/:slug' => 'blog#show', as: 'blog'
-  get    '/blog/:slug/edit' => 'blog#edit', as: 'edit_blog'
-  patch  '/blog/:slug' => 'blog#update'
-  post   '/blog' => 'blog#create'
+  get    '/stories' => 'blog#index', as: 'blogs'
+  get    '/stories/new' => 'blog#new', as: 'new_blog'
+  get    '/stories/tags/:tag' => 'blog#index', as: 'blog_tag'
+  get    '/stories/:slug' => 'blog#show', as: 'blog'
+  get    '/stories/:slug/edit' => 'blog#edit', as: 'edit_blog'
+  patch  '/stories/:slug' => 'blog#update'
+  post   '/stories' => 'blog#create'
 
   # login
   get   '/login'  => 'sessions#new'
