@@ -1,0 +1,15 @@
+<div id="blog-post">
+  <section id="resources">
+    <article>
+      <h1>
+        <%= @blog.title%>
+      </h1>
+      <p>
+        <%= simple_format(@blog.body) %>
+      </p>
+    </article>
+    <h3 class="page-nav-buttons">
+      <%= link_to 'Back to Stories', blogs_path %>
+    </h3>
+  </section>
+</div>

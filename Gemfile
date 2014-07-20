@@ -46,12 +46,12 @@ gem 'omniauth-twitter'
 
 group :development do
   gem 'foreman'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
   gem 'awesome_print'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'jazz_hands'

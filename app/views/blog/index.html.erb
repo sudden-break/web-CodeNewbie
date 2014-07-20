@@ -1,0 +1,17 @@
+<section id="new-resource">
+
+  <h1>#CodeNewbie Stories</h1>
+
+  <article>
+    <% @blogs.each do |post| %>
+      <h3><%= link_to post.title, blog_path(post) %></h3>
+      <%= simple_format(post.excerpt) %>
+
+    <% end %>
+  </article>
+
+  <h3 class="page-nav-buttons">
+    <%#= link_to 'Back to Edit Blog', edit_resources_path %>
+  </h3>
+
+</section>
