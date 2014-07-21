@@ -3,10 +3,7 @@
     <h1>
       <%= link_to '#CodeNewbie Stories', blogs_path %>
     </h1>
-
     <br>
-
-    
   </article>
 
   <article id="blog_post_<%= @blog_post.slug %>">
@@ -18,6 +15,7 @@
 
     <% end %>
   </article>
+  
   <%= button_to 'Add New Story', new_blog_path, :method => :get %>
   <%= button_to 'Back to Stories', blogs_path, :method => :get %>
 </section>

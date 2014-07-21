@@ -6,6 +6,13 @@ CodeNewbie::Application.routes.draw do
     match '/sessions/user', to: 'devise/sessions#create', via: :post
   end
 
+  # chat
+  get    '/chats' => 'chat#index', as: 'chats'
+  get    '/chats/new' => 'chat#new', as: 'new_chat'
+  post   '/chats' => 'chat#create'
+  get    '/chats/:slug' => 'chat#show', as: 'chat'
+  get    '/chats/:slug/edit' => 'chat#edit', as: 'edit_chat'
+
   # blog
   get    '/stories' => 'blog#index', as: 'blogs'
   get    '/stories/new' => 'blog#new', as: 'new_blog'

@@ -1,0 +1,17 @@
+<section id="new-chat">
+
+  <h1>Create a New Chat</h1>
+
+  <article>
+    <%= form_for @chat do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+
+      <%= f.submit 'Create', name: 'create_button', id: 'create_button' %>
+    <% end %>
+  </article>
+
+  <h3>
+    <%= link_to 'Back to Edit Blog', edit_resources_path if admin? %>
+  </h3>
+
+</section>

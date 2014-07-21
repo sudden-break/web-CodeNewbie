@@ -1,0 +1,19 @@
+<div id="chat">
+  <section id="resources">
+    <article>
+      <h1>
+        <%= @chat.name%>
+      </h1>
+      <p>
+      </p>
+        <%= @chat.date %>
+      <p>
+        <%= simple_format(@chat.description) %>
+      </p>
+    </article>
+    <h3 class="page-nav-buttons">
+      <%= link_to 'Back to Stories', chats_path %>
+      <%= link_to 'Edit', edit_chat_path(@chat) if admin? %>
+    </h3>
+  </section>
+</div>
