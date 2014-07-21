@@ -1,14 +1,10 @@
 <section class="challenge">
   <section>
     <article class="next-chat-info">
-      <h1>CodeNewbie Challenge: <%= link_to @challenge.hashtag, challenge_path("the-commit") %></h1>
+      <h1>Last Week: <%= link_to @chat.name, chat_path(@chat) %></h1>
             <p>
-          <%= @challenge.description.html_safe %> Tweet us at 
-          <a href="https://twitter.com/codenewbies">
-            @CodeNewbies
-          </a>
+          <%= @chat.description.html_safe if @chat.description %> 
         </p>
-        <p><%= @challenge.source.html_safe %></p>
     </article>  
     <article class="sign-up">
       <%= render 'pages/mailchimp_signup_form' %>
