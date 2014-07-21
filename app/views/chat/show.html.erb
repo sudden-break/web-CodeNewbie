@@ -6,7 +6,7 @@
       </h1>
 
       <p>
-        on <%= @chat.date.strftime("%B %d") %>
+        on <%= @chat.date.strftime("%B %d") if @chat.date %>
       </p>
 
       <p>
