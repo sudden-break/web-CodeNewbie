@@ -19,6 +19,7 @@ feature "Admin can add a new chat" do
     fill_in("chat_name", with: "Code Impostor")
     fill_in("chat_date", with: "Sept 4")
     fill_in("chat_description", with: "this is a description")
+    fill_in("chat_tweet", with: "this is the tweet")
     
     click_button("Create")
     expect(page).to have_content("Code Impostor")

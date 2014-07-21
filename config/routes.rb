@@ -12,6 +12,9 @@ CodeNewbie::Application.routes.draw do
   post   '/chats' => 'chat#create'
   get    '/chats/:slug' => 'chat#show', as: 'chat'
   get    '/chats/:slug/edit' => 'chat#edit', as: 'edit_chat'
+  patch    '/chats/:slug' => 'chat#update'
+  delete    '/chats/:slug' => 'chat#destroy', as: 'delete_chat'
+
 
   # blog
   get    '/stories' => 'blog#index', as: 'blogs'

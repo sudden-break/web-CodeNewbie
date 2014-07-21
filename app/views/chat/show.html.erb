@@ -4,16 +4,26 @@
       <h1>
         <%= @chat.name%>
       </h1>
+
       <p>
+        on <%= @chat.date.strftime("%B %d") %>
       </p>
-        <%= @chat.date %>
+
       <p>
         <%= simple_format(@chat.description) %>
       </p>
+
+      <p>
+        <%= simple_format(@chat.tweet) %>
+      </p>
+
     </article>
-    <h3 class="page-nav-buttons">
-      <%= link_to 'Back to Stories', chats_path %>
-      <%= link_to 'Edit', edit_chat_path(@chat) if admin? %>
-    </h3>
+    <% if admin? %>
+      <h3 class="page-nav-buttons">
+        <%= link_to 'Back to Chats', chats_path %>
+        <%= link_to 'Edit', edit_chat_path(@chat) if admin? %>
+        <%= link_to 'Delete', delete_chat_path(@chat) , :method => :delete, date: { confirm: "Sure ya wanna delete this?"} %>
+      </h3>
+    <% end %>
   </section>
 </div>

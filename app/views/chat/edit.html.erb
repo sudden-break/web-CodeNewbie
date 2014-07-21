@@ -1,0 +1,21 @@
+<section id="edit-chat">
+  <article>
+    <h1>
+      <%= link_to 'Chats', chats_path %>
+    </h1>
+    <br>
+  </article>
+
+  <article id="chat_<%= @chat.slug %>">
+    <%= form_for(@chat) do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+      
+      <%= f.submit 'Update', name: 'update_button', id: 'update_button' %>
+
+    <% end %>
+  </article>
+  
+  <%= button_to 'Cancel', chat_path(@chat), :method => :get %>
+  <%= button_to 'Add New Chat', new_chat_path, :method => :get %>
+  <%= button_to 'Back to Chats', chats_path, :method => :get %>
+</section>

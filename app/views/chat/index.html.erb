@@ -1,0 +1,17 @@
+<section id="new-resource">
+
+  <h1>Chats</h1>
+
+  <article>
+    <% @chats.each do |chat| %>
+      <h3><%= link_to chat.name, chat_path(chat) %></h3>
+      <%= simple_format(chat.description) %>
+      <% if admin? %>
+        <h3 class="page-nav-buttons">
+          <%= link_to 'Edit', edit_chat_path(chat) %>
+        </h3>
+      <% end %>
+    <% end %>
+  </article>
+
+</section>
