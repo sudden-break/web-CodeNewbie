@@ -13,6 +13,13 @@
         <%= simple_format(@chat.description) %>
       </p>
 
+      <div class="module">
+        <h3>Some our favorite tweets</h3>
+        <p>
+          <%= simple_format(@chat.favorite_tweets) %>
+        </p>
+      </div>
+
       <p>
         <%= simple_format(@chat.tweet) %>
       </p>
