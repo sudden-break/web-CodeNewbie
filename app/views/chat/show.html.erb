@@ -1,30 +1,30 @@
 <div id="chat">
-  <section id="resources">
-    <article>
-      <h1>
-        <%= @chat.name%>
-      </h1>
-
-      <p>
-        on <%= @chat.date.strftime("%B %d") if @chat.date %>
-      </p>
-
-      <p>
-        <%= simple_format(@chat.description) %>
-      </p>
-
+  <section>
+    <div>
       <div class="module">
-        <h3>Some our favorite tweets</h3>
-        <p>
-          <%= simple_format(@chat.favorite_tweets) %>
+        <h1 class="title">
+          <%= @chat.name%>
+        </h1>
+
+        <p class="subtitle">
+          <%= @chat.date.strftime("%B %d") if @chat.date %>
         </p>
       </div>
 
-      <p>
-        <%= simple_format(@chat.tweet) %>
-      </p>
+      <div class="module">
+        <%= simple_format(@chat.description) %>
+      </div>
 
-    </article>
+      <div class="module">
+        <h3 class="title">Some our favorite tweets</h3>
+        <%= simple_format(@chat.favorite_tweets) %>
+      </div>
+
+      <div class="module">
+        <%= simple_format(@chat.tweet) %>
+      </div>
+
+    </div>
     <% if admin? %>
       <h3 class="page-nav-buttons">
         <%= link_to 'Back to Chats', chats_path %>
