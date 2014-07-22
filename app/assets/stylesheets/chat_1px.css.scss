@@ -1,3 +1,21 @@
+.header {
+  padding-top: 50px;
+  h1.title {
+    color: $bright-orange;
+    font-weight: 500;
+    font-family: "Love Ya Like A Sister";
+    font-size: 90px;
+    line-height: 1;
+  }
+  span.subtitle {
+    font-size: 25px;
+    text-transform: none;
+    color: black;
+    font-family: "Roboto";
+    font-weight: 300;
+  }
+}
+
 .module {
   border-bottom: 1px solid $lightgray;
   padding-top: 20px;
@@ -14,6 +32,19 @@
 
   }
 
-  p {
+  p a {
+    color: black; 
   }
+
+  .description p { 
+    font-weight: 100; 
+    color: black;
+  }
+
+  p { 
+    color: $bright-green; 
+    font-weight: 500;
+    font-size: 22px;
+  }
+
 }

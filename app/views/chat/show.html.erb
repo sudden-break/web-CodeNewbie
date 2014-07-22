@@ -1,18 +1,19 @@
 <div id="chat">
   <section>
     <div>
-      <div class="module">
+      <div class="header">
         <h1 class="title">
           <%= @chat.name%>
+          <span class="subtitle">
+            on <%= @chat.date.strftime("%B %d") if @chat.date %>
+          </span>
         </h1>
-
-        <p class="subtitle">
-          <%= @chat.date.strftime("%B %d") if @chat.date %>
-        </p>
       </div>
 
       <div class="module">
-        <%= simple_format(@chat.description) %>
+        <div class="description">
+          <%= simple_format(@chat.description) %>
+        </div>
       </div>
 
       <div class="module">
@@ -23,6 +24,10 @@
       <div class="module">
         <h3 class="title">More Resources</h3>
         <%= simple_format(@chat.resources) %>
+      </div>
+
+      <div class="module">
+        <p>Got more resources on impostor syndrome to share? Tweet us at <a href="https://twitter.com/CodeNewbies">@CodeNewbies</a></p>
       </div>
 
     </div>
