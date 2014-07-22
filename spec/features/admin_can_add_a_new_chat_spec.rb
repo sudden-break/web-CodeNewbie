@@ -21,20 +21,11 @@ feature "Admin can add a new chat" do
     fill_in("chat_description", with: "this is a description")
     fill_in("chat_tweet", with: "this is the tweet")
     fill_in("chat_favorite_tweets", with: "these are some of my favorite tweets")
+    fill_in("chat_resources", with: "these are some resources")
     
     click_button("Create")
     expect(page).to have_content("Code Impostor")
     expect(current_path).to eq(chat_path(Chat.last))  
-  end
-
-
-  scenario "successfully with additional resources" do
-  end
-
-  scenario "successfully with a twitter chat" do 
-  end
-
-  scenario "successfully with a twitter chat and additional resources" do 
   end
 
 end
