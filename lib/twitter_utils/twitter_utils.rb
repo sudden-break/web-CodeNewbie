@@ -11,8 +11,8 @@ module TwitterUtils
              config.access_token_secret = ENV['TWITTER_TOKEN_SECRET']
            end
 
-  # Recipients for automatic Direct Messaging (in CSV format)           
-  DM_RECIPIENTS = 'CarlosPlusPlus,saronyitbarek'
+  # Recipients for automatic Direct Messaging (in CSV format)
+  DM_RECIPIENTS = 'CodeNewbies'
 
   # Max attempts to overcome API throttling before quitting.
   MAX_ATTEMPTS  = 3
@@ -22,7 +22,7 @@ module TwitterUtils
   TIME_DIFF     = 1.hour
 
   # Set Local Time Zone of Rails App
-  # For US Time Zones: ActiveSupport::TimeZone.us_zones.map(&:name) 
+  # For US Time Zones: ActiveSupport::TimeZone.us_zones.map(&:name)
   TIME_ZONE     = ActiveSupport::TimeZone.new('Eastern Time (US & Canada)')
 
   #########################################
