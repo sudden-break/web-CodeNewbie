@@ -1,7 +1,7 @@
 <section class="challenge">
   <section>
     <article class="next-chat-info">
-      <h1>Last Week : "<%= link_to @chat.name, chat_path(@chat) %>"</h1>
+      <h1>Last Week : <%= link_to @chat.name, chat_path(@chat) %></h1>
             <p>
           <%= @chat.description.html_safe if @chat.description %> 
         </p>
