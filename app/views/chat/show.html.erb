@@ -16,18 +16,23 @@
         </div>
       </div>
 
-      <div class="module">
-        <h3 class="title">Some our favorite tweets</h3>
-        <%= simple_format(@chat.favorite_tweets) %>
-      </div>
+      <% if @chat.favorite_tweets.present? %>
+        <div class="module">
+          <h3 class="title">Some our favorite tweets</h3>
+          <%= simple_format(@chat.favorite_tweets) %>
+        </div>
+      <% end %>
+
+
+      <% if @chat.resources.present? %>
+        <div class="module">
+          <h3 class="title">More Resources</h3>
+          <%= simple_format(@chat.resources) %>
+        </div>
+      <% end %>
 
       <div class="module">
-        <h3 class="title">More Resources</h3>
-        <%= simple_format(@chat.resources) %>
-      </div>
-
-      <div class="module">
-        <p>Got more resources on impostor syndrome to share? Tweet us at <a href="https://twitter.com/CodeNewbies">@CodeNewbies</a></p>
+        <p>Got more resources to share? Tweet us at <a href="https://twitter.com/CodeNewbies">@CodeNewbies</a> or emails us at hello@codenewbies.org</p>
       </div>
 
     </div>
