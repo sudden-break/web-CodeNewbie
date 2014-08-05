@@ -1,10 +1,16 @@
+.left-right-cushion {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
 .header {
   padding-top: 50px;
   h1.title {
     color: $bright-orange;
     font-weight: 500;
     font-family: "Love Ya Like A Sister";
-    font-size: 90px;
+    font-size: 70px;
     line-height: 1;
   }
   span.subtitle {
