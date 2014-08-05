@@ -5,7 +5,7 @@
   <article>
     <% @chats.each do |chat| %>
       <h3><%= link_to chat.name, chat_path(chat) %></h3>
-      <%= simple_format(chat.description) %>
+      <%= simple_format(chat.description.truncate(300)) %>
       <% if admin? %>
         <h3 class="page-nav-buttons">
           <%= link_to 'Edit', edit_chat_path(chat) %>
