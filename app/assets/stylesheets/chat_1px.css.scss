@@ -12,7 +12,6 @@
   padding-right: 20px;
 }
 
-
 .header {
   padding-top: 50px;
   h1.title {
@@ -23,7 +22,6 @@
     @include caption-text;
   }
 }
-
 
 .module {
   border-bottom: 1px solid $lightgray;
@@ -36,11 +34,6 @@
   .caption {
     @include caption-text;
     text-align: center; 
-  }
-
-
-  h3.title {
-
   }
 
   p a {
@@ -60,4 +53,23 @@
 
   &.image { text-align: center; }
 
+}
+
+.share {
+  display: inline;
+  float: right;
+  a {
+    font-size: 15px;
+    text-transform: lowercase;
+    padding: 3px 10px;
+  }
+  a.tweet {
+    background: $mint-green;
+    color: $dark-green;
+  }
+
+  a.mail {
+    background: $lightgray;
+    color: $soft-gray;
+  }
 }
