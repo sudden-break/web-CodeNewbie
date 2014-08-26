@@ -10,6 +10,8 @@
             <% end %>
           </span>
         </h1>
+        <p id="custom-tweet-button"><a href="http://twitter.com/share?text='<%=@chat.name%>' via @CodeNewbies:&hashtags=CodeNewbie&url=http://nyctecheconomy.com" class="popup">TWEET</a></p>
+        <p id=""><%= mail_to nil, "Email", :subject => "Checkout '#{@chat.name}' from #CodeNewbies", :body => "http://www.codenewbie.org/#{chat_path(@chat)}", :target => "blank" %></p>
       </div>
 
       <div class="module">
