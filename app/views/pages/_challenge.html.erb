@@ -1,7 +1,7 @@
 <section class="challenge">
   <section>
     <article class="next-chat-info">
-      <h1>Last Week : <%= link_to @chat.name, chat_path(@chat) %></h1>
+      <h1>The Latest : <%= link_to @chat.name, chat_path(@chat) %></h1>
             <p>
           <%= @chat.description.html_safe.truncate(300) if @chat.description %> <%= link_to "continue", chat_path(@chat)%>
         </p>

@@ -2,7 +2,7 @@ class ChatController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-    @chats = Chat.all
+    @chats = Chat.all.order("date DESC")
   end
 
   def new
