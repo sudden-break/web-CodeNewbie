@@ -11,10 +11,10 @@
           </span>
           <span class="share">
             <span id="custom-tweet-button">
-              <a class="tweet" target="blank" href="http://twitter.com/share?text='<%=@chat.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://nyctecheconomy.com" class="popup">TWEET</a>
+              <a class="tweet" target="blank" href="http://twitter.com/share?text='<%=@chat.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://www.codenewbie.org<%=chat_path(@chat)%>" class="popup">TWEET</a>
             </span> 
             <span>
-              <%= mail_to nil, "Email", :subject => "Checkout '#{@chat.name}' from #CodeNewbies", :body => "http://www.codenewbie.org/#{chat_path(@chat)}", :target => "blank", :class => "mail" %>
+              <%= mail_to nil, "Email", :subject => "Checkout '#{@chat.name}' from #CodeNewbies", :body => "http://www.codenewbie.org#{chat_path(@chat)}", :target => "blank", :class => "mail" %>
             </span>
           </span>
         </h1>
