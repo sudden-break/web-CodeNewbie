@@ -54,22 +54,3 @@
   &.image { text-align: center; }
 
 }
-
-.share {
-  display: inline;
-  float: right;
-  a {
-    font-size: 15px;
-    text-transform: lowercase;
-    padding: 3px 10px;
-  }
-  a.tweet {
-    background: $mint-green;
-    color: $dark-green;
-  }
-
-  a.mail {
-    background: $lightgray;
-    color: $soft-gray;
-  }
-}
