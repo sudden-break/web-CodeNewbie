@@ -3,7 +3,7 @@
     <article class="next-chat-info">
       <h1>The Latest : <%= link_to @chat.name, chat_path(@chat) %></h1>
             <p>
-          <%= @chat.description.html_safe.truncate(300) if @chat.description %> <%= link_to "continue", chat_path(@chat)%>
+          <%= simple_format(@chat.description.truncate(300)) if @chat.description %> <%= link_to "continue", chat_path(@chat)%>
         </p>
     </article>  
     <article class="sign-up">
