@@ -7,23 +7,23 @@ CodeNewbie::Application.routes.draw do
   end
 
   # chat
-  get    '/chats' => 'chat#index', as: 'chats'
-  get    '/chats/new' => 'chat#new', as: 'new_chat'
-  post   '/chats' => 'chat#create'
-  get    '/chats/:slug' => 'chat#show', as: 'chat'
-  get    '/chats/:slug/edit' => 'chat#edit', as: 'edit_chat'
-  patch    '/chats/:slug' => 'chat#update'
-  delete    '/chats/:slug' => 'chat#destroy', as: 'delete_chat'
+  get    '/blog' => 'chat#index', as: 'chats'
+  get    '/blog/new' => 'chat#new', as: 'new_chat'
+  post   '/blog' => 'chat#create'
+  get    '/blog/:slug' => 'chat#show', as: 'chat'
+  get    '/blog/:slug/edit' => 'chat#edit', as: 'edit_chat'
+  patch    '/blog/:slug' => 'chat#update'
+  delete    '/blog/:slug' => 'chat#destroy', as: 'delete_chat'
 
 
   # blog
-  get    '/stories' => 'blog#index', as: 'blogs'
-  get    '/stories/new' => 'blog#new', as: 'new_blog'
-  get    '/stories/tags/:tag' => 'blog#index', as: 'blog_tag'
-  get    '/stories/:slug' => 'blog#show', as: 'blog'
-  get    '/stories/:slug/edit' => 'blog#edit', as: 'edit_blog'
-  patch  '/stories/:slug' => 'blog#update'
-  post   '/stories' => 'blog#create'
+  # get    '/stories' => 'blog#index', as: 'blogs'
+  # get    '/stories/new' => 'blog#new', as: 'new_blog'
+  # get    '/stories/tags/:tag' => 'blog#index', as: 'blog_tag'
+  # get    '/stories/:slug' => 'blog#show', as: 'blog'
+  # get    '/stories/:slug/edit' => 'blog#edit', as: 'edit_blog'
+  # patch  '/stories/:slug' => 'blog#update'
+  # post   '/stories' => 'blog#create'
 
   # login
   get   '/login'  => 'sessions#new'
