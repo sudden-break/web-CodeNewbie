@@ -15,13 +15,13 @@ CodeNewbie::Application.routes.draw do
   patch    '/blog/:slug' => 'chat#update'
   delete    '/blog/:slug' => 'chat#destroy', as: 'delete_chat'
 
-  get    '/chat' => 'chat#index'
-  get    '/chat/new' => 'chat#new'
-  post   '/chat' => 'chat#create'
-  get    '/chat/:slug' => 'chat#show'
-  get    '/chat/:slug/edit' => 'chat#edit'
-  patch    '/chat/:slug' => 'chat#update'
-  delete    '/chat/:slug' => 'chat#destroy'
+  get    '/chats' => 'chat#index'
+  get    '/chats/new' => 'chat#new'
+  post   '/chats' => 'chat#create'
+  get    '/chats/:slug' => 'chat#show'
+  get    '/chats/:slug/edit' => 'chat#edit'
+  patch    '/chats/:slug' => 'chat#update'
+  delete    '/chats/:slug' => 'chat#destroy'
 
 
   # blog
