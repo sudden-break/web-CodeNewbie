@@ -47,7 +47,7 @@ class ChatController < ApplicationController
   private
 
   def chat_params
-    params.require(:chat).permit(:name, :date, :description, :tweet, :favorite_tweets, :resources)
+    params.require(:chat).permit(:name, :date, :description, :tweet, :favorite_tweets, :resources, :image)
   end
 
 end

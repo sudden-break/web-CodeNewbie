@@ -16,6 +16,12 @@
         </div>
       </div>
 
+      <% if @chat.image.present? %>
+      <div class="module">
+        <img src="/assets/<%= @chat.image %>">
+      </div>
+      <% end %>
+
       <% if @chat.favorite_tweets.present? %>
         <div class="module">
           <h3 class="title">Some our favorite tweets</h3>
