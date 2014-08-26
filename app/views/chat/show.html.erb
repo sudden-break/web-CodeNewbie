@@ -5,7 +5,9 @@
         <h1 class="title">
           <%= @chat.name%>
           <span class="subtitle">
-            on <%= @chat.date.strftime("%B %d") if @chat.date %>
+            <% if @chat.date.present? %>
+            from our chat on <%= @chat.date.strftime("%B %d") %>
+            <% end %>
           </span>
         </h1>
       </div>
@@ -38,7 +40,7 @@
       <% end %>
 
       <div class="module">
-        <p>Thoughts? Tweet us at <a href="https://twitter.com/CodeNewbies">@CodeNewbies</a> or email us at <%= mail_to "hello@codenewbie.org" %>.</p>
+        <p class="caption">Thoughts? Tweet us at <a href="https://twitter.com/CodeNewbies">@CodeNewbies</a> or email us at <%= mail_to "hello@codenewbie.org" %>.</p>
       </div>
 
     </div>
