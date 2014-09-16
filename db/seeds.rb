@@ -1,5 +1,45 @@
 # Create Initial Seed Data for Resources
 
+podcast = Podcast.create({
+    id:            1,
+    name:          'Ep. 1 - Bootcamps, Water Coolers, and Hiring Devs',
+    description:   "Carlos Lazo, software developer at Time Inc. and graduate of the programming bootcamp, the Flatiron School, shares his unique programming experiences in the first episode of the CodeNewbie podcast. We talk about working in hardware and software, the difference between studying computer science and actually being an engineer, what he's learned from leading recruitment and interviewing over 100 engineers, and why after all that, he decided to attend a three-month bootcamp to become a web developer. There's also some info on a particularly cool water cooler.",
+    published_on:   Time.now,
+    audio_link:     'http://static.squarespace.com/static/5161ac76e4b0d5cb924e7ed5/t/54173800e4b0aad39e696e53/1410807808151/Carlos-Audition_mixdown_cbr.mp3/original/Carlos-Audition_mixdown_cbr.mp3'
+  })
+
+guests = Guest.create([
+  {
+    id:              1,
+    first_name:      'Carlos',
+    full_name:       'Carlos Lazo',
+    podcast_id:         1          
+  },
+  {
+    id:              2,
+    first_name:      'Saron',
+    full_name:       'Saron Yitbarek',
+    podcast_id:         1
+  }
+])
+
+pick = Pick.create([
+  {
+    id:             1,
+    name:           "Traffic Lights",
+    link:           "http://trafficlights.com",
+    author:         Guest.find(2),
+    podcast_id:     1
+  },
+  {
+    id:             1,
+    name:           "Coolest Cooler",
+    link:           "http://coolestcooler.com",
+    author:         Guest.find(1),
+    podcast_id:     1
+  }
+])
+
 resources = Resource.create([
   {
     name:          'App Academy',    

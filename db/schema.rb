@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916024708) do
+ActiveRecord::Schema.define(version: 20140916034720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -184,10 +184,10 @@ ActiveRecord::Schema.define(version: 20140916024708) do
     t.text     "bio"
     t.string   "twitter"
     t.string   "github"
-    t.string   "other_links"
     t.integer  "podcast_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "other_links", default: [], array: true
   end
 
   add_index "guests", ["podcast_id"], name: "index_guests_on_podcast_id", using: :btree
@@ -208,9 +208,11 @@ ActiveRecord::Schema.define(version: 20140916024708) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "guest_id"
   end
 
   add_index "picks", ["author_id"], name: "index_picks_on_author_id", using: :btree
+  add_index "picks", ["guest_id"], name: "index_picks_on_guest_id", using: :btree
   add_index "picks", ["podcast_id"], name: "index_picks_on_podcast_id", using: :btree
 
   create_table "podcasts", force: true do |t|

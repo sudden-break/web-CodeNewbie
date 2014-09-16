@@ -8,7 +8,6 @@ class CreateGuests < ActiveRecord::Migration
       t.text :bio
       t.string :twitter
       t.string :github
-      t.string :other_links
       t.references :podcast, index: true
 
       t.timestamps
