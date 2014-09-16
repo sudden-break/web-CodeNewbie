@@ -5,7 +5,7 @@
 
       <a href="<%= podcast_path(@episode) %>"><h2 class="title"><%= @episode.name %></h2></a>
 
-      <audio controls>
+      <audio controls="controls" preload="auto">
         <source src="<%= @episode.audio_link %>" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
