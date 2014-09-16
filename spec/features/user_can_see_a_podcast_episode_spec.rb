@@ -13,7 +13,7 @@ feature 'User can see a podcast episode' do
 
     expect(page).to have_content("Podcast")
     expect(page).to have_content(podcast.name)
-    expect(page).to have_link(podcast.name, href: podcast_path(podcast))
+    expect(page).to have_content(podcast.name)
     expect(page).to have_content(podcast.description)
     
     expect(page).to have_content(podcast.guests.first.full_name)
