@@ -32,7 +32,7 @@ pick = Pick.create([
     podcast_id:     1
   },
   {
-    id:             1,
+    id:             2,
     name:           "Coolest Cooler",
     link:           "http://coolestcooler.com",
     author:         Guest.find(1),

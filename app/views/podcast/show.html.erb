@@ -4,6 +4,12 @@
 
     <article>
       <%= link_to @episode.name, podcast_path(@episode) %>
+
+      <audio controls>
+        <source src="<%= @episode.audio_link %>" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
       <%= @episode.description %>
       <% @episode.picks.each do |pick| %>
         <%= link_to pick.name, pick.link %><%= pick.author.first_name %>
