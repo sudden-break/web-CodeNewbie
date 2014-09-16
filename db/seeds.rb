@@ -3,7 +3,7 @@
 podcast = Podcast.create({
     id:            1,
     name:          'Ep. 1 - Bootcamps, Water Coolers, and Hiring Devs',
-    description:   "Carlos Lazo, software developer at Time Inc. and graduate of the programming bootcamp, the Flatiron School, shares his unique programming experiences in the first episode of the CodeNewbie podcast. We talk about working in hardware and software, the difference between studying computer science and actually being an engineer, what he's learned from leading recruitment and interviewing over 100 engineers, and why after all that, he decided to attend a three-month bootcamp to become a web developer. There's also some info on a particularly cool water cooler.",
+    description:   "Carlos Lazo, software developer at Time Inc. and graduate of the programming bootcamp, the Flatiron School, shares his unique programming experiences in the first episode of the CodeNewbie podcast.\n\n We talk about working in hardware and software, the difference between studying computer science and actually being an engineer, what he's learned from leading recruitment and interviewing over 100 engineers, and why after all that, he decided to attend a three-month bootcamp to become a web developer.",
     published_on:   Time.now,
     audio_link:     'http://static.squarespace.com/static/5161ac76e4b0d5cb924e7ed5/t/54173800e4b0aad39e696e53/1410807808151/Carlos-Audition_mixdown_cbr.mp3/original/Carlos-Audition_mixdown_cbr.mp3'
   })
@@ -33,14 +33,35 @@ pick = Pick.create([
   {
     id:             1,
     name:           "Traffic Lights",
-    link:           "http://trafficlights.com",
+    link:           "https://www.behance.net/gallery/Traffic-lights/13150627",
     author:         Guest.find(2),
     podcast_id:     1
   },
   {
     id:             2,
+    name:           "Thoughtbot's Style Guide",
+    link:           "https://github.com/thoughtbot/guides/tree/master/style",
+    author:         Guest.find(2),
+    podcast_id:     1
+  },
+  {
+    id:             3,
+    name:           "GitGutter",
+    link:           "https://github.com/jisaacks/GitGutter",
+    author:         Guest.find(1),
+    podcast_id:     1
+  },
+  {
+    id:             4,
     name:           "Coolest Cooler",
-    link:           "http://coolestcooler.com",
+    link:           "https://www.kickstarter.com/projects/ryangrepper/coolest-cooler-21st-century-cooler-thats-actually",
+    author:         Guest.find(1),
+    podcast_id:     1
+  },
+  {
+    id:             5,
+    name:           "Mozilla Developer Network's CSS Reference",
+    link:           "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference",
     author:         Guest.find(1),
     podcast_id:     1
   }

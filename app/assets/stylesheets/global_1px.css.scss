@@ -72,3 +72,10 @@ input[type="submit"]:hover {
    border: 1px solid $bright-green;
 
 }
+
+span.thin {
+  font-weight: 100;
+}
+
+.green { color: $bright-green; }
+.gray, .gray a { color: $gray; }
