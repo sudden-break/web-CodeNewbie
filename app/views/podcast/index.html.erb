@@ -5,7 +5,7 @@
   <article>
     <% @episodes.each do |episode| %>
       <h3><%= link_to episode.name, podcast_path(episode) %></h3>
-      <%= simple_format(episode.description.truncate(300)) %>
+      <%= simple_format(episode.description.truncate(200)) %><%= link_to "more", podcast_path(episode) %>
       <% if admin? %>
         <h3 class="page-nav-buttons">
           <%#= link_to 'Edit', edit_episode_path(episode) %>

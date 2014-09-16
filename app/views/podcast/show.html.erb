@@ -1,0 +1,30 @@
+<div id="podcast-episode">
+  <section id="resources">
+    <h1>Podcast</h1>
+
+    <article>
+      <%= link_to @episode.name, podcast_path(@episode) %>
+      <%= @episode.description %>
+      <% @episode.picks.each do |pick| %>
+        <%= link_to pick.name, pick_url %><%= pick.guest.first_name %>
+      <% end %>
+      <% @episode.guests.each do |guest| %>
+        <%= guest.full_name %>
+        <%= guest.job_title %>
+        <%= guest.company %>
+        <%= guest.bio %>
+        <%= guest.twitter %>
+        <%= guest.github %>
+        <% guest.links.each do |link| %>
+          <%= link_to "personal", link.url %>
+        <% end %>
+      <% end %>
+
+      
+    </article>
+    <h3 class="page-nav-buttons">
+      <%#= link_to 'Back to Stories', blogs_path %>
+      <%#= link_to 'Edit', edit_blog_path(@blog_post) if admin? %>
+    </h3>
+  </section>
+</div>
