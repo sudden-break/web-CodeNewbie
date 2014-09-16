@@ -1,8 +1,9 @@
 <section id="new-resource">
 
-  <h1>Podcast</h1>
-  
   <article>
+
+    <h1>Podcast</h1>
+
     <% @episodes.each do |episode| %>
       <h3><%= link_to episode.name, podcast_path(episode) %></h3>
       <%= simple_format(episode.description.truncate(200)) %><%= link_to "more", podcast_path(episode) %>
@@ -13,6 +14,7 @@
         </h3>
       <% end %>
     <% end %>
+    
   </article>
 
 </section>

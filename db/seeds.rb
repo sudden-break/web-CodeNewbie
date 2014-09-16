@@ -13,7 +13,13 @@ guests = Guest.create([
     id:              1,
     first_name:      'Carlos',
     full_name:       'Carlos Lazo',
-    podcast_id:         1          
+    podcast_id:      1,
+    bio:             "Carlos Lazo worked for the Department of Defense for 5 years as an engineer, course corrected at the Flatiron School in Summer 2013, and is now a Rails Developer at Time Inc in NYC. He's passionate about consistent learning, good software practices, and always having fun doing what you're doing.",
+    twitter:         "@CarlosPlusPlus",
+    github:          "CarlosPlusPlus",
+    other_links:     ["http://about.me/carlosjlazo"],
+    job_title:       "Rails Developer",
+    company:         "Time Inc."           
   },
   {
     id:              2,
