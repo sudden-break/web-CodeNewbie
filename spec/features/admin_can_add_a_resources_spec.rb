@@ -21,7 +21,7 @@ feature "Admin creates a new resource" do
     expect(page).not_to have_content("Yea gurl!")
 
     visit new_resource_path
-    expect(page).to have_content("Unauthorized fuck")
+    expect(page).to have_content("Unauthorized access")
     expect(current_path).to eq(root_path) 
   end
 
