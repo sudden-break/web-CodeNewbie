@@ -1,0 +1,18 @@
+<section id="new-resource">
+
+  <h1>Podcast</h1>
+  
+  <article>
+    <% @episodes.each do |episode| %>
+      <h3><%= link_to episode.name, podcast_path(episode) %></h3>
+      <%= simple_format(episode.description.truncate(300)) %>
+      <% if admin? %>
+        <h3 class="page-nav-buttons">
+          <%#= link_to 'Edit', edit_episode_path(episode) %>
+          <%#= link_to 'Delete', delete_episode_path(episode) %>
+        </h3>
+      <% end %>
+    <% end %>
+  </article>
+
+</section>

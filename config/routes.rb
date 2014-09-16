@@ -12,26 +12,23 @@ CodeNewbie::Application.routes.draw do
   post   '/blog' => 'chat#create'
   get    '/blog/:slug' => 'chat#show', as: 'chat'
   get    '/blog/:slug/edit' => 'chat#edit', as: 'edit_chat'
-  patch    '/blog/:slug' => 'chat#update'
-  delete    '/blog/:slug' => 'chat#destroy', as: 'delete_chat'
+  patch  '/blog/:slug' => 'chat#update'
+  delete '/blog/:slug' => 'chat#destroy', as: 'delete_chat'
 
   get    '/chats' => 'chat#index'
   get    '/chats/new' => 'chat#new'
   post   '/chats' => 'chat#create'
   get    '/chats/:slug' => 'chat#show'
   get    '/chats/:slug/edit' => 'chat#edit'
-  patch    '/chats/:slug' => 'chat#update'
-  delete    '/chats/:slug' => 'chat#destroy'
+  patch  '/chats/:slug' => 'chat#update'
+  delete '/chats/:slug' => 'chat#destroy'
 
 
-  # blog
-  # get    '/stories' => 'blog#index', as: 'blogs'
-  # get    '/stories/new' => 'blog#new', as: 'new_blog'
-  # get    '/stories/tags/:tag' => 'blog#index', as: 'blog_tag'
-  # get    '/stories/:slug' => 'blog#show', as: 'blog'
-  # get    '/stories/:slug/edit' => 'blog#edit', as: 'edit_blog'
-  # patch  '/stories/:slug' => 'blog#update'
-  # post   '/stories' => 'blog#create'
+  # podcast
+
+  get    '/podcast' => 'podcast#index', as: 'podcasts'
+  get    '/podcast/:slug' => 'podcast#show', as: 'podcast'
+
 
   # login
   get   '/login'  => 'sessions#new'
