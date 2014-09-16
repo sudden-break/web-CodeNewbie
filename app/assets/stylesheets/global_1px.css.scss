@@ -79,3 +79,17 @@ span.thin {
 
 .green { color: $bright-green; }
 .gray, .gray a { color: $gray; }
+
+@mixin caption-text {
+  font-size: 18px;
+  text-transform: none;
+  color: $gray;
+  font-family: "Roboto";
+  font-weight: 300;
+  a { color: $soft-gray; }
+}
+
+.caption {
+  @include caption-text;
+  text-align: left; 
+}
