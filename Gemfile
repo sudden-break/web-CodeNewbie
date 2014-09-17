@@ -39,6 +39,7 @@ gem 'twitter'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'travis'
 
 ##############
 # Group Gems #

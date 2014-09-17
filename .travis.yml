@@ -6,3 +6,6 @@ rvm:
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake spec
+
+env:
+  - secure: "zoTbzhxkwQpsZpgDtxHfqTzKuDE2R9gq+pLdOgouFECDGukHeVNahQKbii4Hge80pUBh0RStDUbPL8t+GlnByUgGNjZvs7X2qemrEogOeqKDjNPvHtGYT/RlzN4NVPQgVWsdwd8EsmBnB1sqU1Q4cyQtLXl3YRlu7DPzuK6p92o="
