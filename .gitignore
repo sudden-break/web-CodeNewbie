@@ -25,3 +25,6 @@
 
 # Ignore simplecov test files.
 /coverage
+
+#Travis
+/super_secret.txt
