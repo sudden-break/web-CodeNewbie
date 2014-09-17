@@ -8,6 +8,8 @@ env:
   matrix:
   - secure: zoTbzhxkwQpsZpgDtxHfqTzKuDE2R9gq+pLdOgouFECDGukHeVNahQKbii4Hge80pUBh0RStDUbPL8t+GlnByUgGNjZvs7X2qemrEogOeqKDjNPvHtGYT/RlzN4NVPQgVWsdwd8EsmBnB1sqU1Q4cyQtLXl3YRlu7DPzuK6p92o=
   global:
-    secure: co2PY71Z9i+IfkhQap99YzY1b8lZMPsosCY2DCbr764bnRXRWor3CkMPS+VG2qrNooY397t0f+9jsgcGguVm7m0hFEdgKdxQtTZhHbWZefoK/2mTJrHDg8Km+XZ60sWPHItOEmBVk9HMKkAa/ORFK3h2VzZNQLtjFGna4YbN108=
+  - secure: co2PY71Z9i+IfkhQap99YzY1b8lZMPsosCY2DCbr764bnRXRWor3CkMPS+VG2qrNooY397t0f+9jsgcGguVm7m0hFEdgKdxQtTZhHbWZefoK/2mTJrHDg8Km+XZ60sWPHItOEmBVk9HMKkAa/ORFK3h2VzZNQLtjFGna4YbN108=
+  - secure: nz2Vo6KBarNMhaZMziFfDSldtc2Pm66iXgCJ4IQH2JNa81HD3d+tgk3Ap2MTTGG138wfAMMrLnqBvnUtRyiVV2EtJZPPqiV6/sXdtoOWOhX1alkNPQQB8xDj9nq1fdYrERER39+uN6T+zhCKRHMzENbHYLe0e83EKBv1OCYf+Ak=
 before_install:
-  - openssl aes-256-cbc -k "$super_secret_password" -in super_secret.txt.enc -out super_secret.txt -d
+- openssl aes-256-cbc -k "$super_secret_password" -in super_secret.txt.enc -out super_secret.txt
+  -d
