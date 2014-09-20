@@ -3,6 +3,16 @@
   <article>
 
     <h1>Podcast</h1>
+    <br>
+    <div>
+      <span class="share inline-left">
+        <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" >iTunes</a>
+        <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" >RSS</a>
+      </span>
+      <br>
+      <br>
+      <br>
+    </div>
 
     <% @episodes.each do |episode| %>
       <h3><%= link_to episode.name, podcast_path(episode) %></h3>
