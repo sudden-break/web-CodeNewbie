@@ -5,17 +5,18 @@
 
       <h2 class="title">
         <%= @episode.name %>
-        <span class="share inline-left">
+        <span class="share inline-right">
           <span id="custom-tweet-button">
-            <a class="tweet" target="blank" href="http://twitter.com/share?text='<%=@episode.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://www.codenewbie.org<%=podcast_path(@episode)%>" class="popup">TWEET</a>
+            <a class="green" target="blank" href="http://twitter.com/share?text='<%=@episode.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://www.codenewbie.org<%=podcast_path(@episode)%>" class="popup">TWEET</a>
           </span> 
           <span>
-            <%= mail_to nil, "Email", :subject => "Checkout '#{@episode.name}' from the CodeNewbie Podcast", :body => "http://www.codenewbie.org#{podcast_path(@episode)}", :target => "blank", :class => "mail" %>
+            <%= mail_to nil, "Email", :subject => "Checkout '#{@episode.name}' from the CodeNewbie Podcast", :body => "http://www.codenewbie.org#{podcast_path(@episode)}", :target => "blank", :class => "gray" %>
           </span>
         </span>
       </h2>
 
       <div class="jw-audio">
+
       <div id='playerCxKAeqkKjbSj' class="jw-audio"></div>
         <script type='text/javascript'>
             jwplayer('playerCxKAeqkKjbSj').setup({
@@ -25,6 +26,15 @@
                 height: 30
             });
         </script>
+      </div>
+      <div>
+        <span class="share inline-left">
+          <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" >iTunes</a>
+          <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" >RSS</a>
+        </span>
+        <br>
+        <br>
+        <br>
       </div>
 
       <% if @episode.description.present? %>

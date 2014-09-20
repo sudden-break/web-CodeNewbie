@@ -5,14 +5,27 @@
     font-size: 15px;
     text-transform: lowercase;
     padding: 3px 10px;
+    color: white;
   }
-  a.tweet {
+  a.green {
     background: $mint-green;
     color: $dark-green;
   }
 
-  a.mail {
+  a.gray {
     background: $lightgray;
     color: $soft-gray;
+  }
+
+  a.orange {
+    background: $bright-orange;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  a.blue {
+    background: $blue;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 }

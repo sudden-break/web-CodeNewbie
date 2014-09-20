@@ -3,7 +3,12 @@
   float: right;
 }
 
-.share.inline-left {
+.share.inline-right {
   float: none;
   margin-left: 20px;
+}
+
+.share.inline-left {
+  float: none;
+  margin-right: 20px;
 }
