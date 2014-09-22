@@ -1,17 +1,12 @@
 <section id="new-resource">
 
-  <article>
-
+  <div class="buffer">
     <h1>Podcast</h1>
     <br>
-    <div>
       <span class="share inline-left">
         <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" target="_blank">iTunes</a>
         <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" target="_blank">RSS</a>
       </span>
-      <br>
-      <br>
-      <br>
     </div>
 
     <% @episodes.each do |episode| %>
@@ -30,6 +25,5 @@
     <p class="caption">
       We're looking for sponsors for the CodeNewbie podcast. Interested? Email us at <%= mail_to "hello@codenewbie.org" %>.
     </p>
-  </article>
 
 </section>
