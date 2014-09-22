@@ -72,9 +72,9 @@
           </h3>
           <p class="gray">
             <%= link_to "twitter", "http://twitter.com/#{guest.twitter}", target: "blank" if guest.twitter.present? %>,
-            <%= link_to "github", "http://github.com/#{guest.github}", target: "blank" if guest.github.present? %>,
+            <%= link_to "github", "http://github.com/#{guest.github}", target: "blank" if guest.github.present? %>
             <% guest.other_links.each do |link| %>
-              <%= link_to "personal site", link, target: "blank" %>
+              <%= link_to ", personal site", link, target: "blank" %>
             <% end %>
           </p>
 
