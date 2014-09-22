@@ -42,24 +42,6 @@
         <%=simple_format(@episode.description)%>
       <% end %>
 
-      <% if !@episode.show_notes.empty? %>
-        <h3 class="green">Show Links</h3>
-        <ul>
-          <% @episode.show_notes.each do |show_note| %>
-          <li class="less-bottom-space"><%= link_to show_note.name, show_note.link %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <% if !@episode.picks.empty? %>
-        <h3 class="green">Picks</h3>
-        <ul>
-        <% @episode.picks.each do |pick| %>
-          <li class="less-bottom-space"><%= link_to pick.name, pick.link, target: "blank" %> (<%= pick.author.first_name %>)</li>
-        <% end %>
-        </ul>
-      <% end %>
-
       <% if !@episode.guests.empty? %>
         <h3 class="green">Guest</h3>
         <% @episode.guests.each do |guest| %>
@@ -81,6 +63,24 @@
           <%= simple_format(guest.bio) if guest.bio.present? %>
 
         <% end %>
+      <% end %>
+
+      <% if !@episode.show_notes.empty? %>
+        <h3 class="green">Show Links</h3>
+        <ul>
+          <% @episode.show_notes.each do |show_note| %>
+          <li class="less-bottom-space"><%= link_to show_note.name, show_note.link, target: "blank" %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <% if !@episode.picks.empty? %>
+        <h3 class="green">Picks</h3>
+        <ul>
+        <% @episode.picks.each do |pick| %>
+          <li class="less-bottom-space"><%= link_to pick.name, pick.link, target: "blank" %> (<%= pick.author.first_name %>)</li>
+        <% end %>
+        </ul>
       <% end %>
       <br>
       <br>

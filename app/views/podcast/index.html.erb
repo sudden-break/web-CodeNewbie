@@ -15,6 +15,7 @@
     </div>
 
     <% @episodes.each do |episode| %>
+    <article>
       <h3><%= link_to episode.name, podcast_path(episode) %></h3>
       <%= simple_format(episode.description.truncate(200)) %><%= link_to "more", podcast_path(episode) %>
       <% if admin? %>
@@ -23,15 +24,12 @@
           <%#= link_to 'Delete', delete_episode_path(episode) %>
         </h3>
       <% end %>
+    </article>
     <% end %>
-    <br>
-    <br>
-    <br>
-    <br>
+
     <p class="caption">
       We're looking for sponsors for the CodeNewbie podcast. Interested? Email us at <%= mail_to "hello@codenewbie.org" %>.
     </p>
-      
   </article>
 
 </section>

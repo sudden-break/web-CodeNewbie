@@ -55,6 +55,7 @@ section {
   article, aside {
     @include grid-column(12);
     padding: 30px;
+    padding-left: 0px;
     border-bottom: solid 1px $mint-green;
   }
 
