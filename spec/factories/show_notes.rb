@@ -1,9 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :show_note do
-    link "MyString"
+  factory :valid_show_note, :class => "ShowNote" do
     name "MyString"
-    podcast nil
   end
 end
