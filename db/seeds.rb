@@ -8,6 +8,24 @@ podcast = Podcast.create({
     audio_link:     'http://static.squarespace.com/static/5161ac76e4b0d5cb924e7ed5/t/54173800e4b0aad39e696e53/1410807808151/Carlos-Audition_mixdown_cbr.mp3/original/Carlos-Audition_mixdown_cbr.mp3'
   })
 
+show_note = ShowNote.create([
+  {
+    name: "Vim Adventures",
+    link: "http://vimadventures.com",
+    podcast_id: 1
+  },
+  {
+    name: "Coding Buddies",
+    link: "http://vimadventures.com",
+    podcast_id: 1
+  },
+  {
+    name: "Odin Project",
+    link: "http://vimadventures.com",
+    podcast_id: 1
+  }
+])
+
 guests = Guest.create([
   {
     id:              1,

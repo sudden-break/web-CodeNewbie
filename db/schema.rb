@@ -205,11 +205,13 @@ ActiveRecord::Schema.define(version: 20140922040757) do
     t.string   "name"
     t.string   "link"
     t.integer  "podcast_id"
+    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "guest_id"
   end
 
+  add_index "picks", ["author_id"], name: "index_picks_on_author_id", using: :btree
   add_index "picks", ["guest_id"], name: "index_picks_on_guest_id", using: :btree
   add_index "picks", ["podcast_id"], name: "index_picks_on_podcast_id", using: :btree
 
