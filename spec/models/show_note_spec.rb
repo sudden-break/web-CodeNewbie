@@ -9,7 +9,7 @@ describe ShowNote do
       expect(show_note.link).to eq("hello")
     end
 
-    it "has a podcast" do 
+    it "belongs to a podcast" do 
       show_note.podcast = Podcast.new
       expect(show_note.podcast).not_to be_nil
     end

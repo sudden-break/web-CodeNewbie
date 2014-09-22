@@ -23,8 +23,7 @@ feature 'User can see a podcast episode' do
     expect(page).to have_link(podcast.picks.first.name)
     expect(page).to have_content(podcast.picks.first.guest.first_name)
 
-    expect(page).to have_content(podcast.show_notes.first.name)
-    expect(page).to have_content(podcast.show_notes.first.link)
+    expect(page).to have_link(podcast.show_notes.first.name, :href => podcast.show_notes.first.link)
 
   end
 end

@@ -42,6 +42,15 @@
         <%=simple_format(@episode.description)%>
       <% end %>
 
+      <% if !@episode.show_notes.empty? %>
+        <h3 class="green">Show Links</h3>
+        <ul>
+          <% @episode.show_notes.each do |show_note| %>
+          <li class="less-bottom-space"><%= link_to show_note.name, show_note.link %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <% if !@episode.picks.empty? %>
         <h3 class="green">Picks</h3>
         <ul>
