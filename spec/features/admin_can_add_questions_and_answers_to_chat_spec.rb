@@ -25,16 +25,6 @@ feature "Admin can add questions and answers to chat" do
     expect(page).to have_content("Code Impostor")
     expect(current_path).to eq(chat_path(Chat.last))  
 
-    # click_button("Add question")
-    # expect(current_path).to eq(new_question_path(Chat.last))  
-    # fill_in("question_body", with: "Q1: What is this?")
-    # fill_in("answer_body", with: "A1: This is a tweet!")
-    # fill_in("answer_handle", with: "@saronyitbarek")
-
-    # click_button("Create")
-    # expect(current_path).to eq(chat_path(Chat.last))
-    # expect(page).to have_content("Q1: What is this?")
-
   end
 
 
