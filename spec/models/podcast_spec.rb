@@ -28,5 +28,11 @@ describe Podcast do
       podcast.jw_player_id = "123"
       expect(podcast.jw_player_id).to eq("123")
     end
+
+    it "has a show_guest" do 
+      podcast.show_guests << ShowGuest.new
+      expect(podcast.show_guests.last).to be_a(ShowGuest)
+    end
+
   end
 end

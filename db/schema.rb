@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923050325) do
+ActiveRecord::Schema.define(version: 20140923183109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -205,13 +205,11 @@ ActiveRecord::Schema.define(version: 20140923050325) do
     t.string   "name"
     t.string   "link"
     t.integer  "podcast_id"
-    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "guest_id"
   end
 
-  add_index "picks", ["author_id"], name: "index_picks_on_author_id", using: :btree
   add_index "picks", ["guest_id"], name: "index_picks_on_guest_id", using: :btree
   add_index "picks", ["podcast_id"], name: "index_picks_on_podcast_id", using: :btree
 
@@ -233,6 +231,16 @@ ActiveRecord::Schema.define(version: 20140923050325) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "show_guests", force: true do |t|
+    t.integer  "podcast_id"
+    t.integer  "guest_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "show_guests", ["guest_id"], name: "index_show_guests_on_guest_id", using: :btree
+  add_index "show_guests", ["podcast_id"], name: "index_show_guests_on_podcast_id", using: :btree
 
   create_table "show_notes", force: true do |t|
     t.string   "link"

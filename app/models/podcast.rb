@@ -4,6 +4,7 @@ class Podcast < ActiveRecord::Base
   has_many :guests
   has_many :picks
   has_many :show_notes
+  has_many :show_guests
 
   extend FriendlyId
   friendly_id :name, :use => :slugged
