@@ -9,16 +9,6 @@ describe Podcast do
       expect(podcast.description).to eq("hello")
     end
 
-    it "is invalid without an audio_link" do 
-      podcast.audio_link = nil
-      expect(podcast).to be_invalid
-    end
-
-    it "is invalid without a published_on date" do 
-      podcast.published_on = nil
-      expect(podcast).to be_invalid
-    end
-
     it "is invalid without a name" do
       podcast.name = nil
       expect(podcast).to be_invalid
@@ -29,9 +19,15 @@ describe Podcast do
       expect(podcast.jw_player_id).to eq("123")
     end
 
-    it "has a show_guest" do 
+    it "has show_guests" do 
       podcast.show_guests << ShowGuest.new
       expect(podcast.show_guests.last).to be_a(ShowGuest)
+    end
+
+    it "has show_guests" do 
+      guest = Guest.create
+      ShowGuest.create(:guest => guest, :podcast => podcast)
+      expect(podcast.guests.last).to eq(guest)
     end
 
   end

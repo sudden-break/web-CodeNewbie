@@ -2,7 +2,8 @@ require 'spec_helper'
 
 feature 'User can see a podcast episode' do
   given!(:podcast){FactoryGirl.create(:valid_podcast)}
-  given!(:guest){FactoryGirl.create(:valid_guest, podcast: podcast)}
+  given!(:guest){FactoryGirl.create(:valid_guest)}
+  given!(:show_guest){ShowGuest.create(:guest => guest, :podcast => podcast)}
   given!(:show_note){FactoryGirl.create(:valid_show_note, podcast: podcast, :link => "http://google.com")}
 
   scenario 'with direct link' do
