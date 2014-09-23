@@ -17,11 +17,11 @@
 
       <div class="jw-audio">
 
-      <div id='playerCxKAeqkKjbSj' class="jw-audio"></div>
+      <div id='<%= @episode.jw_player_id %>' class="jw-audio"></div>
         <script type='text/javascript'>
-            jwplayer('playerCxKAeqkKjbSj').setup({
+            jwplayer('<%= @episode.jw_player_id %>').setup({
                 file: '<%= @episode.audio_link %>',
-                title: 'Ep. 1 - Bootcamps, Water Coolers, and Hiring Devs',
+                title: '<%= @episode.name %>',
                 width: '100%',
                 height: 30
             });
