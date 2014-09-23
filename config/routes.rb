@@ -27,7 +27,11 @@ CodeNewbie::Application.routes.draw do
   # podcast
 
   get    '/podcast' => 'podcast#index', as: 'podcasts'
+  get    '/podcast/new' => 'podcast#new', as: 'new_podcast'
   get    '/podcast/:slug' => 'podcast#show', as: 'podcast'
+  post   '/podcast' => 'podcast#create'
+  get    '/podcast/:slug/picks/new' => 'pick#new', as: 'new_podcast_pick'
+  get    '/picks' => 'pick#index', as: "picks" 
 
 
   # login

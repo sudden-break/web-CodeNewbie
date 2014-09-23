@@ -1,0 +1,6 @@
+<%= form_for @pick do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :link %>
+  <%= select_tag "pick_guest_id", options_for_select(Guest.all.collect {|guest| guest.podcasts.include(Podcast.friendly.find(params[:slug]))}) %>
+
+<% end %>

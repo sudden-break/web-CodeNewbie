@@ -1,0 +1,19 @@
+<%= form_for @episode do |f| %>
+  <%= f.text_field :name, :placeholder => "name" %> 
+  <%= f.text_area :description %> 
+  <%= f.date_field :published_on %> 
+  <%= f.text_field :audio_link %> 
+  <%= f.text_field :jw_player_id %> 
+
+  <%= text_field_tag 'guest[first_name]' %>
+  <%= text_field_tag 'guest[full_name]' %>
+  <%= text_field_tag 'guest[job_title]' %>
+  <%= text_field_tag 'guest[company]' %>
+  <%= text_field_tag 'guest[bio]' %>
+  <%= text_field_tag 'guest[twitter]' %>
+  <%= text_field_tag 'guest[github' %>
+  <%= text_field_tag 'guest[links][]' %>
+
+  <%= f.submit %>
+
+<% end %>
