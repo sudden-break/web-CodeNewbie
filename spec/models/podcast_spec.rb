@@ -45,14 +45,18 @@ describe Podcast do
         }
       }
     }
-    let(:saron){Guest.create(:full_name => "Saron Yitbarek")}
+
+    let!(:saron){Guest.create(:full_name => "Saron Yitbarek")}
 
     it "creates a new podcast with guest information" do 
       Podcast.create_with_guest(params)
+
+      carlos = Guest.find_by(:first_name => "Carlos")
+
       expect(Podcast.last.name).to eq("Episode 1")
       expect(Guest.last.first_name).to eq("Carlos")
-      expect(ShowGuest.where(:podcast => Podcast.last)).to include(Guest.find_by(:first_name => "Carlos"))
-      expect(ShowGuest.where(:podcast => Podcast.last)).to include(saron)
+      expect(ShowGuest.where(:podcast => Podcast.last)).to include(ShowGuest.find_by(:guest => carlos))
+      expect(ShowGuest.where(:podcast => Podcast.last)).to include(ShowGuest.find_by(:guest => saron))
     end
   end
 

@@ -10,4 +10,21 @@ class Podcast < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
+  def self.create_with_guest(params)
+    podcast = Podcast.new(params[:podcast])
+    if podcast.save
+      guest = Guest.new(params[:guest])
+      if guest.save
+        ShowGuest.create([
+          {:podcast => podcast, :guest => guest},
+          {:podcast => podcast, :guest => Guest.find_by(:full_name => "Saron Yitbarek")},
+        ])
+      else
+        return guest.error.full_message.join(". ")
+      end
+    else
+      return podcast.error.full_message.join(". ")
+    end
+  end
+
 end
