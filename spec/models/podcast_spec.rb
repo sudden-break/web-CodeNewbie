@@ -23,5 +23,10 @@ describe Podcast do
       podcast.name = nil
       expect(podcast).to be_invalid
     end
+
+    it "has a jw_player_id" do 
+      podcast.jw_player_id = "123"
+      expect(podcast.jw_player_id).to eq("123")
+    end
   end
 end
