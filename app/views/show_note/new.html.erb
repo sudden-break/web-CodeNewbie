@@ -1,0 +1,14 @@
+<%= @show_notes %>
+
+<%= form_for(@show_note) do |f| %>
+
+  <%= hidden_field_tag "podcast", params[:slug] %>
+  <%= f.text_field :name %>
+  <%= f.text_field :link %>
+
+  <%= f.submit "Add Show Link" %>
+
+<% end %>
+
+<%= link_to "View Podcast", podcast_path(params[:slug]) %>
+<%= link_to "Add Picks", new_podcast_pick_path(params[:slug]) %>

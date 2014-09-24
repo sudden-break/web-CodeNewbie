@@ -27,7 +27,7 @@ class PodcastController < ApplicationController
   end
 
   def guest_params
-    params.require(:guest).permit(:first_name, :full_name, :job_title, :company, :bio, :twitter, :github, :links => [])
+    params.require(:guest).permit(:first_name, :full_name, :job_title, :company, :bio, :twitter, :github, :other_links => [])
   end 
 
   def podcast_info

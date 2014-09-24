@@ -22,6 +22,7 @@ class Podcast < ActiveRecord::Base
       else
         return guest.error.full_message.join(". ")
       end
+      return podcast
     else
       return podcast.error.full_message.join(". ")
     end

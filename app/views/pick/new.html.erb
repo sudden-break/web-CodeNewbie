@@ -1,6 +1,20 @@
-<%= form_for @pick do |f| %>
+<div id="picks">
+  <%= @picks %>
+</div>
+
+<%= form_for(@pick) do |f| %>
   <%= f.text_field :name %>
+  <%= hidden_field_tag "podcast", params[:slug] %>
   <%= f.text_field :link %>
-  <%= select_tag "pick_guest_id", options_for_select(Guest.all.collect {|guest| guest.podcasts.include(Podcast.friendly.find(params[:slug]))}) %>
+  <%= select_tag "pick_guest_id", options_from_collection_for_select(
+    Guest.all.select do |guest| 
+      guest.podcasts.include?(Podcast.friendly.find(params[:slug]))
+    end, "id", "full_name"
+  ) %>
+
+  <%= f.submit "Add Pick"  %>
 
 <% end %>
+
+<%= link_to "Add Show Links", new_show_note_path(params[:slug]) %>
+<%= link_to "View Podcast", podcast_path(params[:slug]) %>
