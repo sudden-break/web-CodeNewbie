@@ -10,6 +10,7 @@ class PodcastController < ApplicationController
   end
 
   def create
+    binding.pry
     @episode = Podcast.create_with_guest(podcast_info)
     if @episode.save
       redirect_to new_podcast_pick_path(@episode)

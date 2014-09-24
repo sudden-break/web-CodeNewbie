@@ -1,12 +1,18 @@
-<div id="picks">
-  <%= @picks %>
-</div>
+<h1>Picks</h1>
+
+<ul id="picks">
+  <% @picks.each do |pick| %>
+    <li class="less-bottom">
+      <%= link_to "#{pick.name} (#{pick.guest.first_name})", pick.link, :target => "blank" %>
+    </li>
+  <% end %>
+</ul>
 
 <%= form_for(@pick) do |f| %>
-  <%= f.text_field :name %>
-  <%= hidden_field_tag "pick[podcast_id]", params[:slug] %>
-  <%= f.text_field :link %>
-  <%= select_tag "pick_guest_id", options_from_collection_for_select(
+  <%= f.text_field :name, :placeholder => "Name" %>
+  <%= hidden_field_tag "podcast", params[:slug] %>
+  <%= f.text_field :link, :placeholder => "Link"  %>
+  <%= select_tag "pick[guest_id]", options_from_collection_for_select(
     Guest.all.select do |guest| 
       guest.podcasts.include?(Podcast.friendly.find(params[:slug]))
     end, "id", "full_name"

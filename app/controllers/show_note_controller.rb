@@ -1,24 +1,23 @@
 class ShowNoteController < ApplicationController
 
   def new
-    @show_notes = ShowNote.all
+    @show_notes = Podcast.friendly.find(params[:slug]).show_notes
     @show_note = ShowNote.new
   end
 
   def create
-    @show_note = ShowNote.new(show_notes_params)
+    @show_note = ShowNote.new(show_notes_params.merge(:podcast_id => Podcast.friendly.find(params[:podcast]).id))
 
     unless @show_note.save
       flash[:notice] = "Show note didn't save."
     end
-
-    redirect_to new_show_note_path(params[:show_note][:podcast_id])
+    redirect_to new_show_note_path(params[:podcast])
   end
 
   private
 
   def show_notes_params
-    params.require(:show_note).permit(:name, :link, :podcast_id)
+    params.require(:show_note).permit(:name, :link)
   end
 
 end

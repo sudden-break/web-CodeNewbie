@@ -13,6 +13,7 @@ class Podcast < ActiveRecord::Base
   def self.create_with_guest(params)
     podcast = Podcast.new(params[:podcast])
     if podcast.save
+      binding.pry
       guest = Guest.new(params[:guest])
       if guest.save
         ShowGuest.create([

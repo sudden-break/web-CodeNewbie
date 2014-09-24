@@ -1,10 +1,16 @@
-<%= @show_notes %>
+<h1>Show Notes</h1>
+
+<ul>
+  <% @show_notes.each do |show_note| %>
+    <li><%= link_to show_note.name, show_note.link, :target => "blank" %></li>
+  <% end %>
+</ul>
 
 <%= form_for(@show_note) do |f| %>
 
-  <%= hidden_field_tag "show_note[podcast_id]", params[:slug] %>
-  <%= f.text_field :name %>
-  <%= f.text_field :link %>
+  <%= hidden_field_tag "[podcast]", params[:slug] %>
+  <%= f.text_field :name, :placeholder => "Name" %>
+  <%= f.text_field :link, :placeholder => "Link" %>
 
   <%= f.submit "Add Show Link" %>
 

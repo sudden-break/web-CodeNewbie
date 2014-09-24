@@ -1,18 +1,20 @@
 <%= form_for @episode do |f| %>
   <%= f.text_field :name, :placeholder => "name" %> 
-  <%= f.text_area :description %> 
-  <%= f.date_field :published_on %> 
-  <%= f.text_field :audio_link %> 
-  <%= f.text_field :jw_player_id %> 
+  <%= f.text_area :description, :placeholder => "description" %> 
+  <%= f.date_field :published_on, :placeholder => "published_on" %> 
+  <%= f.text_field :audio_link, :placeholder => "squarespace .mp3 link" %> 
+  <%= f.text_field :jw_player_id, :placeholder => "jw player id" %> 
 
-  <%= text_field_tag 'guest[first_name]' %>
-  <%= text_field_tag 'guest[full_name]' %>
-  <%= text_field_tag 'guest[job_title]' %>
-  <%= text_field_tag 'guest[company]' %>
-  <%= text_field_tag 'guest[bio]' %>
-  <%= text_field_tag 'guest[twitter]' %>
-  <%= text_field_tag 'guest[github' %>
-  <%= text_field_tag 'guest[other_links][]' %>
+  <h1>Guest</h1>
+
+  <%= text_field_tag 'guest[first_name]', "First Name" %>
+  <%= text_field_tag 'guest[full_name]', "Full Name" %>
+  <%= text_field_tag 'guest[job_title]', "Job Title" %>
+  <%= text_field_tag 'guest[company]', "Company" %>
+  <%= text_field_tag 'guest[bio]', "Bio" %>
+  <%= text_field_tag 'guest[twitter]', "Twitter" %>
+  <%= text_field_tag 'guest[github]', "Github" %>
+  <%= text_field_tag 'guest[other_links][]', "Other Links" %>
 
   <%= f.submit %>
 
