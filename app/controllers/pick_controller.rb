@@ -1,4 +1,5 @@
 class PickController < ApplicationController
+  before_action :authorize, except: [:index, :show]
 
   def new
     @picks = Podcast.friendly.find(params[:slug]).picks

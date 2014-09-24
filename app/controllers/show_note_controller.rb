@@ -1,4 +1,5 @@
 class ShowNoteController < ApplicationController
+  before_action :authorize, except: [:index, :show]
 
   def new
     @show_notes = Podcast.friendly.find(params[:slug]).show_notes
