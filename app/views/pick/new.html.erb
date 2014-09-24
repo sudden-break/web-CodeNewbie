@@ -4,7 +4,7 @@
 
 <%= form_for(@pick) do |f| %>
   <%= f.text_field :name %>
-  <%= hidden_field_tag "podcast", params[:slug] %>
+  <%= hidden_field_tag "pick[podcast_id]", params[:slug] %>
   <%= f.text_field :link %>
   <%= select_tag "pick_guest_id", options_from_collection_for_select(
     Guest.all.select do |guest| 

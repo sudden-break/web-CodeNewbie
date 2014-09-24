@@ -2,7 +2,7 @@
 
 <%= form_for(@show_note) do |f| %>
 
-  <%= hidden_field_tag "podcast", params[:slug] %>
+  <%= hidden_field_tag "show_note[podcast_id]", params[:slug] %>
   <%= f.text_field :name %>
   <%= f.text_field :link %>
 
