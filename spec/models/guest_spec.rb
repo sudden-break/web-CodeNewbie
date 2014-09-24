@@ -16,14 +16,14 @@ describe Guest do
     end
   end
 
-  describe ".sanitize_and_make" do 
+  describe ".sanitize_and_create" do 
     it "sanitizes guest info and makes a new Guest" do 
       guest_params = {
         first_name: "Saron",
         other_links: ["", "http://hello.com"]
       }
 
-      guest = Guest.sanitize_and_make(guest_params)
+      guest = Guest.sanitize_and_create(guest_params)
       expect(guest.other_links).to eq(["http://hello.com"])
     end
   end

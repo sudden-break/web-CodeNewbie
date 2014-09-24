@@ -3,7 +3,7 @@ class Guest < ActiveRecord::Base
   has_many :show_guests
   has_many :podcasts, through: :show_guests
 
-  def self.sanitize_and_make(guest_params)
+  def self.sanitize_and_create(guest_params)
     Guest.new(sanitize_params(guest_params))
   end
 
