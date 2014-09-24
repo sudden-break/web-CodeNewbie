@@ -7,7 +7,6 @@ class PickController < ApplicationController
 
   def create
     @pick = Pick.new(pick_params.merge(:podcast_id => Podcast.friendly.find(params[:podcast]).id))
-
     unless @pick.save
       flash[:notice] = "Pick didn't save."
     end
