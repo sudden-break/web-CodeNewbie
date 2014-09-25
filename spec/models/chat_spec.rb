@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Chat do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "add_activity" do 
+    it "creates a new activity" do 
+      chat = Chat.create(:name => "Having It All")
+      expect(Activity.last.content).to eq(chat)
+    end
+  end
+  
 end
