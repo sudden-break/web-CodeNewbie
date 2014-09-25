@@ -2,7 +2,7 @@ article.sign-up {
   @include grid-column(12);
   border-bottom: none;
   background: $mint-green;
-  padding-bottom: 30px;
+  padding: 0px 20px;
 
   #mc_embed_signup {
     margin-right: 10px;

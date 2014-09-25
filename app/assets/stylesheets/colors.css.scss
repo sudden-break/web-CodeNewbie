@@ -11,4 +11,8 @@ $lightgray: #eee;
 $bright-orange: #FFB415;
 $gray: #C0C0C0;
 $soft-gray: #929292; 
-$blue: rgb(90, 188, 253);
+$blue: #068CE6;
+
+.podcast, .orange { color: $bright-orange }
+.chat, .green { color: $bright-green }
+.story, .blue { color: $blue }

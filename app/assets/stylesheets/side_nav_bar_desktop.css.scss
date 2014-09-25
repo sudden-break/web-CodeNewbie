@@ -1,0 +1,11 @@
+.side-nav {
+  .side-nav-title {
+    border-bottom: 1px solid $lightgray;
+    h3 {
+      padding: 0px 10px;
+      span { 
+          float: right; 
+        }
+      }
+  }
+}

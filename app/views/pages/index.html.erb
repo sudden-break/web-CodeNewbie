@@ -20,7 +20,6 @@
   </div>
 
   <div class="sidebar">
-
     <div class="callout desktop">
       <div class="subtitle">next chat</div>
       <h1><%= @next_wednesday.strftime("%b %d") %></h1>
@@ -31,14 +30,45 @@
     </div>
 
     <div class="side-nav">
-
+      <div class="side-nav-title">
+        <a href="3">
+          <h3 class="podcast">
+            Podcast
+            <span>-></span>
+          </h3>
+        </a>
+      </div>
+      <div class="side-nav-title">
+        <a href="#">
+          <h3 class="chat">
+            TwitterChat
+            <span>-></span>
+          </h3>
+        </a>
+      </div>
+      <div class="side-nav-title">
+        <a href="#">
+          <h3 class="blue">
+            Our Stories
+            <span>-></span>
+          </h3>
+        </a>
+      </div>
+      <div class="side-nav-title">
+        <a href="#">
+          <h3>
+            About
+            <span>-></span>
+          </h3>
+        </a>
+      </div>
     </div>
+
+    <article class="sign-up">
+      <%= render 'mailchimp_signup_form' %>
+    </article>
 
   </div>
 
 </section>
-
-<% if @challenge %>
-  <%= render 'pages/challenge' %>
-<% end %>
 <%= render 'pages/about' %>
