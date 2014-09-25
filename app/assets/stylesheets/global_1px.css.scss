@@ -33,6 +33,11 @@ ul {
 
 div.subtitle { @include caption-text }
 
+.bottom-border {
+  border-bottom: 1px solid $lightgray;
+  margin-bottom: 20px;
+}
+
 li {
   margin-left: 10px;
   padding: 0 0 25px 0;

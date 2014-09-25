@@ -1,11 +1,12 @@
 .next-chat {
   max-width: none;
-  background: $bright-green;
+  background: #fefefe;
   height: 410px;
   background-image: url("code-newbie-baby4.png");
   background-repeat: no-repeat;
   background-position: right 300px top 60px;
   background-size: 700px;
+  border-bottom: 1px solid #eaecea;
   padding-top: 50px;
 
   article.next-chat-info {
@@ -20,26 +21,20 @@
       // color: $bright-green;
       line-height: 65px;
     }
-    h2:first-child {
-      line-height: 32px;
-    }
   }
 
   .tweet {
     background: none;
-    padding-left: 330px;
-    padding-right: 100px;
+    padding-left: 30px;
+    padding-right: 20px;
     border: none;
     h2 {
-      // color: $bright-green;
-      line-height: 30px;
+      color: $dark-gray;
+      line-height: 45px;
       font-family: "Roboto", "Helvetica";
       font-weight: 100;
-      font-size: 20px;
+      font-size: 32px;
       text-align: left;
-    }
-    h2:last-child {
-      font-size: 20px;
     }
   }
 }
@@ -57,7 +52,6 @@
       text-align: left;
       h2:first-child {
         line-height: 15px;
-        font-size: 20px;
         padding: 0;
         margin: 0;  
         color: $dark-gray;

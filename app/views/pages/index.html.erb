@@ -2,25 +2,26 @@
 <br>
 <br>
 <section>
-
   <div class="main-column">
-    <% @activity.each do |activity| %>
-    <div class="module">
-      <div class="flag"><span class="<%= activity.category %>">Story</span></div>
+    <article>
+      <% @activity.each do |activity| %>
+      <div class="bottom-border">
+        <div class="flag"><span class="<%= activity.category %>"><%= activity.category %></span></div>
+        </br>
+        <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
+        <p><%= activity.content.description.truncate(170) %> <%= link_to "more", activity.content %></p>
+        <div class="subtitle">September 2, 2014</div>
+        </br>
+        </br>
+      </div>
       </br>
-      <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
-      <p><%= activity.content.description.truncate(200) %> ... <%= link_to "more", activity.content %></p>
-      <div class="subtitle">September 2, 2014</div>
-      </br>
-      </br>
-    </div>
-    </br>
-    <% end %>
+      <% end %>
+    </article>
   </div>
 
-
   <div class="sidebar">
-    <div class="callout">
+
+    <div class="callout desktop">
       <div class="subtitle">next chat</div>
       <h1><%= @next_wednesday.strftime("%b %d") %></h1>
       <h3>9PM EST</h3>
@@ -28,6 +29,11 @@
         <a href="<%= chat_info_path%>"><span>more info</span></a>
       </div>
     </div>
+
+    <div class="side-nav">
+
+    </div>
+
   </div>
 
 </section>
