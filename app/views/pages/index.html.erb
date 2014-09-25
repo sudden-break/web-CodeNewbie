@@ -31,7 +31,7 @@
 
     <div class="side-nav">
       <div class="side-nav-title">
-        <a href="3">
+        <a href="<%= podcasts_path %>">
           <h3 class="podcast">
             Podcast
             <span>-></span>
@@ -39,7 +39,7 @@
         </a>
       </div>
       <div class="side-nav-title">
-        <a href="#">
+        <a href="<%= chat_info_path %>">
           <h3 class="chat">
             TwitterChat
             <span>-></span>
@@ -49,7 +49,7 @@
       <div class="side-nav-title">
         <a href="#">
           <h3 class="blue">
-            Our Stories
+            Stories
             <span>-></span>
           </h3>
         </a>
@@ -57,7 +57,7 @@
       <div class="side-nav-title">
         <a href="#">
           <h3>
-            About
+            How To Get Involved
             <span>-></span>
           </h3>
         </a>
@@ -71,4 +71,10 @@
   </div>
 
 </section>
-<%= render 'pages/about' %>
+<section class="full-panel gray">
+  <%= render 'pages/about' %>
+</section>
+
+
+
+

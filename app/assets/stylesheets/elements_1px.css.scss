@@ -12,3 +12,11 @@
 .desktop {
   display: none;
 }
+
+.full-panel {
+  max-width: none;
+  &.gray { 
+    background: #fefefe; 
+    border-top: 1px solid $lightgray;
+  }
+}
