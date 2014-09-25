@@ -1,0 +1,7 @@
+.main-column {
+  @include grid-column(8);
+}
+
+.sidebar {
+  @include grid-column(4);
+}

@@ -1,0 +1,8 @@
+@mixin caption-text {
+  font-size: 16px;
+  text-transform: none;
+  color: $gray;
+  font-family: "Roboto";
+  font-weight: 300;
+  a { color: $soft-gray; }
+}

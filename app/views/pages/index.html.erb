@@ -2,21 +2,35 @@
 <br>
 <br>
 <section>
-  <div class="activity">
-    <div class="flag inline-left"><span>Story</span></div>
-    <h1>Ep. 2 - Coding Like A Boss w/Brian Douglas</h1>
-    <p>Brian Douglas, rails developer at Izea and graduate of the Bloc program, shares his story of learning to code and finding a job in 7 months, while also getting his MBA, working full time, running t...</p>
-    <div class="subtitle">September 2, 2014</div>
+
+  <div class="main-column">
+    <% @activity.each do |activity| %>
+    <div class="module">
+      <div class="flag"><span class="<%= activity.category %>">Story</span></div>
+      </br>
+      <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
+      <p><%= activity.content.description.truncate(200) %> ... <%= link_to "more", activity.content %></p>
+      <div class="subtitle">September 2, 2014</div>
+      </br>
+      </br>
+    </div>
+    </br>
+    <% end %>
   </div>
+
+
+  <div class="sidebar">
+    <div class="callout">
+      <div class="subtitle">next chat</div>
+      <h1><%= @next_wednesday.strftime("%b %d") %></h1>
+      <h3>9PM EST</h3>
+      <div class="flag">
+        <a href="<%= chat_info_path%>"><span>more info</span></a>
+      </div>
+    </div>
+  </div>
+
 </section>
-
-<% @activity.each do |activity| %>
-  
-  <%= activity.content.name %>
-  <%= activity.content.description %>
-  <%= activity.content.created_at.strftime("%B %d") %>
-
-<% end %>
 
 <% if @challenge %>
   <%= render 'pages/challenge' %>

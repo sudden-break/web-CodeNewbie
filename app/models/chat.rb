@@ -7,7 +7,7 @@ class Chat < ActiveRecord::Base
   private 
 
   def add_activity
-    Activity.create(:content => self, :category => "podcast")
+    Activity.create(:content => self, :category => "chat")
   end
 
 end
