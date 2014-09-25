@@ -1,4 +1,14 @@
 <%= render 'pages/next_chat' %>
+<br>
+<br>
+<section>
+  <div class="activity">
+    <div class="flag inline-left"><span>Story</span></div>
+    <h1>Ep. 2 - Coding Like A Boss w/Brian Douglas</h1>
+    <p>Brian Douglas, rails developer at Izea and graduate of the Bloc program, shares his story of learning to code and finding a job in 7 months, while also getting his MBA, working full time, running t...</p>
+    <div class="subtitle">September 2, 2014</div>
+  </div>
+</section>
 
 <% @activity.each do |activity| %>
   
@@ -11,5 +21,4 @@
 <% if @challenge %>
   <%= render 'pages/challenge' %>
 <% end %>
-<%= render 'pages/faqs' %>
 <%= render 'pages/about' %>

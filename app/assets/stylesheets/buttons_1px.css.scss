@@ -1,0 +1,11 @@
+@mixin button-bg($bg-color: "$bright-green", $color: white, $text-transform: uppercase){
+  font-size: 15px;
+  text-transform: $text-transform;
+  padding: 3px 10px;
+  color: $color;
+  background: $bg-color;
+}
+
+.flag {
+  span { @include button-bg($bright-orange) }
+}
