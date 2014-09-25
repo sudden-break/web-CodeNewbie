@@ -23,6 +23,8 @@ CodeNewbie::Application.routes.draw do
   patch  '/chats/:slug' => 'chat#update'
   delete '/chats/:slug' => 'chat#destroy'
 
+  get    '/chat' => 'pages#chat', as: 'chat_info'
+
 
   # podcast
 

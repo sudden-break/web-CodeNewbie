@@ -6,7 +6,10 @@ class PagesController < ApplicationController
     @chat = Chat.order("date DESC").first
 
     @activity = Activity.all.order(:created_at).limit(20).includes(:content)
+  end
 
+  def chat
+    
   end
 
   def beta

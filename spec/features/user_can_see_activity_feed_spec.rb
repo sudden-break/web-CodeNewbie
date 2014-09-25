@@ -11,8 +11,8 @@ feature 'User can see the activity feed' do
     expect(page).to have_content(podcast.name)
     expect(page).to have_content(chat.name)
 
-    expect(page).to have_content(podcast.created_at)
-    expect(page).to have_content(chat.created_at)
+    expect(page).to have_content(podcast.created_at.strftime("%B %d"))
+    expect(page).to have_content(chat.created_at.strftime("%B %d"))
 
     expect(page).to have_content(podcast.description)
     expect(page).to have_content(chat.description)

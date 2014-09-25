@@ -22,6 +22,8 @@ class PodcastController < ApplicationController
     @episode = Podcast.friendly.find(params[:slug])
   end
 
+  private
+
   def podcast_params
     params.require(:podcast).permit(:name, :description, :published_on, :audio_link, :jw_player_id)
   end
