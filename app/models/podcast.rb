@@ -7,6 +7,8 @@ class Podcast < ActiveRecord::Base
   has_many :picks
   has_many :show_notes
 
+  after_create :add_activity
+
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
@@ -26,6 +28,12 @@ class Podcast < ActiveRecord::Base
     else
       return podcast.errors.full_messages.join(". ")
     end
+  end
+
+  private
+
+  def add_activity
+    Activity.create(:content => self, :category => "podcast")
   end
 
 end

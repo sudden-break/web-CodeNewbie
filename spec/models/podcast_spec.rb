@@ -60,4 +60,13 @@ describe Podcast do
     end
   end
 
+  describe "add_activity" do 
+
+    it "creates a new activity" do 
+      podcast = Podcast.create(:name => "new podcast")
+      expect(Activity.last.content).to eq(podcast)
+    end
+
+  end
+
 end
