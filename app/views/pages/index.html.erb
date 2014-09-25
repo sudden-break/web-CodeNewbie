@@ -2,9 +2,9 @@
 
 <% @activity.each do |activity| %>
   
-  <%= activity.name %>
-  <%= activity.description %>
-  <%= activity.submitted_on %>
+  <%= activity.content.name %>
+  <%= activity.content.description %>
+  <%= activity.content.created_at %>
 
 <% end %>
 
