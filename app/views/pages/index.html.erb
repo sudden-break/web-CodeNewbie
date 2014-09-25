@@ -1,4 +1,13 @@
 <%= render 'pages/next_chat' %>
+
+<% @activity.each do |activity| %>
+  
+  <%= activity.name %>
+  <%= activity.description %>
+  <%= activity.submitted_on %>
+
+<% end %>
+
 <% if @challenge %>
   <%= render 'pages/challenge' %>
 <% end %>

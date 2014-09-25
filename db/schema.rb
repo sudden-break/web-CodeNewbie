@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923184701) do
+ActiveRecord::Schema.define(version: 20140925144209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.string   "category"
+    t.integer  "content_id"
+    t.string   "content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -202,13 +210,11 @@ ActiveRecord::Schema.define(version: 20140923184701) do
     t.string   "name"
     t.string   "link"
     t.integer  "podcast_id"
-    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "guest_id"
   end
 
-  add_index "picks", ["author_id"], name: "index_picks_on_author_id", using: :btree
   add_index "picks", ["guest_id"], name: "index_picks_on_guest_id", using: :btree
   add_index "picks", ["podcast_id"], name: "index_picks_on_podcast_id", using: :btree
 
