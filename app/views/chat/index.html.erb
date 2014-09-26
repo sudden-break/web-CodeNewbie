@@ -3,6 +3,7 @@
 <section id="new-resource">
   <div class="main-column buffer">
     <% @chats.each do |chat| %>
+    <div class="bottom-border">
       <a href="<%= chat_path(chat) %>"><h2><%= chat.name %></h2></a>
       <%= simple_format(chat.description.truncate(300)) %>
       <% if admin? %>
@@ -10,6 +11,7 @@
           <%= link_to 'Edit', edit_chat_path(chat) %>
         </h3>
       <% end %>
+    </div>
     <% end %>
   </div>
   <div class="sidebar">
