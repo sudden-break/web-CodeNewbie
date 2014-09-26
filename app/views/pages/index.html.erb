@@ -9,7 +9,7 @@
         <div class="flag"><span class="<%= activity.category %>"><%= activity.category %></span></div>
         </br>
         <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
-        <p><%= activity.content.description.truncate(170) %> <%= link_to "more", activity.content %></p>
+        <p><%= activity.content.description.truncate(170).html_safe %> <%= link_to "more", activity.content %></p>
         <div class="subtitle"><%= activity.content.created_at.strftime("%B %d, %Y") %></div>
         </br>
         </br>

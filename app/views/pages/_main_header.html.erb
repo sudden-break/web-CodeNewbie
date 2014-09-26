@@ -3,9 +3,11 @@
     <article>
       <a href="<%= link %>"><h1><%= title %></h1></a>
       <p><%= description %></p>
+      <% if cta.present? %>
       <span class="share inline-left">
-        <a href="#" class="<%= button_color %>" target="_blank"><%= cta %></a>
+        <a href="<%= cta_link %>" class="<%= button_color %>" target="_blank"><%= cta %></a>
       </span>
+      <% end %>
     </article>
   </section>
 </section>
