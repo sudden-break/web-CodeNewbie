@@ -1,100 +1,116 @@
 <section class="full-panel gray">
   <section class="page-header">
-    <h1>Podcast</h1>
-    <p>stories of people on their coding journey</p>
-    <span class="share inline-left">
-      <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" target="_blank">iTunes</a>
-      <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" target="_blank">RSS</a>
-    </span>
+    <article>
+      <a href="<%= podcasts_path %>"><h1>Podcast</h1></a>
+      <p>stories of people on their coding journey</p>
+      <span class="share inline-left">
+        <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" target="_blank">iTunes</a>
+        <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" target="_blank">RSS</a>
+      </span>
+    </article>
   </section>
 </section>
 
 <div id="podcast-episode">
   <section id="resources">
-    <article>
-      <h2 class="title">
-        <%= @episode.name %>
-        <span class="share inline-right">
-          <span id="custom-tweet-button">
-            <a class="green" target="blank" href="http://twitter.com/share?text='<%=@episode.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://www.codenewbie.org<%=podcast_path(@episode)%>" class="popup">TWEET</a>
-          </span> 
-          <span>
-            <%= mail_to nil, "Email", :subject => "Checkout '#{@episode.name}' from the CodeNewbie Podcast", :body => "http://www.codenewbie.org#{podcast_path(@episode)}", :target => "blank", :class => "gray" %>
-          </span>
-        </span>
-      </h2>
-
-      <div class="jw-audio">
-
-      <div id='<%= @episode.jw_player_id %>' class="jw-audio"></div>
-        <script type='text/javascript'>
-            jwplayer('<%= @episode.jw_player_id %>').setup({
-                file: '<%= @episode.audio_link %>',
-                title: '<%= @episode.name %>',
-                width: '100%',
-                height: 30
-            });
-        </script>
-      </div>
-      
-      <% if @episode.description.present? %>
-        <h3 class="green">Description</h3>
-        <%=simple_format(@episode.description)%>
-      <% end %>
-
-      <% if !@episode.guests.empty? %>
-        <h3 class="green">Guest</h3>
-        <% @episode.guests.each do |guest| %>
-          <% next if guest.full_name == "Saron Yitbarek" %>
-          <h3><%= guest.full_name %>
-            <span class="thin">
-              <%= guest.job_title if guest.job_title.present? %>,
-              <%= guest.company if guest.company.present?%>
+    <div class="main-column">
+      <article>
+        <h2 class="title">
+          <%= @episode.name %>
+          <span class="share inline-left">
+            <span id="custom-tweet-button">
+              <a class="green" target="blank" href="http://twitter.com/share?text='<%=@episode.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://www.codenewbie.org<%=podcast_path(@episode)%>" class="popup">TWEET</a>
+            </span> 
+            <span>
+              <%= mail_to nil, "Email", :subject => "Checkout '#{@episode.name}' from the CodeNewbie Podcast", :body => "http://www.codenewbie.org#{podcast_path(@episode)}", :target => "blank", :class => "gray" %>
             </span>
-          </h3>
-          <p class="gray">
-            <%= link_to "twitter", "http://twitter.com/#{guest.twitter}", target: "blank" if guest.twitter.present? %>,
-            <%= link_to "github", "http://github.com/#{guest.github}", target: "blank" if guest.github.present? %>
-            <% guest.other_links.each do |link| %>
-              <%= link_to ", personal site", link, target: "blank" %>
-            <% end %>
-          </p>
+          </span>
+        </h2>
 
-          <%= simple_format(guest.bio) if guest.bio.present? %>
+        <div class="jw-audio">
 
+        <div id='<%= @episode.jw_player_id %>' class="jw-audio"></div>
+          <script type='text/javascript'>
+              jwplayer('<%= @episode.jw_player_id %>').setup({
+                  file: '<%= @episode.audio_link %>',
+                  title: '<%= @episode.name %>',
+                  width: '100%',
+                  height: 30
+              });
+          </script>
+        </div>
+
+        <% if @episode.description.present? %>
+          <h3 class="green">Description</h3>
+          <%=simple_format(@episode.description)%>
         <% end %>
-      <% end %>
 
-      <% if !@episode.show_notes.empty? %>
-        <h3 class="green">Show Links</h3>
-        <ul>
-          <% @episode.show_notes.each do |show_note| %>
-          <li class="less-bottom-space"><%= link_to show_note.name, show_note.link, target: "blank" %></li>
+        <% if !@episode.guests.empty? %>
+          <h3 class="green">Guest</h3>
+          <% @episode.guests.each do |guest| %>
+            <% next if guest.full_name == "Saron Yitbarek" %>
+            <h3><%= guest.full_name %>
+              <span class="thin">
+                <%= guest.job_title if guest.job_title.present? %>,
+                <%= guest.company if guest.company.present?%>
+              </span>
+            </h3>
+            <p class="gray">
+              <%= link_to "twitter", "http://twitter.com/#{guest.twitter}", target: "blank" if guest.twitter.present? %>,
+              <%= link_to "github", "http://github.com/#{guest.github}", target: "blank" if guest.github.present? %>
+              <% guest.other_links.each do |link| %>
+                <%= link_to ", personal site", link, target: "blank" %>
+              <% end %>
+            </p>
+
+            <%= simple_format(guest.bio) if guest.bio.present? %>
+
           <% end %>
-        </ul>
-      <% end %>
-
-      <% if !@episode.picks.empty? %>
-        <h3 class="green">Picks</h3>
-        <ul>
-        <% @episode.picks.each do |pick| %>
-          <li class="less-bottom-space"><%= link_to pick.name, pick.link, target: "blank" %> (<%= pick.author.first_name %>)</li>
         <% end %>
-        </ul>
-      <% end %>
-      <br>
-      <br>
-      <br>
-      <br>
-      <p class="caption">
-        We're looking for sponsors for the CodeNewbie podcast. Interested? Email us at <%= mail_to "hello@codenewbie.org" %>.
-      </p>
 
-    </article>
+        <% if !@episode.show_notes.empty? %>
+          <h3 class="green">Show Links</h3>
+          <ul>
+            <% @episode.show_notes.each do |show_note| %>
+            <li class="less-bottom-space"><%= link_to show_note.name, show_note.link, target: "blank" %></li>
+            <% end %>
+          </ul>
+        <% end %>
 
+        <% if !@episode.picks.empty? %>
+          <h3 class="green">Picks</h3>
+          <ul>
+          <% @episode.picks.each do |pick| %>
+            <li class="less-bottom-space"><%= link_to pick.name, pick.link, target: "blank" %> (<%= pick.author.first_name %>)</li>
+          <% end %>
+          </ul>
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class="caption">
+          We're looking for sponsors for the CodeNewbie podcast. Interested? Email us at <%= mail_to "hello@codenewbie.org" %>.
+        </p>
+      </article>
+    </div>
     <h3 class="page-nav-buttons">
       <%#= link_to 'Back to Stories', blogs_path %>
       <%#= link_to 'Edit', edit_blog_path(@blog_post) if admin? %>
     </h3>
+    <div class="sidebar">
+        <div class="callout desktop">
+          <h3>Submit a Shoutout!</h3>
+          <p>Got a project, a blog post, or a program that we should put on the podcast?</p>
+          <div class="flag">
+            <a href="#"><span>submit a shoutout</span></a>
+          </div>
+        </div>
+        <%= render 'pages/side_nav' %> 
+        <article class="sign-up">
+          <%= render 'pages/mailchimp_signup_form' %>
+        </article>
+      </div>
+    </div>
   </section>
 </div>

@@ -1,63 +1,79 @@
+<%= render :partial => "pages/main_header", :locals => { :title => "Blog", :description => "Stories from newbies and not-so-newbies", :button_color => "blue", :cta => "submit a story", :link => chats_path } %>
+
 <div id="chat">
-  <section class="left-right-cushion">
-    <div>
-      <div class="header">
-        <h1 class="title">
-          <%= @chat.name%>
-          <span class="subtitle">
-            <% if @chat.date.present? %>
-            from our chat on <%= @chat.date.strftime("%B %d") %>
-            <% end %>
-          </span>
-          <span class="share">
-            <span id="custom-tweet-button">
-              <a class="tweet" target="blank" href="http://twitter.com/share?text='<%=@chat.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://www.codenewbie.org<%=chat_path(@chat)%>" class="popup">TWEET</a>
-            </span> 
-            <span>
-              <%= mail_to nil, "Email", :subject => "Checkout '#{@chat.name}' from #CodeNewbies", :body => "http://www.codenewbie.org#{chat_path(@chat)}", :target => "blank", :class => "mail" %>
+  <section>
+    <section class="main-column">
+      <div class="buffer">
+        <div class="header">
+          <h2 class="title">
+            <%= @chat.name%>
+            <span class="subtitle">
+              <% if @chat.date.present? %>
+              from our chat on <%= @chat.date.strftime("%B %d") %>
+              <% end %>
             </span>
-          </span>
-        </h1>
-      </div>
+            <span class="share">
+              <span id="custom-tweet-button">
+                <a class="tweet" target="blank" href="http://twitter.com/share?text='<%=@chat.name%>' by @CodeNewbies:&hashtags=CodeNewbie&url=http://www.codenewbie.org<%=chat_path(@chat)%>" class="popup">TWEET</a>
+              </span> 
+              <span>
+                <%= mail_to nil, "Email", :subject => "Checkout '#{@chat.name}' from #CodeNewbies", :body => "http://www.codenewbie.org#{chat_path(@chat)}", :target => "blank", :class => "mail" %>
+              </span>
+            </span>
+          </h2>
+        </div class="buffer">
 
-      <div class="module">
-        <div class="description">
-          <%= simple_format(@chat.description) %>
-        </div>
-      </div>
-
-      <% if @chat.image.present? %>
-      <div class="module image">
-        <img src="/assets/<%= @chat.image %>">
-      </div>
-      <% end %>
-
-      <% if @chat.favorite_tweets.present? %>
         <div class="module">
-          <h3 class="title">Some our favorite tweets</h3>
-          <%= simple_format(@chat.favorite_tweets) %>
+          <div class="description">
+            <%= simple_format(@chat.description) %>
+          </div>
         </div>
-      <% end %>
 
-
-      <% if @chat.resources.present? %>
-        <div class="module">
-          <h3 class="title">More Resources</h3>
-          <%= simple_format(@chat.resources) %>
+        <% if @chat.image.present? %>
+        <div class="module image">
+          <img src="/assets/<%= @chat.image %>">
         </div>
-      <% end %>
+        <% end %>
 
-      <div class="module">
-        <p class="caption">Thoughts? Tweet us at <a href="https://twitter.com/CodeNewbies">@CodeNewbies</a> or email us at <%= mail_to "hello@codenewbie.org" %>.</p>
+        <% if @chat.favorite_tweets.present? %>
+          <div class="module">
+            <h3 class="title">Some our favorite tweets</h3>
+            <%= simple_format(@chat.favorite_tweets) %>
+          </div>
+        <% end %>
+
+
+        <% if @chat.resources.present? %>
+          <div class="module">
+            <h3 class="title">More Resources</h3>
+            <%= simple_format(@chat.resources) %>
+          </div>
+        <% end %>
+
       </div>
+      <% if admin? %>
+        <h3 class="page-nav-buttons">
+          <%= link_to 'Back to Chats', chats_path %>
+          <%= link_to 'Edit', edit_chat_path(@chat) if admin? %>
+          <%= link_to 'Delete', delete_chat_path(@chat) , :method => :delete, date: { confirm: "Sure ya wanna delete this?"} %>
+        </h3>
+      <% end %>
+    </section>
 
+    <div class="sidebar">
+      <div class="callout desktop">
+        <h3>Submit a Blog Post</h3>
+        <p>Got a programming story to share? </br>We want to hear it.</p>
+        <div class="flag">
+          <a href="#"><span>pitch a story</span></a>
+        </div>
+      </div>
+      <%= render 'pages/side_nav' %> 
+      <article class="sign-up">
+        <%= render 'pages/mailchimp_signup_form' %>
+      </article>
     </div>
-    <% if admin? %>
-      <h3 class="page-nav-buttons">
-        <%= link_to 'Back to Chats', chats_path %>
-        <%= link_to 'Edit', edit_chat_path(@chat) if admin? %>
-        <%= link_to 'Delete', delete_chat_path(@chat) , :method => :delete, date: { confirm: "Sure ya wanna delete this?"} %>
-      </h3>
-    <% end %>
+
+
   </section>
 </div>

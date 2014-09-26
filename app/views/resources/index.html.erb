@@ -1,16 +1,17 @@
+<section class="full-panel gray">
+  <section class="page-header">
+    <article>
+      <h1>Learning Resources</h1>
+      <p>Some of our favorite programming learning resources.<br> What's yours?</p>
+      <span class="share inline-left">
+        <a href="#" class="blue" target="_blank">Share a resource</a>
+      </span>
+    </article>
+  </section>
+</section>
+
 <section id="resources">
   <article>
-    <h1>
-      <%= link_to "Learning Resources", resources_path %>
-    </h1>
-
-    <p>
-      Here are some of our favorite programming learning resources. Got one you want added to the list? Tweet us at 
-      <a href="https://twitter.com/codenewbies">
-        @CodeNewbies
-      </a>.
-    </p>
-
     <p>
       <h3>Format
         <% Resource.format_counts.sort{ |x,y| x.name <=> y.name }.each do |tag| %>

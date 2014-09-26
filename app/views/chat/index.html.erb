@@ -1,10 +1,9 @@
-<section id="new-resource" class="left-right-cushion">
+<%= render :partial => "pages/main_header", :locals => { :title => "Blog", :description => "Stories from newbies and not-so-newbies.", :button_color => "blue", :cta => "submit a story", link: chats_path } %>
 
-  <h1>Chats</h1>
-
-  <article>
+<section id="new-resource">
+  <div class="main-column buffer">
     <% @chats.each do |chat| %>
-      <h3><%= link_to chat.name, chat_path(chat) %></h3>
+      <a href="<%= chat_path(chat) %>"><h2><%= chat.name %></h2></a>
       <%= simple_format(chat.description.truncate(300)) %>
       <% if admin? %>
         <h3 class="page-nav-buttons">
@@ -12,6 +11,18 @@
         </h3>
       <% end %>
     <% end %>
-  </article>
-
+  </div>
+  <div class="sidebar">
+    <div class="callout desktop">
+      <h3>Tell Us A Story</h3>
+      <p>Got a programming story to share? <br>We want to hear it.</p>
+      <div class="flag">
+        <a href="#"><span>pitch a story</span></a>
+      </div>
+    </div>
+    <%= render 'pages/side_nav' %> 
+    <article class="sign-up">
+      <%= render 'pages/mailchimp_signup_form' %>
+    </article>
+  </div>
 </section>

@@ -10,7 +10,7 @@
         </br>
         <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
         <p><%= activity.content.description.truncate(170) %> <%= link_to "more", activity.content %></p>
-        <div class="subtitle">September 2, 2014</div>
+        <div class="subtitle"><%= activity.content.created_at.strftime("%B %d, %Y") %></div>
         </br>
         </br>
       </div>
@@ -29,40 +29,7 @@
       </div>
     </div>
 
-    <div class="side-nav desktop">
-      <div class="side-nav-title">
-        <a href="<%= podcasts_path %>">
-          <h3 class="podcast">
-            Podcast
-            <span>-></span>
-          </h3>
-        </a>
-      </div>
-      <div class="side-nav-title">
-        <a href="<%= chat_info_path %>">
-          <h3 class="chat">
-            TwitterChat
-            <span>-></span>
-          </h3>
-        </a>
-      </div>
-      <div class="side-nav-title">
-        <a href="#">
-          <h3 class="blue">
-            Stories
-            <span>-></span>
-          </h3>
-        </a>
-      </div>
-      <div class="side-nav-title">
-        <a href="#">
-          <h3>
-            How To Get Involved
-            <span>-></span>
-          </h3>
-        </a>
-      </div>
-    </div>
+    <%= render 'side_nav' %> 
 
     <article class="sign-up">
       <%= render 'mailchimp_signup_form' %>
