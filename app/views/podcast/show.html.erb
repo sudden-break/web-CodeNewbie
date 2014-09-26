@@ -14,7 +14,7 @@
 <div id="podcast-episode">
   <section id="resources">
     <div class="main-column">
-      <article>
+      <div class="buffer">
         <h2 class="title">
           <%= @episode.name %>
           <span class="share inline-left">
@@ -85,32 +85,29 @@
           <% end %>
           </ul>
         <% end %>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <p class="caption">
           We're looking for sponsors for the CodeNewbie podcast. Interested? Email us at <%= mail_to "hello@codenewbie.org" %>.
         </p>
-      </article>
+      </div>
     </div>
     <h3 class="page-nav-buttons">
       <%#= link_to 'Back to Stories', blogs_path %>
       <%#= link_to 'Edit', edit_blog_path(@blog_post) if admin? %>
     </h3>
     <div class="sidebar">
-        <div class="callout desktop">
-          <h3>Submit a Shoutout!</h3>
-          <p>Got a project, a blog post, or a program that we should put on the podcast?</p>
-          <div class="flag">
-            <a href="#"><span>submit a shoutout</span></a>
-          </div>
+      <div class="callout">
+        <h3>Submit a Shoutout!</h3>
+        <p>Got a project, a blog post, or a program that we should put on the podcast?</p>
+        <div class="flag">
+          <a href="#"><span>submit a shoutout</span></a>
         </div>
-        <%= render 'pages/side_nav' %> 
-        <article class="sign-up">
-          <%= render 'pages/mailchimp_signup_form' %>
-        </article>
       </div>
+      <%= render 'pages/side_nav' %> 
+
+      <article class="sign-up desktop">
+        <%= render 'pages/mailchimp_signup_form' %>
+      </article>
     </div>
   </section>
 </div>

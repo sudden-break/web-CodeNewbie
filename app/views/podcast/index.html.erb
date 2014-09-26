@@ -31,12 +31,13 @@
     <% end %>
 
     <p class="caption buffer">
+      <br>
       We're looking for sponsors for the CodeNewbie podcast. Interested? Email us at <%= mail_to "hello@codenewbie.org" %>.
     </p>
   </div>
 
   <div class="sidebar">
-    <div class="callout desktop">
+    <div class="callout">
       <h3>Submit a Shoutout!</h3>
       <p>Got a project, a blog post, or a program that we should put on the podcast?</p>
       <div class="flag">
@@ -44,7 +45,7 @@
       </div>
     </div>
     <%= render 'pages/side_nav' %> 
-    <article class="sign-up">
+    <article class="sign-up desktop">
       <%= render 'pages/mailchimp_signup_form' %>
     </article>
   </div>
