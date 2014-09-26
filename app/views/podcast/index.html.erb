@@ -1,14 +1,15 @@
-<section id="new-resource">
-
-  <div class="buffer">
+<section class="full-panel gray">
+  <section class="page-header">
     <h1>Podcast</h1>
-    <br>
-      <span class="share inline-left">
-        <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" target="_blank">iTunes</a>
-        <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" target="_blank">RSS</a>
-      </span>
-    </div>
+    <p>stories of people on their coding journey</p>
+    <span class="share inline-left">
+      <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" target="_blank">iTunes</a>
+      <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" target="_blank">RSS</a>
+    </span>
+  </section>
+</section>
 
+<section id="new-resource">
     <% @episodes.each do |episode| %>
     <article>
       <h3><%= link_to episode.name, podcast_path(episode) %></h3>

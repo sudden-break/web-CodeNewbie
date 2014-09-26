@@ -1,8 +1,17 @@
+<section class="full-panel gray">
+  <section class="page-header">
+    <h1>Podcast</h1>
+    <p>stories of people on their coding journey</p>
+    <span class="share inline-left">
+      <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" target="_blank">iTunes</a>
+      <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" target="_blank">RSS</a>
+    </span>
+  </section>
+</section>
+
 <div id="podcast-episode">
   <section id="resources">
     <article>
-      <a href="<%= podcasts_path %>"><h1>Podcast</h1></a>
-
       <h2 class="title">
         <%= @episode.name %>
         <span class="share inline-right">
@@ -27,16 +36,7 @@
             });
         </script>
       </div>
-      <div>
-        <span class="share inline-left">
-          <a href="https://itunes.apple.com/us/podcast/codenewbie/id919219256" class="blue" target="_blank">iTunes</a>
-          <a href="http://bloggytoons.com/codenewbies?format=rss" class="orange" target="_blank">RSS</a>
-        </span>
-        <br>
-        <br>
-        <br>
-      </div>
-
+      
       <% if @episode.description.present? %>
         <h3 class="green">Description</h3>
         <%=simple_format(@episode.description)%>

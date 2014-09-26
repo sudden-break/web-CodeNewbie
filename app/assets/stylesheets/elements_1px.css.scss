@@ -18,5 +18,12 @@
   &.gray { 
     background: #fefefe; 
     border-top: 1px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
   }
+}
+
+.page-header {
+  padding: 60px 0px;
+  h1 { font-weight: 500; }
+  p { font-size: 30px; }
 }
