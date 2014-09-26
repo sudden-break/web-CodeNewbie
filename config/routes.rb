@@ -24,6 +24,7 @@ CodeNewbie::Application.routes.draw do
   delete '/chats/:slug' => 'chat#destroy'
 
   get    '/chat' => 'pages#chat', as: 'chat_info'
+  get    '/get-involved' => 'pages#get_involved', as: 'get_involved'
 
 
   # podcast

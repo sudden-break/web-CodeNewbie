@@ -9,10 +9,12 @@ class PagesController < ApplicationController
   end
 
   def chat
-    
   end
 
   def beta
+  end
+
+  def get_involved
   end
 
 end

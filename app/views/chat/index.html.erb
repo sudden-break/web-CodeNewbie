@@ -5,7 +5,9 @@
     <% @chats.each do |chat| %>
     <div class="bottom-border">
       <a href="<%= chat_path(chat) %>"><h2><%= chat.name %></h2></a>
-      <%= simple_format(chat.description.truncate(300)) %>
+      <p><%= chat.description.truncate(250).html_safe %>
+      <%= link_to "more", chat_path(chat) %>
+      </p>
       <% if admin? %>
         <h3 class="page-nav-buttons">
           <%= link_to 'Edit', edit_chat_path(chat) %>
