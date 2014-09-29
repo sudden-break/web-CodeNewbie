@@ -4,8 +4,7 @@ class PagesController < ApplicationController
     @next_wednesday = Time.now.wday == 3 ? Chronic.parse("today") : Chronic.parse("this Wednesday")
     @challenge = Challenge.find_by(:current => true)
     @chat = Chat.order("date DESC").first
-
-    @activity = Activity.all.order(:created_at).limit(20).includes(:content)
+    @activity = Activity.all.includes(:content).sort_by{ |activity| activity.content.created_at }.reverse!
   end
 
   def chat

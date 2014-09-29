@@ -7,6 +7,8 @@ class Podcast < ActiveRecord::Base
   has_many :picks
   has_many :show_notes
 
+  has_many :activities, as: :content, dependent: :destroy
+
   after_create :add_activity
 
   extend FriendlyId
