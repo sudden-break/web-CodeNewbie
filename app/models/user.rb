@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
                             email: auth.uid+"@twitter.com",
                             password: Devise.friendly_token[0,20],
                             avatar: auth.extra.raw_info.profile_image_url.gsub("_normal", ""),
+                            username: auth.extra.raw_info.screen_name,
                             name: auth.extra.raw_info.name,
                             twitter_account: TwitterAccount.create(
                               followers_count: auth.extra.raw_info.followers_count, 
