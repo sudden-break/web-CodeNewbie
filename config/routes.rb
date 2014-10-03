@@ -1,10 +1,14 @@
 CodeNewbie::Application.routes.draw do
+  
+  devise_scope :user do 
+    post '/users' => 'devise_registrations#create'
+    match '/sessions/user', to: 'devise_sessions#create', via: :post
+  end
+
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :sessions => "devise_sessions" }
   resources :sessions
   root 'pages#index'
-  devise_scope :user do 
-    match '/sessions/user', to: 'devise_sessions#create', via: :post
-  end
+
 
   # sso
   get '/sso' => 'discourse_sso#sso', as: 'sso'
