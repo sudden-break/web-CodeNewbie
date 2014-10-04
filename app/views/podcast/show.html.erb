@@ -27,13 +27,7 @@
           </span>
         </h2>
 
-        <audio controls preload="auto" src="<%= @episode.audio_link.sub("http://", "http://www.podtrac.com/pts/redirect.mp3/") %>"> </audio>
-        
-
-
         <div class="jw-audio">
-
-          <% if false %>
 
         <div id='<%= @episode.jw_player_id %>' class="jw-audio"></div>
           <script type='text/javascript'>
@@ -46,7 +40,6 @@
           </script>
         </div>
 
-        <% end %>
 
         <% if @episode.description.present? %>
           <h3 class="green">Description</h3>
