@@ -29,11 +29,7 @@ class DeviseRegistrationsController < Devise::RegistrationsController
       if @validatable
         @minimum_password_length = resource_class.password_length.min
       end
-      if session[:payload]
-        redirect_to_sso
-      else
-        respond_with resource
-      end
+      respond_with resource
     end
   end
 
