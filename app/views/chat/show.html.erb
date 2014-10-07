@@ -10,7 +10,7 @@
             <span class="subtitle">
               <br>
               <% if @chat.author.present? %>
-                by <%= @chat.author.full_name %>
+                by <%= link_to @chat.author.full_name, "http://twitter.com/#{@chat.author.twitter}", target: "blank" %>
               <% end %>
               <% if @chat.date.present? %>
               from our chat on <%= @chat.date.strftime("%B %d") %>

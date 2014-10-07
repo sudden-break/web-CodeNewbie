@@ -6,8 +6,8 @@
     <div class="bottom-border">
       <a href="<%= chat_path(chat) %>"><h2><%= chat.name %></h2></a>
       <span class="subtitle">
-        <br>
         <% if chat.author.present? %>
+          <br>
           by <%= chat.author.full_name %>
         <% end %>
         <% if chat.date.present? %>
