@@ -32,6 +32,9 @@ class Podcast < ActiveRecord::Base
     end
   end
 
+  def author
+  end
+
   private
 
   def add_activity

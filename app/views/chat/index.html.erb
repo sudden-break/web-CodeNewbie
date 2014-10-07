@@ -5,6 +5,17 @@
     <% @chats.each do |chat| %>
     <div class="bottom-border">
       <a href="<%= chat_path(chat) %>"><h2><%= chat.name %></h2></a>
+      <span class="subtitle">
+        <br>
+        <% if chat.author.present? %>
+          by <%= chat.author.full_name %>
+        <% end %>
+        <% if chat.date.present? %>
+        from our chat on <%= chat.date.strftime("%B %d") %>
+        <% end %>
+      </span>
+      <br>
+      <br>
       <p><%= chat.description.truncate(250).html_safe %>
       <%= link_to "more", chat_path(chat) %>
       </p>

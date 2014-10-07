@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :chat do
-    date "MyString"
+    date DateTime.now
     description "MyText"
     name "MyString"
   end

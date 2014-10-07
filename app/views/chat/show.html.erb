@@ -8,6 +8,10 @@
           <h2 class="title">
             <%= @chat.name%>
             <span class="subtitle">
+              <br>
+              <% if @chat.author.present? %>
+                by <%= @chat.author.full_name %>
+              <% end %>
               <% if @chat.date.present? %>
               from our chat on <%= @chat.date.strftime("%B %d") %>
               <% end %>

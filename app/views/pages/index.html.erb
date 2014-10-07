@@ -10,7 +10,12 @@
         </br>
         <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
         <p><%= activity.content.description.truncate(170).html_safe %> <%= link_to "more", activity.content %></p>
-        <div class="subtitle"><%= activity.content.created_at.strftime("%B %d, %Y") %></div>
+        <div class="subtitle">
+          <% if activity.content.author.present? %>
+          by <%= activity.content.author.full_name %> - 
+          <% end %>
+          <%= activity.content.created_at.strftime("%B %d, %Y") %>
+        </div>
         </br>
         </br>
       </div>

@@ -23,6 +23,10 @@
   }
 }
 
+span.subtitle {
+  @include caption-text;
+}
+
 .module {
   border-bottom: 1px solid $lightgray;
   padding-top: 20px;
