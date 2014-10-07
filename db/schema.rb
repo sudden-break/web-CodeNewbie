@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925144209) do
+ActiveRecord::Schema.define(version: 20141007145156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,10 @@ ActiveRecord::Schema.define(version: 20140925144209) do
     t.text     "favorite_tweets"
     t.text     "resources"
     t.string   "image"
+    t.integer  "guest_id"
   end
+
+  add_index "chats", ["guest_id"], name: "index_chats_on_guest_id", using: :btree
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -210,13 +213,11 @@ ActiveRecord::Schema.define(version: 20140925144209) do
     t.string   "name"
     t.string   "link"
     t.integer  "podcast_id"
-    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "guest_id"
   end
 
-  add_index "picks", ["author_id"], name: "index_picks_on_author_id", using: :btree
   add_index "picks", ["guest_id"], name: "index_picks_on_guest_id", using: :btree
   add_index "picks", ["podcast_id"], name: "index_picks_on_podcast_id", using: :btree
 

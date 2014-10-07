@@ -1,6 +1,7 @@
 class Guest < ActiveRecord::Base
   has_many :picks
   has_many :show_guests
+  has_many :chats
   has_many :podcasts, through: :show_guests
 
   def self.sanitize_and_create(guest_params)
