@@ -25,6 +25,8 @@
     border-top: none; 
   }
 
+  .top-bar .name { width: 600px; }
+
   .top-bar .toggle-topbar.menu-icon::after {
     display: none;
   }

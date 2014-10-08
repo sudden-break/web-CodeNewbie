@@ -17,6 +17,11 @@
                 Get Involved
               </a>
             </li>
+            <% if user_signed_in? %>
+            <li>
+              <a href="<%= logout_path %>">Logout</a>
+            </li>
+            <% end %>
             <div class="mobile">
               <li><a href="<%= chats_path %>">Blog</a></li>
               <li><a href="<%= podcasts_path %>">Podcast</a></li>
