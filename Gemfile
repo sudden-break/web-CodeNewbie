@@ -40,6 +40,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'travis'
+gem 'mandrill-api'
 
 ##############
 # Group Gems #

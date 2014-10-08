@@ -1,6 +1,8 @@
 CodeNewbie::Application.routes.draw do
   
+
   devise_scope :user do 
+    get '/sessions/new' => 'devise_registrations#new'
     post '/users' => 'devise_registrations#create'
     match '/sessions/user', to: 'devise_sessions#create', via: :post
   end

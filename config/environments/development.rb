@@ -30,5 +30,21 @@ CodeNewbie::Application.configure do
   # a parameter is not explcitly permitted but is passed anyway.
   config.action_controller.action_on_unpermitted_parameters = :raise
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => ENV["MANDRILL_USERNAME"],
+    :password  => ENV["MANDRILL_API_KEY"], # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => 'codenewbie.org', # your domain to identify your server when connecting
+  }
+
+  config.action_mailer.default_url_options = { :host => 'localhost', port: 3000 }
+  # config.action_mailer.delivery_method = :pop
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default :charset => "utf-8"
+
+
 end
