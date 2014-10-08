@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << [:name, :remember_me, :username]
   end
 
 end
