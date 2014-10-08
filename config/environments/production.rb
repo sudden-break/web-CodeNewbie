@@ -76,7 +76,7 @@ CodeNewbie::Application.configure do
     :user_name => ENV["MANDRILL_USERNAME"],
     :password  => ENV["MANDRILL_API_KEY"],
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'codenewbie.org',
+    :domain => 'www.codenewbie.org',
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -92,5 +92,5 @@ CodeNewbie::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { host: 'codenewbie.org' }
+  config.action_mailer.default_url_options = { host: 'www.codenewbie.org' }
 end
