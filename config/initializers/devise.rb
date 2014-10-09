@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   require 'omniauth-twitter'
-  config.omniauth :twitter, "3xgadMbraYf4DdGUwEFIR46jR", "JMsYduK6ZLFnE7hMnDNi5DT8Ae02qsyugIA2cIgGCe9tbWTEG8", strategy_class: OmniAuth::Strategies::Twitter
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], strategy_class: OmniAuth::Strategies::Twitter
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
