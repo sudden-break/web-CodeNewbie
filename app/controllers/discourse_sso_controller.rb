@@ -18,7 +18,7 @@ class DiscourseSsoController < ApplicationController
         sso.sso_secret = secret
         redirect_to sso.to_url("http://discourse.codenewbie.org/session/sso_login")
     else
-        redirect_to sso.to_url(beta_path)
+        redirect_to sso.to_url(new_user_registration_path)
     end
   end
 
