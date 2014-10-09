@@ -5,7 +5,7 @@
 #
 # Generated October 09, 2014
 #
-# This configuration file is custom generated for app24922242@heroku.com
+# This configuration file is custom generated for CodeNewbie
 
 
 # Here are the settings that are common to all environments
@@ -15,7 +15,7 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: 'f79f93254f189505f5586e4fea5f17ffebce085b'
+  license_key: '88892607fba39a4b9b7c87dcb4b905f1dcc91de0'
 
   # Agent Enabled (Ruby/Rails Only)
   # Use this setting to force the agent to run or not run.
