@@ -7,9 +7,9 @@
 
       <div class="form-inputs">
         <%= f.input :name, required: false, autofocus: true, label: "Full Name" %>
-        <%= f.input :email, required: false, autofocus: true %>
-        <%= f.input :password, required: false %>
-        <%= f.input :password_confirmation, required: false %>
+        <%= f.input :email, required: false, autofocus: true, label: "Email *" %>
+        <%= f.input :password, required: false, label: "Password *" %>
+        <%= f.input :password_confirmation, required: false, label: "Password Confirmation *" %>
       </div>
 
       <div class="form-actions">

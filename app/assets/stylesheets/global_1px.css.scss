@@ -107,3 +107,9 @@ span.thin {
   @include caption-text;
   text-align: left; 
 }
+
+.required {
+  content: " *";
+  color: red;
+  width: auto;
+}

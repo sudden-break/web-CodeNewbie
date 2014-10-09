@@ -1,9 +1,10 @@
 <section>
   <article>
-    <h2>Email *</h2>
+    <h2>one more step ... </h2>
     <p class="gray"><em>For account information and notification purposes only. No spam, we promise :)</em></p>
 
     <%= form_for(@user) do |f| %>
+      <%= f.label :email, "Email *" %>
       <%= f.text_field :email, value: "" %>
       <%= f.submit "Submit" %>
     <% end %>
