@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  skip_before_action :need_email
 
   def edit_email
     @user = current_user
@@ -16,7 +17,6 @@ class UserController < ApplicationController
       flash[:notice] = current_user.errors.full_messages.join(". ")
       redirect_to edit_email_path
     end
-      
   end
 
   private

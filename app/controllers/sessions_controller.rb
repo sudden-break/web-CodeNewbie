@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController
+  skip_before_action :need_email
 
   def new
   end
 
   def create
+
   end
 
   def destroy
