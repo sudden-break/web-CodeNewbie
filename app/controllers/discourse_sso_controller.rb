@@ -16,7 +16,7 @@ class DiscourseSsoController < ApplicationController
         sso.avatar_url = current_user.avatar
         sso.external_id = current_user.id # unique to your application
         sso.sso_secret = secret
-        redirect_to sso.to_url("http://discourse.codenewbie.org/session/sso_login")
+        redirect_to sso.to_url(discourse_url)
     else
         redirect_to sso.to_url(new_user_session_path)
     end
@@ -26,6 +26,14 @@ class DiscourseSsoController < ApplicationController
 
   def sso_payload
     session[:payload] || request.query_string
+  end
+
+  def discourse_url
+    if Rails.env == "production"
+      "http://discourse.codenewbie.org/session/sso_login"
+    else
+      "http://staging-discourse.codenewbie.org/session/sso_login"
+    end
   end
 
 end
