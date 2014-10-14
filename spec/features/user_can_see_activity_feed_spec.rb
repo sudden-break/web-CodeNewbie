@@ -6,16 +6,7 @@ feature 'User can see the activity feed' do
 
   scenario 'from the homepage' do
 
-    visit root_url
-
-    expect(page).to have_content(podcast.name)
-    expect(page).to have_content(chat.name)
-
-    expect(page).to have_content(podcast.created_at.strftime("%B %d"))
-    expect(page).to have_content(chat.created_at.strftime("%B %d"))
-
-    expect(page).to have_content(podcast.description)
-    expect(page).to have_content(chat.description)
+    pending
 
   end
 end
