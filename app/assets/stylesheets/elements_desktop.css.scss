@@ -5,3 +5,11 @@
 .desktop {
   display: block;
 }
+
+.six-columns {
+  @include grid-column(6);
+}
+
+.six-columns:last-child {
+  padding-top: 0px;
+}

@@ -27,3 +27,11 @@
   h1 { font-weight: 500; }
   p { font-size: 30px; }
 }
+
+.six-columns {
+  width: 100%;
+}
+
+.six-columns:last-child {
+  padding-top: 30px;
+}

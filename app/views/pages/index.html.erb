@@ -71,72 +71,75 @@
       <li><img src="https://pbs.twimg.com/profile_images/418149612814225408/TCbbr9So_400x400.jpeg"></li>
       <li class="circle"><a href="<%= chat_info_path%>"><p>you</p></a></li>
     </ul>
-    <p class="large-12 columns"><span class="subtitle">But with so many stories of people learning to code, that wasn't enough. </span></p>
+    <p><span class="subtitle">But with so many stories of people learning to code, that wasn't enough.</span></p>
   </div>
 </section>
 
 <section class="full-panel gray">
-  <section class="">
-    <br>
+  <section>
     <article>
+      <br>
       <span class="subtitle">So we created the ...</span>
       <h2 class="orange">CodeNewbie Podcast</h2>
       <p>The weekly show highlighting the story of a programmer.
         <a href="<%= podcasts_path %>" class="desktop inline-arrow-nav">  view episodes <span class="right-triangle"></span></a>
       </p>
       </br>    
-    <div class="small-12 large-4 columns">
-      <img src="/assets/marty-blue.png" class="small-12 large-6 columns">
-      <div class="small-12 large-6 columns image-text">
-        <h3 class="orange">Ep. 5</h3>
-        <h3>Speaking Of Speaking</h3>
-        <h3 class="gray"><span class="subtitle">Marty Haught</span></h3>
-        <br>
-        <br>
-      </div>
-    </div>
-    <div class="small-12 large-4 columns">
-      <img src="/assets/Kinsey_head_shot.jpg" class="small-12 large-6 columns">
-      <div class="small-12 large-6 columns image-text">
-        <h3 class="orange">Ep. 4</h3>
-        <h3>Wearing All The Hats</h3>
-        <h3 class="gray"><span class="subtitle">Kinsey Ann Durham</span></h3>
+      <div class="small-12 large-4 columns">
+        <img src="/assets/marty-blue.png" class="small-12 large-6 columns">
+        <div class="small-12 large-6 columns image-text">
+          <h3 class="orange">Ep. 5</h3>
+          <h3>Speaking Of Speaking</h3>
+          <h3 class="gray"><span class="subtitle">Marty Haught</span></h3>
           <br>
-        <br>
-      </div>
-    </div> 
-    <div class="small-12 large-4 columns">
-      <img src="/assets/Kinsey_head_shot.jpg" class="large-6 columns">
-      <div class="small-12 large-6 columns image-text">
-        <h3 class="orange">Ep. 3</h3>
-        <h3>CodeCouple</h3>
-        <h3 class="gray"><span class="subtitle">Felicia and Jamal O'Garro</span></h3>
           <br>
-        <br>
+        </div>
       </div>
-    </div> 
-  <div class="small-12 columns mobile">
-     <a href="<%= podcasts_path %>" class="inline-arrow-nav">  view all episodes <span class="right-triangle"></span></a>
-  </div>
-  </article>
+      <div class="small-12 large-4 columns">
+        <img src="/assets/Kinsey_head_shot.jpg" class="small-12 large-6 columns">
+        <div class="small-12 large-6 columns image-text">
+          <h3 class="orange">Ep. 4</h3>
+          <h3>Wearing All The Hats</h3>
+          <h3 class="gray"><span class="subtitle">Kinsey Ann Durham</span></h3>
+            <br>
+          <br>
+        </div>
+      </div> 
+      <div class="small-12 large-4 columns">
+        <img src="/assets/Kinsey_head_shot.jpg" class="large-6 columns">
+        <div class="small-12 large-6 columns image-text">
+          <h3 class="orange">Ep. 3</h3>
+          <h3>CodeCouple</h3>
+          <h3 class="gray"><span class="subtitle">Felicia and Jamal O'Garro</span></h3>
+            <br>
+          <br>
+        </div>
+      </div> 
+      <div class="small-12 columns mobile">
+         <a href="<%= podcasts_path %>" class="inline-arrow-nav">  view all episodes <span class="right-triangle"></span></a>
+      </div>
+    </article>
   </section> 
 </section>
 <section>
-  <section class="large-12 columns">
-  </br>
-    <h2><span class="subtitle left">But we needed a place to hangout, a home online. So we setup ...</span> <span class="blue right">CodeNewbie Discourse</span></h2>
-    <img src="/assets/discourse-ss.png" class="buffer">
-  </section>
+  <article>
+    </br>
+    <h2><span class="subtitle left">But we needed a place to hangout, a home online. So we launched ...</span> <span class="blue right">CodeNewbie Discourse</span><br><br></h2>
+    <img src="/assets/discourse-ss.png">
+  </article>
 </section>
+<hr>
 <section>
-  <section class="large-6 columns">
-    <p><span class="subtitle left">And we're just getting started. <br>Keep up with the CodeNewbie community.</span></p>
-  </section>
-  <section class="large-6 columns">
-    <article class="sign-up">
-      <%= render 'mailchimp_signup_form' %>
-    </article>
-  </section>
+  <article>
+    <div class="six-columns">
+      <p><span class="subtitle left">And we're just getting started. <br>Keep up with the CodeNewbie community.</span></p>
+    </div>
+    <div class="six-columns">
+      <article class="sign-up">
+        <%= render 'mailchimp_signup_form' %>
+      </article>
+    </div>
+  </article>
 </section>
 <section class="full-panel gray">
   <%= render 'pages/about' %>
