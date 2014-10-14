@@ -94,6 +94,7 @@ span.thin {
 .green { color: $bright-green; }
 .orange { color: $bright-orange; }
 .gray, .gray a { color: $gray; }
+.blue, .blue a { color: $blue; }
 
 @mixin caption-text {
   font-size: 18px;
