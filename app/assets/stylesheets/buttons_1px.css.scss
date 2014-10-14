@@ -13,7 +13,13 @@
     &.chat {background: $bright-green} 
     &.blog {background: $blue} 
     &.attention {background: $blue} 
+    &.gray { background: $lightgray; color: $gray; } 
+    &.gray:hover { background: $gray; color: white; } 
   }
+}
+
+.flag .gray {
+
 }
 
 .twitter-avatar li.circle {

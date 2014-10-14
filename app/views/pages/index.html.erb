@@ -54,7 +54,7 @@
     <h4><span class="gray">next chat</span><strong> <%= @next_wednesday.strftime("%b %d") %></strong></h4>
     <br>
     <div class="flag">
-      <a href="<%= chat_info_path%>"><span>more info</span></a>
+      <a href="<%= chat_info_path%>"><span>how it works</span></a>
     </div>
   </div>
 
@@ -70,8 +70,46 @@
       <li><img src="https://pbs.twimg.com/profile_images/418149612814225408/TCbbr9So_400x400.jpeg"></li>
       <li class="circle"><a href="<%= chat_info_path%>"><p>you</p></a></li>
     </ul>
+    <p class="large-12 columns"><span class="subtitle">But with so many stories of people learning to code, that wasn't enough. </span></p>
   </div>
+</section>
 
+<section class="full-panel gray">
+  <section class="buffer">
+    <br>
+    <div class="large-4 columns">
+      <span class="subtitle">So we created the ...</span>
+      <h2 class="orange">CodeNewbie Podcast</h2>
+      </br>
+      <div class="flag">
+        <a href="<%= podcasts_path%>" class="gray"><span class="gray">more episodes</span></a>
+      </div>
+    </div>    
+    <div class="large-4 columns">
+      <img src="/assets/marty-blue.png" class="large-6 columns">
+      <div class="large-6 columns image-text">
+        <h3 class="orange">Ep. 5</h3>
+        <h3>Speaking Of Speaking</h3>
+        <h3 class="gray"><span class="subtitle">Marty Haught</span></h3>
+      </div>
+    </div>  
+    <div class="large-4 columns">
+      <img src="/assets/Kinsey_head_shot.jpg" class="large-6 columns">
+      <div class="large-6 columns image-text">
+        <h3 class="orange">Ep. 4</h3>
+        <h3>Wearing All The Hats</h3>
+        <h3 class="gray"><span class="subtitle">Kinsey Ann Durham</span></h3>
+      </div>
+    </div> 
+    </br>   
+  </section>
+</section>
+<section>
+  <section class="large-12 columns">
+  </br>
+    <h2><span class="subtitle left">But we needed a place to hangout, an online home ...</span> <span class="blue right">CodeNewbie Discourse</span></h2>
+    <img src="/assets/discourse-ss.png" class="buffer">
+  </section>
 </section>
 <section class="full-panel gray">
   <%= render 'pages/about' %>
