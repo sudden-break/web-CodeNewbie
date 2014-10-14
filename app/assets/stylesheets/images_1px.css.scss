@@ -1,0 +1,13 @@
+.twitter-avatar {
+  padding-top: 20px;
+  @include block-grid(10);
+  li:before {
+    display: none;
+  }
+  img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+  }
+}
+

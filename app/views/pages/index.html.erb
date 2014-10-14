@@ -2,44 +2,74 @@
 <br>
 <br>
 <section>
-  <div class="main-column">
-    <article>
-      <% @activity.each do |activity| %>
-      <div class="bottom-border">
-        <div class="flag"><span class="<%= activity.category %>"><%= activity.category %></span></div>
-        </br>
-        <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
-        <p><%= activity.content.description.truncate(170).html_safe %> <%= link_to "more", activity.content %></p>
-        <div class="subtitle">
-          <% if activity.content.author.present? %>
-          by <%= activity.content.author.full_name %> - 
-          <% end %>
-          <%= activity.content.created_at.strftime("%B %d, %Y") %>
+  <% if false %>
+    <div class="main-column">
+      <article>
+        <% @activity.each do |activity| %>
+        <div class="bottom-border">
+          <div class="flag"><span class="<%= activity.category %>"><%= activity.category %></span></div>
+          </br>
+          <a href="<%= url_for activity.content %>"><h2><%= activity.content.name %></h2></a>
+          <p><%= activity.content.description.truncate(170).html_safe %> <%= link_to "more", activity.content %></p>
+          <div class="subtitle">
+            <% if activity.content.author.present? %>
+            by <%= activity.content.author.full_name %> - 
+            <% end %>
+            <%= activity.content.created_at.strftime("%B %d, %Y") %>
+          </div>
+          </br>
+          </br>
         </div>
         </br>
-        </br>
-      </div>
-      </br>
-      <% end %>
-    </article>
-  </div>
-
-  <div class="sidebar">
-    <div class="callout desktop">
-      <div class="subtitle">next chat</div>
-      <h1><%= @next_wednesday.strftime("%b %d") %></h1>
-      <h3>9PM EST</h3>
-      <div class="flag">
-        <a href="<%= chat_info_path%>"><span>more info</span></a>
-      </div>
+        <% end %>
+      </article>
     </div>
 
-    <%= render 'side_nav' %> 
+    <div class="sidebar">
+      <div class="callout desktop">
+        <div class="subtitle">next chat</div>
+        <h1><%= @next_wednesday.strftime("%b %d") %></h1>
+        <h3>9PM EST</h3>
+        <div class="flag">
+          <a href="<%= chat_info_path%>"><span>more info</span></a>
+        </div>
+      </div>
 
-    <article class="sign-up">
-      <%= render 'mailchimp_signup_form' %>
-    </article>
+      <%= render 'side_nav' %> 
 
+      <article class="sign-up">
+        <%= render 'mailchimp_signup_form' %>
+      </article>
+    </div>
+  <% end %>
+
+  <p class="large-12 columns"><span class="subtitle">It started with a TwitterChat ... </span></p>
+  <div class="small-12 large-6 columns">
+    <img src="/assets/where-to-start-tweet.png">
+    <img src="/assets/first-step-tweet.png">
+  </div>
+  <div class="small-12 large-6 column center">
+    <h2 class="center green">CodeNewbie TwitterChat</h2>
+    <p>Every Wednesday at 9PM EST, <br>we get together using the #CodeNewbie <br>hashtag to talk about that week's tech topic.</p>
+    <h4><span class="gray">next chat</span><strong> <%= @next_wednesday.strftime("%b %d") %></strong></h4>
+    <br>
+    <div class="flag">
+      <a href="<%= chat_info_path%>"><span>more info</span></a>
+    </div>
+  </div>
+
+  <div class="large-12 columns buffer">
+    <ul class="twitter-avatar small-block-3 large-block-10">
+      <li><img src="https://pbs.twimg.com/profile_images/468239507981336576/TVgGJoPU_400x400.jpeg"></li>
+      <li><img src="https://pbs.twimg.com/profile_images/378800000833912247/2b653f03ac2203520921b2eb7e6433c2_400x400.jpeg"></li>
+      <li><img src="https://pbs.twimg.com/profile_images/378800000283202027/793170afce3bf2f39cd1a513bcd62a7b_400x400.jpeg"></li>
+      <li><img src="https://pbs.twimg.com/profile_images/2827182394/5f1a49014cf346d8fa86b60621ab3831_400x400.jpeg"></li>
+      <li><img src="https://pbs.twimg.com/profile_images/517754288022384640/rjxdOU5G_400x400.jpeg"></li>
+      <li><img src="https://pbs.twimg.com/profile_images/2533294520/4ez8c47m6aq4gz2f9fp6_400x400.jpeg"></li>
+      <li><img src="https://pbs.twimg.com/profile_images/513508592230866944/ZJDSpl2h_400x400.jpeg"></li>
+      <li><img src="https://pbs.twimg.com/profile_images/418149612814225408/TCbbr9So_400x400.jpeg"></li>
+      <li class="circle"><a href="<%= chat_info_path%>"><p>you</p></a></li>
+    </ul>
   </div>
 
 </section>
