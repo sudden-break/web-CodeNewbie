@@ -1,2 +1,13 @@
 article.sign-up {
+  padding: 0px 10px;
+  #mc_embed_signup input.email {
+    width: 65%;
+    margin-right: 0px;
+    float: left;
+    display: inline;
+  }
+  #mc-embedded-subscribe.button {
+    width: 35%;
+    display: inline;
+  }
 }
