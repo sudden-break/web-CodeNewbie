@@ -35,3 +35,19 @@
       margin-top: 33%;
     }
 }
+
+.right-triangle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-left: 20px solid $bright-orange;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.inline-arrow-nav {
+  position: relative;
+}
+
+
+
