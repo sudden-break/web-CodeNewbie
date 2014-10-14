@@ -1,0 +1,8 @@
+.twitter-avatar {
+  @include block-grid(10);
+}
+
+.image-text {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}

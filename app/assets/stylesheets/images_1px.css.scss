@@ -1,6 +1,7 @@
 .twitter-avatar {
   padding-top: 20px;
-  @include block-grid(10);
+  @include block-grid(3);
+  li { margin-left: 0px; }
   li:before {
     display: none;
   }
@@ -9,6 +10,10 @@
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
   }
+}
+
+img.columns {
+  padding: 0px;
 }
 
 .image-text {

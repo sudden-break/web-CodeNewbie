@@ -49,6 +49,7 @@
     <img src="/assets/first-step-tweet.png">
   </div>
   <div class="small-12 large-6 column center">
+    <br>
     <h2 class="center green">CodeNewbie TwitterChat</h2>
     <p>Every Wednesday at 9PM EST, <br>we get together using the #CodeNewbie <br>hashtag to talk about that week's tech topic.</p>
     <h4><span class="gray">next chat</span><strong> <%= @next_wednesday.strftime("%b %d") %></strong></h4>
@@ -75,44 +76,50 @@
 </section>
 
 <section class="full-panel gray">
-  <section class="buffer">
+  <section class="">
     <br>
-    <br>
-    <div class="large-12 columns">
+    <article>
       <span class="subtitle">So we created the ...</span>
       <h2 class="orange">CodeNewbie Podcast</h2>
       <p>The weekly show highlighting the story of a programmer.
-        <a href="<%= podcasts_path %>" class="inline-arrow-nav">  view episodes <span class="right-triangle"></span></a>
+        <a href="<%= podcasts_path %>" class="desktop inline-arrow-nav">  view episodes <span class="right-triangle"></span></a>
       </p>
-      </br>
-    </div>    
-    <div class="large-4 columns">
-      <img src="/assets/marty-blue.png" class="large-6 columns">
-      <div class="large-6 columns image-text">
+      </br>    
+    <div class="small-12 large-4 columns">
+      <img src="/assets/marty-blue.png" class="small-12 large-6 columns">
+      <div class="small-12 large-6 columns image-text">
         <h3 class="orange">Ep. 5</h3>
         <h3>Speaking Of Speaking</h3>
         <h3 class="gray"><span class="subtitle">Marty Haught</span></h3>
+        <br>
+        <br>
       </div>
     </div>
-    <div class="large-4 columns">
-      <img src="/assets/Kinsey_head_shot.jpg" class="large-6 columns">
-      <div class="large-6 columns image-text">
+    <div class="small-12 large-4 columns">
+      <img src="/assets/Kinsey_head_shot.jpg" class="small-12 large-6 columns">
+      <div class="small-12 large-6 columns image-text">
         <h3 class="orange">Ep. 4</h3>
         <h3>Wearing All The Hats</h3>
         <h3 class="gray"><span class="subtitle">Kinsey Ann Durham</span></h3>
+          <br>
+        <br>
       </div>
     </div> 
-    <div class="large-4 columns">
+    <div class="small-12 large-4 columns">
       <img src="/assets/Kinsey_head_shot.jpg" class="large-6 columns">
-      <div class="large-6 columns image-text">
+      <div class="small-12 large-6 columns image-text">
         <h3 class="orange">Ep. 3</h3>
         <h3>CodeCouple</h3>
         <h3 class="gray"><span class="subtitle">Felicia and Jamal O'Garro</span></h3>
+          <br>
+        <br>
       </div>
     </div> 
-  </section>
-    </br>   
-    </br>   
+  <div class="small-12 columns mobile">
+     <a href="<%= podcasts_path %>" class="inline-arrow-nav">  view all episodes <span class="right-triangle"></span></a>
+  </div>
+  </article>
+  </section> 
 </section>
 <section>
   <section class="large-12 columns">
