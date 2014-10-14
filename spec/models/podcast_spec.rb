@@ -29,6 +29,17 @@ describe Podcast do
       ShowGuest.create(:guest => guest, :podcast => podcast)
       expect(podcast.guests.last).to eq(guest)
     end
+
+    it "has an image link" do 
+      podcast.image_link = "/images/pic.png"
+      expect(podcast.image_link).to eq("/images/pic.png")
+    end
+
+    it "has an episode number" do 
+      podcast.episode_number = 1
+      expect(podcast.episode_number).to eq(1)
+    end
+
   end
 
   describe "#create_with_guest" do 

@@ -50,7 +50,7 @@
   </div>
   <div class="small-12 large-6 column center">
     <br>
-    <h2 class="center green">CodeNewbie TwitterChat</h2>
+    <a href="<%= chat_info_path %>"><h2 class="center green">CodeNewbie TwitterChat</h2></a>
     <p>Every Wednesday at 9PM EST, <br>we get together using the #CodeNewbie <br>hashtag to talk about that week's tech topic.</p>
     <h4><span class="gray">next chat</span><strong> <%= @next_wednesday.strftime("%b %d") %></strong></h4>
     <br>
@@ -80,41 +80,29 @@
     <article>
       <br>
       <span class="subtitle">So we created the ...</span>
-      <h2 class="orange">CodeNewbie Podcast</h2>
+      <a href="<%= podcasts_path %>"><h2 class="orange">CodeNewbie Podcast</h2></a>
       <p>The weekly show highlighting the story of a programmer.
         <a href="<%= podcasts_path %>" class="desktop inline-arrow-nav">  view episodes <span class="right-triangle"></span></a>
       </p>
-      </br>    
+      </br> 
+      <% @episodes.each do | episode | %>   
       <div class="small-12 large-4 columns">
-        <img src="/assets/marty-blue.png" class="small-12 large-6 columns">
+        <a href="<%= url_for episode %>"><img src="<%= episode.image_link %>" class="small-12 large-6 columns"></a>
         <div class="small-12 large-6 columns image-text">
-          <h3 class="orange">Ep. 5</h3>
-          <h3>Speaking Of Speaking</h3>
-          <h3 class="gray"><span class="subtitle">Marty Haught</span></h3>
+          <a href="<%= url_for episode %>"><h3 class="orange">Ep. <%= episode.episode_number %></h3></a>
+          <a href="<%= url_for episode %>"><h3><%= episode.name %></h3></a>
+          <h3 class="gray">
+            <span class="subtitle">
+            <% episode.guests.select{|guest| guest.first_name != "Saron"}.each do |guest| %>
+              <%= guest.full_name %>
+            <% end %>
+            </span>
+          </h3>
           <br>
           <br>
         </div>
       </div>
-      <div class="small-12 large-4 columns">
-        <img src="/assets/Kinsey_head_shot.jpg" class="small-12 large-6 columns">
-        <div class="small-12 large-6 columns image-text">
-          <h3 class="orange">Ep. 4</h3>
-          <h3>Wearing All The Hats</h3>
-          <h3 class="gray"><span class="subtitle">Kinsey Ann Durham</span></h3>
-            <br>
-          <br>
-        </div>
-      </div> 
-      <div class="small-12 large-4 columns">
-        <img src="/assets/Kinsey_head_shot.jpg" class="large-6 columns">
-        <div class="small-12 large-6 columns image-text">
-          <h3 class="orange">Ep. 3</h3>
-          <h3>CodeCouple</h3>
-          <h3 class="gray"><span class="subtitle">Felicia and Jamal O'Garro</span></h3>
-            <br>
-          <br>
-        </div>
-      </div> 
+      <% end %>
       <div class="small-12 columns mobile">
          <a href="<%= podcasts_path %>" class="inline-arrow-nav">  view all episodes <span class="right-triangle"></span></a>
       </div>
@@ -124,7 +112,11 @@
 <section>
   <article>
     </br>
-    <h2><span class="subtitle left">But we needed a place to hangout, a home online. So we launched ...</span> <span class="blue right">CodeNewbie Discourse</span><br><br></h2>
+    
+      <h2>
+        <span class="subtitle left">But we needed a place to hangout, a home online. So we launched ...</span> <a href="http://discourse.codenewbie.org"><strong class="blue right">CodeNewbie Discourse</strong></a><br><br>
+      </h2>
+
     <img src="/assets/discourse-ss.png">
   </article>
 </section>
