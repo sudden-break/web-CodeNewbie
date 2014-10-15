@@ -20,7 +20,7 @@ class PodcastController < ApplicationController
 
   def show
     @episode = Podcast.friendly.find(params[:slug])
-    @episodes = Podcast.all.order("published_on DESC")
+    @episodes = Podcast.where("id != :id", id: @episode.id).limit(3).order("published_on DESC")
   end
 
   private
