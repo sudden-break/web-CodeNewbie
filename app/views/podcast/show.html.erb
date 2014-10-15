@@ -72,5 +72,34 @@
       <% end %>
     </div>
   </article>
+</section>
 
-</section
+<section class="full-panel gray">
+  <section>
+    <article>
+      <br>
+      <p><a href="<%= podcasts_path %>">Other episodes</a>
+        <a href="<%= podcasts_path %>" class="inline-arrow-nav"><span class="right-triangle"></span></a>
+      </p>
+      <% @episodes.each do | episode | %>   
+      <% next if episode == @episode %>
+      <div class="small-12 large-4 columns">
+        <a href="<%= url_for episode %>"><img src="<%= episode.image_link %>" class="small-12 large-6 columns"></a>
+        <div class="small-12 large-6 columns image-text">
+          <a href="<%= url_for episode %>"><h3 class="orange">Ep. <%= episode.episode_number %></h3></a>
+          <a href="<%= url_for episode %>"><h3><%= episode.name %></h3></a>
+          <h3 class="gray">
+            <span class="subtitle">
+            <% episode.guests.select{|guest| guest.first_name != "Saron"}.each do |guest| %>
+              <%= guest.full_name %>
+            <% end %>
+            </span>
+          </h3>
+          <br>
+          <br>
+        </div>
+      </div>
+      <% end %>
+    </article>
+  </section> 
+</section>

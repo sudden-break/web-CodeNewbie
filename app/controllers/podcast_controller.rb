@@ -20,6 +20,7 @@ class PodcastController < ApplicationController
 
   def show
     @episode = Podcast.friendly.find(params[:slug])
+    @episodes = Podcast.all.order("published_on DESC")
   end
 
   private
