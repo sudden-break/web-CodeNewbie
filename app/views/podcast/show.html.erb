@@ -11,6 +11,7 @@
   </section>
 </section>
 
+<% if false %>
 <div id="podcast-episode">
   <section id="resources">
     <div class="main-column">
@@ -29,7 +30,7 @@
 
         <div class="jw-audio">
 
-        <div id='<%= @episode.jw_player_id %>' class="jw-audio"></div>
+          <div id='<%= @episode.jw_player_id %>' class="jw-audio"></div>
           <script type='text/javascript'>
               jwplayer('<%= @episode.jw_player_id %>').setup({
                   file: '<%= @episode.audio_link.sub("http://", "http://www.podtrac.com/pts/redirect.mp3/") %>',
@@ -69,15 +70,6 @@
           <% end %>
         <% end %>
 
-        <% if !@episode.show_notes.empty? %>
-          <h3 class="green">Show Links</h3>
-          <ul>
-            <% @episode.show_notes.each do |show_note| %>
-            <li class="less-bottom-space"><%= link_to show_note.name, show_note.link, target: "blank" %></li>
-            <% end %>
-          </ul>
-        <% end %>
-
         <% if !@episode.picks.empty? %>
           <h3 class="green">Picks</h3>
           <ul>
@@ -112,3 +104,67 @@
     </div>
   </section>
 </div>
+<% end %>
+
+<section>
+  <article>
+    <div class="small-12 medium-4 large-4 columns">
+      <h2 class="mobile">Ep. <%= @episode.episode_number %> - <%= @episode.name %><br></h2>
+      <p class="mobile"><span class="subtitle"><%= @episode.published_on.strftime("%B %d, %Y") %></span></p>
+      <a href="<%= url_for(@episode) %>"><img src="<%= @episode.image_link %>"></a>
+      <% if !@episode.guests.empty? %>
+        <% @episode.guests.each do |guest| %>
+          <% next if guest.full_name == "Saron Yitbarek" %>
+          <h3><%= guest.full_name %></h3>
+          <h3>
+            <span class="thin">
+              <%= guest.job_title if guest.job_title.present? %>,
+              <%= guest.company if guest.company.present?%>
+            </span>
+          </h3>
+          <p class="gray">
+            <%= link_to "twitter", "http://twitter.com/#{guest.twitter}", target: "blank" if guest.twitter.present? %>,
+            <%= link_to "github", "http://github.com/#{guest.github}", target: "blank" if guest.github.present? %>
+            <% guest.other_links.each do |link| %>
+              <%= link_to ", personal site", link, target: "blank" %>
+            <% end %>
+          </p>
+          <h4><%= simple_format(guest.bio) if guest.bio.present? %></h4>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="small-12 medium-8 large-8 columns">
+      <h2 class="desktop">Ep. <%= @episode.episode_number %> - <%= @episode.name %> <span class="subtitle desktop">  ( <%= guest_name(@episode) %> )</span></h2>
+      <p><span class="subtitle desktop"><%= @episode.published_on.strftime("%B %d, %Y") %></span></p>
+        <div class="jw-audio">
+          <div id='<%= @episode.jw_player_id %>' class="jw-audio"></div>
+          <script type='text/javascript'>
+              jwplayer('<%= @episode.jw_player_id %>').setup({
+                  file: '<%= @episode.audio_link.sub("http://", "http://www.podtrac.com/pts/redirect.mp3/") %>',
+                  title: '<%= @episode.name %>',
+                  width: '100%',
+                  height: 30
+              });
+          </script>
+        </div>
+      <p><%= @episode.description.html_safe %></p>
+      <% if !@episode.show_notes.empty? %>
+        <h3 class="green">Show Links</h3>
+        <ul>
+          <% @episode.show_notes.each do |show_note| %>
+          <li class="less-bottom-space"><%= link_to show_note.name, show_note.link, target: "blank" %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% if !@episode.picks.empty? %>
+        <h3 class="green">Picks</h3>
+        <ul>
+        <% @episode.picks.each do |pick| %>
+          <li class="less-bottom-space"><%= link_to pick.name, pick.link, target: "blank" %> (<%= pick.author.first_name %>)</li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </article>
+
+</section
