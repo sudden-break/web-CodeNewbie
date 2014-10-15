@@ -11,6 +11,7 @@
   </section>
 </section>
 
+<% if false %>
 <section id="new-resource">
   <div class="main-column">
     <% @episodes.each do |episode| %>
@@ -49,5 +50,21 @@
       <%= render 'pages/mailchimp_signup_form' %>
     </article>
   </div>
-
 </section>
+<% end %>
+
+<section>
+  <% @episodes.each do |episode| %>
+  <article>
+    <div class="small-12 large-3 columns">
+      <a href="<%= url_for(episode) %>"><img src="<%= episode.image_link %>"></a>
+    </div>
+    <div class="small-12 large-9 columns">
+      <a href="<%= url_for(episode) %>"><h3>Ep. <%= episode.episode_number %> - <%= episode.name %> <span class="subtitle">  ( <%= guest_name(episode) %> )</span></h3></a>
+      <p><span class="subtitle"><%= episode.published_on.strftime("%B %d, %Y") %></span></p>
+      <p><%= episode.description.truncate(200).html_safe %> <%= link_to "more", episode %></p>
+    </div>
+  </article>
+  <% end %>
+
+</section
