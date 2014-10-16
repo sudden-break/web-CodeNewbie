@@ -13,3 +13,17 @@
 .six-columns:last-child {
   padding-top: 0px;
 }
+
+.image-sidebar {
+  padding: 20px;
+  background: $really-light-gray;
+  h3 { margin-bottom: 0px; }
+  p {
+    font-size: 14px;
+    color: $dark-gray;
+  }
+  a { color: $bright-green; }
+  .thin { font-size: 18px; }
+}
+
+.pad-left { padding-left: 30px;}
