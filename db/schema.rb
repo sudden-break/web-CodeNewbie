@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014202929) do
+ActiveRecord::Schema.define(version: 20141017074515) do
 
   create_table "activities", force: true do |t|
     t.string   "category"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20141014202929) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "answers", force: true do |t|
+    t.datetime "date"
+    t.string   "topic"
+    t.string   "flag"
+    t.integer  "tweet_id"
+    t.integer  "question_id"
+    t.string   "author"
+  end
+
+  add_index "answers", ["tweet_id"], name: "index_answers_on_tweet_id", unique: true
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -43,6 +54,11 @@ ActiveRecord::Schema.define(version: 20141014202929) do
   end
 
   add_index "challenges", ["slug"], name: "index_challenges_on_slug", unique: true
+
+  create_table "chat_sessions", force: true do |t|
+    t.string   "week"
+    t.datetime "start_date"
+  end
 
   create_table "chats", force: true do |t|
     t.text     "description"
@@ -135,6 +151,16 @@ ActiveRecord::Schema.define(version: 20141014202929) do
     t.integer  "episode_number"
     t.string   "image_link"
   end
+
+  create_table "questions", force: true do |t|
+    t.datetime "date"
+    t.string   "topic"
+    t.string   "flag"
+    t.integer  "tweet_id"
+    t.integer  "chat_session_id"
+  end
+
+  add_index "questions", ["tweet_id"], name: "index_questions_on_tweet_id", unique: true
 
   create_table "resources", force: true do |t|
     t.string   "name"
