@@ -28,5 +28,9 @@ class ApplicationController < ActionController::Base
   def need_email
     redirect_to edit_email_path if current_user && current_user.email.include?("twitter")
   end
+  
+  def find_chatsessions
+    @chatsessions = ChatSession.all
+  end
 
 end
