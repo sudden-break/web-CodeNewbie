@@ -1,0 +1,23 @@
+<div class="row">
+  <h4>Week: <%= @chatsession.week+"(Questions: "+@chatsession.questions.count.to_s+")" %></h4>
+  <dl class="accordion" data-accordion>
+  <% @chatsession.questions.each do |q| %>
+    <dd class="accordion-navigation">
+      <a href="#panel<%= q.id %>"><%= q.topic %></a>
+      <div id="panel<%= q.id %>" class=<%="content" + if q.flag == "Q1:"; "active" else "" end %>>
+        <ul class="small-block-grid-1 large-block-grid-3">
+        <% q.answers.order("date ASC").each do |a| %>
+          <li>
+
+            <div>
+              <%= raw a.topic %>
+            </div>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </dd>
+  <% end %>
+  </dl>
+</div>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -92,5 +92,8 @@ CodeNewbie::Application.routes.draw do
   # admin panel
   get   '/admin' => 'sessions#admin_new'
   post  '/admin' => 'sessions#create_admin'
+  
+  # twitter chat sessions
+  resources :chatsessions, :only => [:show]
 
 end
